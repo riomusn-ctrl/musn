@@ -31,7 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
       "./assets/images/Innovation.jpeg"
     ];
 
-    let heroCandidateIndex = 0;
+    const absoluteCandidates = heroCandidates.map(
+      (candidate) => new URL(candidate, document.baseURI).href
+    );
+    let heroCandidateIndex = absoluteCandidates.indexOf(heroImage.src);
+    if (heroCandidateIndex < 0) heroCandidateIndex = 0;
 
     const tryNextHeroImage = () => {
       heroCandidateIndex += 1;
@@ -48,6 +52,12 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     heroImage.addEventListener("error", tryNextHeroImage);
+
+    // إذا كانت الصورة فشلت قبل تسجيل حدث error (قد يحدث على GitHub Pages)
+    // نبدأ محاولة الاسم التالي مباشرة.
+    if (heroImage.complete && heroImage.naturalWidth === 0) {
+      tryNextHeroImage();
+    }
   }
 
   /* --------------------------------------------------------

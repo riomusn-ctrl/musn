@@ -494,7 +494,7 @@ button {
   max-width: 720px;
   margin: 0;
   color: #ffffff;
-  font-size: clamp(3rem, 4.45vw, 5rem);
+  font-size: clamp(2.75rem, 4.1vw, 4.6rem);
   line-height: 1.16;
   letter-spacing: -0.035em;
   font-weight: 700;
@@ -533,6 +533,11 @@ button {
   border-radius: 12px;
   font-size: 0.88rem;
   box-shadow: none;
+}
+
+
+.hero__label-mobile {
+  display: none;
 }
 
 .hero__actions .hero__btn svg {
@@ -1860,7 +1865,7 @@ button {
   }
 
   .hero h1 {
-    font-size: clamp(2.8rem, 5vw, 4.35rem);
+    font-size: clamp(2.55rem, 4.6vw, 4rem);
   }
 
   .hero__motto {
@@ -2058,7 +2063,7 @@ button {
   }
 
   .hero h1 {
-    font-size: clamp(2.35rem, 10.5vw, 3.35rem);
+    font-size: clamp(2.15rem, 9.5vw, 3.05rem);
     line-height: 1.18;
   }
 
@@ -2069,10 +2074,11 @@ button {
   }
 
   .hero__actions {
-    margin-top: 22px;
-    flex-direction: column;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: stretch;
-    gap: 10px;
+    gap: 9px;
   }
 
   .hero__actions .hero__btn,
@@ -2081,7 +2087,30 @@ button {
   .hero__actions .btn--outline-light {
     width: 100%;
     min-width: 0;
-    min-height: 46px;
+    min-height: 48px;
+    padding-inline: 12px;
+    border-radius: 12px;
+    font-size: 0.84rem;
+    white-space: nowrap;
+  }
+
+  /* زر المسابقات هو الإجراء الرئيسي ويأخذ صفًا كاملًا. */
+  .hero__actions .btn--primary {
+    grid-column: 1 / -1;
+  }
+
+  .hero__actions .hero__btn svg {
+    width: 16px;
+    height: 16px;
+    flex-basis: 16px;
+  }
+
+  .hero__label-desktop {
+    display: none;
+  }
+
+  .hero__label-mobile {
+    display: inline;
   }
 
   .scroll-indicator {
@@ -2294,4 +2323,20 @@ button {
     radial-gradient(circle at 18% 18%, rgba(84, 185, 232, 0.30), transparent 34%),
     radial-gradient(circle at 82% 26%, rgba(24, 166, 166, 0.22), transparent 30%),
     linear-gradient(135deg, #0b2948 0%, #135d91 55%, #0b2948 100%);
+}
+
+
+/* Hero buttons: extra-small phones */
+@media (max-width: 360px) {
+  .hero__actions {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__actions .btn--primary {
+    grid-column: auto;
+  }
+
+  .hero__actions .hero__btn {
+    min-height: 46px;
+  }
 }
