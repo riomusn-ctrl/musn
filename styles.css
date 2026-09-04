@@ -2340,3 +2340,77 @@ button {
     min-height: 46px;
   }
 }
+
+
+/* ==========================================================
+   FIX: Hero action buttons on mobile
+   يمنع SVG من أخذ حجمه الافتراضي الكبير (300x150) ويثبت الأزرار
+   كأزرار مدمجة بدل ظهورها كبطاقات كبيرة على بعض المتصفحات.
+   ========================================================== */
+@media (max-width: 640px) {
+  .hero__actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    align-items: center;
+  }
+
+  .hero__actions .hero__btn,
+  .hero__actions .btn--primary,
+  .hero__actions .btn--light,
+  .hero__actions .btn--outline-light {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+    padding: 0 12px !important;
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    border-radius: 12px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .hero__actions .btn--primary {
+    grid-column: 1 / -1;
+  }
+
+  .hero__actions .hero__btn svg {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    min-height: 18px !important;
+    max-width: 18px !important;
+    max-height: 18px !important;
+    flex: 0 0 18px !important;
+    display: block !important;
+    overflow: visible;
+  }
+
+  .hero__actions .hero__btn > span {
+    display: inline-block;
+    flex: 0 1 auto;
+  }
+}
+
+/* حتى هواتف 360px نحافظ على زرين في الصف الثاني بدل تحويلها لبطاقات متتالية */
+@media (max-width: 360px) {
+  .hero__actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero__actions .btn--primary {
+    grid-column: 1 / -1;
+  }
+
+  .hero__actions .hero__btn {
+    font-size: 0.79rem;
+    padding-inline: 8px !important;
+  }
+}
