@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (heroImage) {
     const heroCandidates = [
-      "./assets/images/innovation.png",
       "./assets/images/innovation.PNG",
+      "./assets/images/innovation.png",
       "./assets/images/Innovation.png",
       "./assets/images/Innovation.PNG",
       "./assets/images/innovation.jpg",

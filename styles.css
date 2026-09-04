@@ -410,7 +410,7 @@ button {
 }
 
 .hero__media {
-  z-index: -3;
+  z-index: 0;
   background:
     radial-gradient(circle at 28% 32%, rgba(84, 185, 232, 0.20), transparent 34%),
     linear-gradient(135deg, #2b79b8, #082746 72%);
@@ -418,6 +418,7 @@ button {
 
 .hero__media img,
 .hero__media video {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -426,7 +427,7 @@ button {
 }
 
 .hero__overlay {
-  z-index: -2;
+  z-index: 1;
   background:
     linear-gradient(
       90deg,
@@ -441,7 +442,7 @@ button {
 
 /* زخرفة هندسية هادئة في الجزء الداكن فقط */
 .hero__pattern {
-  z-index: -1;
+  z-index: 2;
   inset-inline-end: auto;
   width: 48%;
   opacity: 0.22;
@@ -458,7 +459,7 @@ button {
 
 .hero__content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   min-height: clamp(465px, 32.25vw, 536px);
   padding-block: 46px 54px;
   display: flex;
