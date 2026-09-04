@@ -14,7 +14,7 @@
 3) عند رفعه على استضافة، ارفع المجلد كاملًا مع الحفاظ على نفس بنية الملفات.
 
 أماكن الصور المقترحة:
-- assets/images/hero.jpg
+- assets/images/innovation.svg
   صورة Hero الرئيسية.
 
 - assets/images/hero-poster.jpg
