@@ -11,6 +11,46 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   /* --------------------------------------------------------
+     0) Hero image fallback for GitHub Pages
+     GitHub Pages is case-sensitive. Try common filename variants
+     if the primary image path returns 404.
+     -------------------------------------------------------- */
+  const heroImage = document.getElementById("hero-image");
+
+  if (heroImage) {
+    const heroCandidates = [
+      "./assets/images/innovation.png",
+      "./assets/images/innovation.PNG",
+      "./assets/images/Innovation.png",
+      "./assets/images/Innovation.PNG",
+      "./assets/images/innovation.jpg",
+      "./assets/images/innovation.JPG",
+      "./assets/images/Innovation.jpg",
+      "./assets/images/Innovation.JPG",
+      "./assets/images/innovation.jpeg",
+      "./assets/images/Innovation.jpeg"
+    ];
+
+    let heroCandidateIndex = 0;
+
+    const tryNextHeroImage = () => {
+      heroCandidateIndex += 1;
+
+      if (heroCandidateIndex < heroCandidates.length) {
+        heroImage.src = heroCandidates[heroCandidateIndex];
+      } else {
+        heroImage.style.display = "none";
+        document.querySelector(".hero")?.classList.add("hero--image-missing");
+        console.error(
+          "Hero image not found. Upload innovation.png to assets/images/ and match the filename case exactly."
+        );
+      }
+    };
+
+    heroImage.addEventListener("error", tryNextHeroImage);
+  }
+
+  /* --------------------------------------------------------
      1) قائمة الجوال
      -------------------------------------------------------- */
   const menuToggle = document.querySelector(".menu-toggle");
