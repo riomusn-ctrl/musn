@@ -12,7 +12,7 @@
 ├── script.js
 └── assets/
     └── images/
-        └── innovation.png
+        └── innovation.PNG
 
 مهم جدًا:
 1) GitHub Pages يفرّق بين الحروف الكبيرة والصغيرة.
