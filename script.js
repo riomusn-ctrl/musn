@@ -167,8 +167,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const progress = Math.min((time - startTime) / duration, 1);
       const current = Math.floor(progress * target);
 
-      element.textContent =
-        "+" + new Intl.NumberFormat("ar-OM").format(current);
+      const eased = Math.round(target * (1 - Math.pow(1 - progress, 3)));
+      element.textContent = new Intl.NumberFormat("en-US").format(eased) + "+";
 
       if (progress < 1) requestAnimationFrame(frame);
     };

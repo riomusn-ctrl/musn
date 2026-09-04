@@ -565,49 +565,351 @@ button {
 }
 
 /* ----------------------------------------------------------
-   11) Category cards
+   11) Halls / قاعات المركز
    ---------------------------------------------------------- */
-.category-card {
-  min-height: 280px;
-  padding: 28px;
+.halls-container {
+  width: min(calc(100% - 32px), 1600px);
+}
+
+.halls-heading {
+  max-width: 900px;
+}
+
+.halls-summary {
+  margin-top: 26px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.halls-summary span {
+  min-height: 38px;
+  padding: 7px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-primary-dark);
+  background: rgba(255, 255, 255, 0.82);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(15, 35, 55, 0.04);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.halls-summary strong {
+  color: var(--color-primary);
+  font-size: 1rem;
+}
+
+/* الحاوية الخارجية تضمن ظهور شريط التمرير أسفل القاعات */
+.halls-scroll-shell {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 2px 18px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+  scrollbar-gutter: stable;
+  scrollbar-width: auto;
+  scrollbar-color: var(--color-primary) rgba(19, 93, 145, 0.12);
+  -webkit-overflow-scrolling: touch;
+}
+
+.halls-scroll-shell::-webkit-scrollbar {
+  height: 12px;
+}
+
+.halls-scroll-shell::-webkit-scrollbar-track {
+  background: rgba(19, 93, 145, 0.10);
+  border-radius: 999px;
+}
+
+.halls-scroll-shell::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-turquoise));
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+}
+
+.halls-scroll-shell::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+
+/* جميع القاعات الست في صف أفقي واحد بدون التفاف */
+.halls-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 18px;
+  width: max-content;
+  min-width: 100%;
+}
+
+.hall-card {
+  flex: 0 0 285px;
+  width: 285px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
   background: var(--color-white);
   box-shadow: var(--shadow-sm);
+  scroll-snap-align: start;
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
-.category-card:hover {
-  transform: translateY(-7px);
+.hall-card:hover {
+  transform: translateY(-6px);
   box-shadow: var(--shadow-md);
   border-color: rgba(19, 93, 145, 0.18);
 }
 
-.category-card__icon {
-  width: 58px;
-  height: 58px;
-  margin-bottom: 24px;
-  border-radius: 18px;
+.hall-card__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(84, 185, 232, 0.28), transparent 35%),
+    linear-gradient(135deg, #0b2948, #135d91 60%, #18a6a6);
+}
+
+.hall-card__media::before {
+  content: "أضف صورة القاعة";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.hall-card__media--energy {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(198, 161, 91, 0.30), transparent 32%),
+    linear-gradient(135deg, #15344d, #176d7a 58%, #2e8e78);
+}
+
+.hall-card__media--innovation {
+  background:
+    radial-gradient(circle at 25% 20%, rgba(24, 166, 166, 0.32), transparent 34%),
+    linear-gradient(135deg, #102f50, #315f85 58%, #5f8fa8);
+}
+
+.hall-card__media--robotics {
+  background:
+    radial-gradient(circle at 78% 22%, rgba(84, 185, 232, 0.30), transparent 34%),
+    linear-gradient(135deg, #0b2948, #164e70 55%, #2c788b);
+}
+
+.hall-card__media--five {
+  background:
+    radial-gradient(circle at 24% 22%, rgba(84, 185, 232, 0.24), transparent 34%),
+    linear-gradient(135deg, #15314d, #28657f 58%, #5aa1a1);
+}
+
+.hall-card__media--six {
+  background:
+    radial-gradient(circle at 78% 20%, rgba(198, 161, 91, 0.25), transparent 34%),
+    linear-gradient(135deg, #102f50, #3f637e 56%, #7b8795);
+}
+
+.hall-card__media img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 420ms ease;
+}
+
+.hall-card:hover .hall-card__media img {
+  transform: scale(1.035);
+}
+
+.hall-card__media::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: auto 0 0;
+  height: 46%;
+  pointer-events: none;
+  background: linear-gradient(0deg, rgba(6, 30, 50, 0.48), transparent);
+}
+
+.hall-card__type {
+  position: absolute;
+  z-index: 3;
+  inset-inline-start: 15px;
+  bottom: 14px;
+  min-height: 30px;
+  padding: 4px 10px;
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  background: rgba(7, 34, 56, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.hall-card__body {
+  padding: 20px;
+}
+
+.hall-card__title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.hall-card__kicker {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--color-primary);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.hall-card h3 {
+  margin: 0;
+  color: var(--color-primary-dark);
+  font-size: 1.06rem;
+  line-height: 1.45;
+}
+
+.hall-card__icon {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
   display: grid;
   place-items: center;
   color: var(--color-primary-dark);
   background: linear-gradient(145deg, #eaf6fb, #eefaf8);
-  font-size: 1.45rem;
-  transition: transform var(--transition);
+  border: 1px solid rgba(19, 93, 145, 0.08);
+  border-radius: 13px;
+  font-size: 0.82rem;
+  font-weight: 800;
 }
 
-.category-card:hover .category-card__icon {
-  transform: rotate(-5deg) scale(1.05);
-}
-
-.category-card h3 {
-  margin: 0 0 10px;
-  font-size: 1.2rem;
-}
-
-.category-card p {
+.hall-card__body > p {
+  min-height: 72px;
+  margin: 12px 0 18px;
   color: var(--color-muted);
-  min-height: 74px;
+  font-size: 0.84rem;
+  line-height: 1.7;
+}
+
+/* ثلاثة عناصر مختصرة لمواصفات القاعة */
+.hall-specs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.hall-specs > div {
+  min-height: 82px;
+  padding: 10px 6px;
+  display: grid;
+  align-content: center;
+  text-align: center;
+  background: var(--color-bg-soft);
+  border: 1px solid rgba(23, 35, 51, 0.06);
+  border-radius: 13px;
+}
+
+.hall-specs span {
+  color: var(--color-muted);
+  font-size: 0.64rem;
+  line-height: 1.35;
+}
+
+.hall-specs strong {
+  margin-top: 3px;
+  color: var(--color-primary-dark);
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
+.hall-specs small {
+  color: var(--color-muted);
+  font-size: 0.62rem;
+}
+
+.halls-scroll-hint {
+  margin: 8px 0 0;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.hall-booking-note {
+  margin-top: 28px;
+  padding: 22px 24px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  color: var(--color-primary-dark);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(236, 247, 251, 0.94));
+  border: 1px solid rgba(19, 93, 145, 0.12);
+  border-radius: 22px;
+  box-shadow: var(--shadow-sm);
+}
+
+.hall-booking-note__icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: var(--color-primary);
+  border-radius: 15px;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.hall-booking-note strong {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 1rem;
+}
+
+.hall-booking-note p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.hall-booking-note__badge {
+  padding: 8px 12px;
+  color: var(--color-primary);
+  background: white;
+  border: 1px solid rgba(19, 93, 145, 0.12);
+  border-radius: 999px;
+  white-space: nowrap;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .hall-card {
+    flex-basis: min(82vw, 285px);
+    width: min(82vw, 285px);
+  }
+
+  .hall-booking-note {
+    grid-template-columns: auto 1fr;
+  }
+
+  .hall-booking-note__badge {
+    grid-column: 1 / -1;
+    width: fit-content;
+  }
 }
 
 /* ----------------------------------------------------------
@@ -876,40 +1178,238 @@ button {
 }
 
 /* ----------------------------------------------------------
-   17) Statistics
+   17) Statistics / مسندم تبتكر
+   بطاقات مؤسسية مستوحاة من التصميم المرجعي مع أيقونات خطية
+   وألوان متدرجة مختلفة لكل مؤشر.
    ---------------------------------------------------------- */
 .stats-section {
-  color: white;
-  background:
-    radial-gradient(circle at 80% 0%, rgba(84, 185, 232, 0.18), transparent 28%),
-    var(--color-primary-dark);
+  position: relative;
+  overflow: hidden;
+  padding: 56px 0 62px;
+  color: var(--color-text);
+  background: #ffffff;
+  border-top: 1px solid rgba(23, 35, 51, 0.05);
+  border-bottom: 1px solid rgba(23, 35, 51, 0.05);
+  isolation: isolate;
+}
+
+.stats-section::before,
+.stats-section::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(84, 185, 232, 0.10), rgba(84, 185, 232, 0) 68%);
+  pointer-events: none;
+}
+
+.stats-section::before {
+  inset-inline-start: -170px;
+  top: 35%;
+}
+
+.stats-section::after {
+  inset-inline-end: -170px;
+  top: 22%;
+}
+
+.stats-container {
+  width: min(calc(100% - 32px), 1420px);
+}
+
+.stats-heading {
+  max-width: 780px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.stats-heading .eyebrow {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 6px 16px;
+  color: #0b6fae;
+  background: linear-gradient(180deg, #eef8ff, #e2f2fc);
+  border: 1px solid rgba(11, 111, 174, 0.08);
+  border-radius: 999px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.stats-heading .eyebrow::before,
+.stats-heading .eyebrow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 42px;
+  height: 2px;
+  border-radius: 999px;
+  background: #dcecf6;
+  transform: translateY(-50%);
+}
+
+.stats-heading .eyebrow::before {
+  right: calc(100% + 18px);
+}
+
+.stats-heading .eyebrow::after {
+  left: calc(100% + 18px);
+}
+
+.stats-heading h2 {
+  margin: 0;
+  color: #0b3458;
+  font-size: clamp(2.25rem, 3.5vw, 3.45rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+.stats-heading p {
+  margin: 8px auto 0;
+  color: #6d7f92;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-weight: 500;
+}
+
+.stats-heading__line {
+  display: block;
+  width: 92px;
+  height: 4px;
+  margin: 14px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #19a7a8, #1486c9);
 }
 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  gap: 16px;
 }
 
 .stat-card {
-  min-height: 150px;
-  padding: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.055);
+  /* نفس الأزرق المستخدم في خط عنوان القسم، مع تدرّج خفيف لعمق بصري */
+  --stat-accent: #1486c9;
+  --stat-accent-2: #0b78bb;
+  position: relative;
+  min-height: 168px;
+  padding: 22px 22px 28px;
+  overflow: hidden;
   display: grid;
-  place-items: center;
-  align-content: center;
-  text-align: center;
+  grid-template-columns: minmax(0, 1fr) 74px;
+  align-items: center;
+  gap: 15px;
+  color: #ffffff;
+  background: linear-gradient(145deg, #1486c9 0%, #0b78bb 100%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 19px;
+  box-shadow: 0 16px 38px rgba(11, 120, 187, 0.20);
+  transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
+}
+
+.stat-card::before {
+  content: "";
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  inset: -95px -65px auto auto;
+  z-index: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+.stat-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 4px;
+  z-index: 2;
+  background: linear-gradient(90deg, rgba(255,255,255,.92), #7ad8f3);
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.34);
+  box-shadow: 0 22px 50px rgba(11, 120, 187, 0.28);
+}
+
+.stat-card__content,
+.stat-card__icon {
+  position: relative;
+  z-index: 1;
+}
+
+.stat-card__content {
+  min-width: 0;
+  text-align: right;
 }
 
 .stat-card strong {
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  line-height: 1;
+  display: block;
+  width: fit-content;
+  margin-inline-start: auto;
+  direction: ltr;
+  unicode-bidi: isolate;
+  color: #ffffff;
+  font-size: clamp(2.45rem, 3.3vw, 3.35rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 2px 12px rgba(0, 52, 92, 0.16);
 }
 
-.stat-card span {
+.stat-card__label {
+  display: block;
+  margin-top: 9px;
+  color: rgba(255, 255, 255, 0.97);
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.stat-card small {
+  display: block;
+  margin-top: 5px;
   color: rgba(255, 255, 255, 0.76);
+  font-size: 0.84rem;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.stat-card__icon {
+  width: 74px;
+  height: 74px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 50%;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(6px);
+}
+
+.stat-card__icon svg {
+  width: 41px;
+  height: 41px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* جميع بطاقات الإحصائيات تستخدم نفس الهوية الزرقاء */
+.stat-card--programs,
+.stat-card--students,
+.stat-card--schools,
+.stat-card--competitions {
+  --stat-accent: #1486c9;
+  --stat-accent-2: #0b78bb;
 }
 
 /* ----------------------------------------------------------
@@ -1223,6 +1723,19 @@ button {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .halls-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hall-booking-note {
+    grid-template-columns: auto 1fr;
+  }
+
+  .hall-booking-note__badge {
+    grid-column: 2;
+    justify-self: start;
+  }
+
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 220px);
@@ -1295,9 +1808,32 @@ button {
   .meta-grid,
   .card-grid--3,
   .card-grid--4,
-  .timeline-cards,
-  .stats-grid {
+  .timeline-cards {
     grid-template-columns: 1fr;
+  }
+
+  .halls-summary {
+    justify-content: flex-start;
+  }
+
+  .hall-card__body {
+    padding: 20px;
+  }
+
+  .hall-specs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hall-booking-note {
+    padding: 20px;
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+  }
+
+  .hall-booking-note__badge {
+    grid-column: auto;
+    justify-self: start;
+    white-space: normal;
   }
 
   .countdown {
@@ -1382,5 +1918,84 @@ button {
 @media (max-width: 420px) {
   .competition-card__actions {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .stats-section {
+    padding: 48px 0 54px;
+  }
+
+  .stats-heading {
+    margin-bottom: 24px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .stat-card {
+    min-height: 160px;
+  }
+}
+
+@media (max-width: 560px) {
+  .stats-section {
+    padding: 42px 0 46px;
+  }
+
+  .stats-container {
+    width: min(calc(100% - 24px), 1420px);
+  }
+
+  .stats-heading .eyebrow::before,
+  .stats-heading .eyebrow::after {
+    width: 28px;
+  }
+
+  .stats-heading h2 {
+    font-size: 2.35rem;
+  }
+
+  .stats-heading p {
+    font-size: 0.96rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .stat-card {
+    min-height: 154px;
+    padding: 22px 20px 28px;
+    grid-template-columns: minmax(0, 1fr) 68px;
+    gap: 14px;
+    border-radius: 18px;
+  }
+
+  .stat-card strong {
+    font-size: 2.7rem;
+  }
+
+  .stat-card__label {
+    margin-top: 9px;
+    font-size: 0.96rem;
+  }
+
+  .stat-card small {
+    margin-top: 5px;
+    font-size: 0.78rem;
+  }
+
+  .stat-card__icon {
+    width: 68px;
+    height: 68px;
+  }
+
+  .stat-card__icon svg {
+    width: 38px;
+    height: 38px;
   }
 }
