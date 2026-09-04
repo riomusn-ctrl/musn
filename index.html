@@ -17,7 +17,8 @@
   <meta name="theme-color" content="#0B2948" />
 
   <!-- ملف التنسيق الرئيسي -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="preload" as="image" href="./assets/images/innovation.png" />
 
 </head>
 
@@ -105,9 +106,12 @@
     <section class="hero" id="home">
       <div class="hero__media" aria-hidden="true">
         <img
-          src="assets/images/innovation.png"
+          id="hero-image"
+          src="./assets/images/innovation.png"
           alt=""
           loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
       </div>
 
@@ -774,6 +778,6 @@
   </div>
 
   <!-- ملف JavaScript الخاص بالتفاعلات البسيطة -->
-  <script src="script.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
