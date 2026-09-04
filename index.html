@@ -131,7 +131,7 @@
           </button>
         </div>
 
-        <a class="scroll-indicator" href="#next-event" aria-label="الانتقال إلى القسم التالي">
+        <a class="scroll-indicator" href="#categories" aria-label="الانتقال إلى القسم التالي">
           <span>استكشف المزيد</span>
           <span class="scroll-indicator__arrow">↓</span>
         </a>
@@ -139,73 +139,7 @@
     </section>
 
     <!-- =========================================================
-         4) الموعد القادم + Countdown
-         لتغيير الموعد عدّل data-date بصيغة:
-         YYYY-MM-DDTHH:MM:SS+04:00
-         ========================================================= -->
-    <section class="section" id="next-event">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <span class="eyebrow eyebrow--blue">المواعيد</span>
-            <h2>الموعد القادم</h2>
-          </div>
-          <p>أقرب فعالية أو مسابقة قادمة ضمن خطة الدائرة.</p>
-        </div>
-
-        <article
-          class="upcoming-card"
-          data-date="2026-10-27T08:00:00+04:00"
-          id="countdown-card"
-        >
-          <div class="upcoming-card__info">
-            <span class="status-badge status-badge--open">قريبًا</span>
-            <h3>مسابقات الروبوت والذكاء الاصطناعي</h3>
-
-            <div class="meta-grid">
-              <div>
-                <span class="meta-label">التاريخ</span>
-                <strong>27 أكتوبر 2026م</strong>
-              </div>
-              <div>
-                <span class="meta-label">الوقت</span>
-                <strong>8:00 ص – 2:00 م</strong>
-              </div>
-              <div>
-                <span class="meta-label">المكان</span>
-                <strong>مركز مسندم للثقافة والابتكار</strong>
-              </div>
-              <div>
-                <span class="meta-label">الفئة المستهدفة</span>
-                <strong>طلبة المدارس</strong>
-              </div>
-            </div>
-          </div>
-
-          <div class="countdown" aria-label="الوقت المتبقي">
-            <div class="countdown__item">
-              <strong data-unit="days">00</strong>
-              <span>يوم</span>
-            </div>
-            <div class="countdown__item">
-              <strong data-unit="hours">00</strong>
-              <span>ساعة</span>
-            </div>
-            <div class="countdown__item">
-              <strong data-unit="minutes">00</strong>
-              <span>دقيقة</span>
-            </div>
-            <div class="countdown__item">
-              <strong data-unit="seconds">00</strong>
-              <span>ثانية</span>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         5) اختر مجالك
+         4) اختر مجالك
          يمكن تغيير النصوص والأيقونات بسهولة من البطاقات التالية.
          ========================================================= -->
     <section class="section section--soft" id="categories">
@@ -251,9 +185,9 @@
     <!-- =========================================================
          6) أبرز المسابقات
          مصدر صور البطاقات:
-         assets/images/competition-robot.svg
-         assets/images/competition-innovation.svg
-         assets/images/competition-ai.svg
+         assets/images/competition-robot.jpg
+         assets/images/competition-innovation.jpg
+         assets/images/competition-ai.jpg
          استبدل أي ملف منها بصورة JPG/WEBP بنفس الاسم أو غيّر src.
          ========================================================= -->
     <section class="section" id="competitions">
@@ -268,53 +202,62 @@
 
         <div class="card-grid card-grid--3">
           <article class="competition-card">
-            <img src="assets/images/competition-robot.svg" alt="صورة توضيحية لمسابقة الروبوت" loading="lazy" />
+            <img src="assets/images/competition-robot.jpg" alt="صورة توضيحية لمسابقة الروبوت" loading="lazy" />
             <div class="competition-card__body">
               <div class="card-topline">
                 <span class="pill">الروبوت</span>
                 <span class="status-badge status-badge--open">التسجيل مفتوح</span>
               </div>
-              <h3>تحدي الروبوت والأنظمة الذكية</h3>
-              <p>مسابقة عملية لتصميم وبرمجة روبوت قادر على تنفيذ مهام محددة.</p>
+              <h3>مسابقات الروبوت</h3>
+              <p>مسابقات الروبوت والذكاء الاصطناعي ضمن الأولمبياد الوطني تُقسم إلى ثلاث فئات للصفوف (5–6)، (7–8)، و(9–11)، وتتأهل الفرق للمنافسة على المستوى الوطني</p>
+              <ul class="meta-list">
+                <li><strong>الفئة:</strong> طلبة المدارس</li>
+                <li><strong>الموعد:</strong> 26 أكتوبر 2026م</li>
+              </ul>
+              <div class="competition-card__actions">
+                <a class="btn btn--secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSdvUwnOTRL9txr6FmcTQXUT0jEN3UWctJxxRhb6f_3P6DQJsQ/viewform?pli=1">التسجيل</a>
+                <a class="btn btn--ghost" href="https://drive.google.com/drive/folders/1HFyQLBSwpyMG7GTtyTLsayKNq_WvucLi?usp=sharing">التفاصيل</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="competition-card">
+            <img src="assets/images/competition-innovation.jpg" alt="صورة توضيحية للابتكارات العلمية" loading="lazy" />
+            <div class="competition-card__body">
+              <div class="card-topline">
+                <span class="pill">الابتكار</span>
+                <span class="status-badge status-badge--open">التسجيل مفتوح</span>
+              </div>
+              <h3>مسابقة الابتكارات العلمية </h3>
+              <p>تشمل مسابقة الابتكارات العلمية أربعة مجالات رئيسية: الهندسة والطاقة، الأحياء والبيئة، العلوم والرياضيات، وتقنية المعلومات.</p>
               <ul class="meta-list">
                 <li><strong>الفئة:</strong> طلبة المدارس</li>
                 <li><strong>الموعد:</strong> 27 أكتوبر 2026م</li>
               </ul>
-              <a class="btn btn--secondary btn--full" href="#">التفاصيل والتسجيل</a>
+              <div class="competition-card__actions">
+                <a class="btn btn--secondary" href="#https://docs.google.com/forms/d/e/1FAIpQLScKKNgu25cI7d8DBXmYXVrX1fPC_IbvuwHqQW4zH4r9CQgqVA/viewform">التسجيل</a>
+                <a class="btn btn--ghost" href="https://drive.google.com/drive/folders/1bbLcBCMUAAQXDsoCAa3sDbFLIUdagB5J?usp=sharing">التفاصيل</a>
+              </div>
             </div>
           </article>
 
           <article class="competition-card">
-            <img src="assets/images/competition-innovation.svg" alt="صورة توضيحية للابتكارات العلمية" loading="lazy" />
+            <img src="assets/images/competition-ai.jpg" alt="صورة توضيحية للذكاء الاصطناعي" loading="lazy" />
             <div class="competition-card__body">
               <div class="card-topline">
-                <span class="pill">الابتكار</span>
-                <span class="status-badge status-badge--soon">قريبًا</span>
+                <span class="pill">مسابقات الطائرات بلاطيار</span>
+               <span class="status-badge status-badge--open">التسجيل مفتوح</span>
               </div>
-              <h3>الابتكارات العلمية الطلابية</h3>
-              <p>عرض الحلول والمشروعات العلمية المبتكرة وتطويرها ضمن بيئة تنافسية.</p>
-              <ul class="meta-list">
-                <li><strong>الفئة:</strong> طلبة المدارس</li>
-                <li><strong>الموعد:</strong> 28 أكتوبر 2026م</li>
-              </ul>
-              <a class="btn btn--secondary btn--full" href="#">التفاصيل والتسجيل</a>
-            </div>
-          </article>
-
-          <article class="competition-card">
-            <img src="assets/images/competition-ai.svg" alt="صورة توضيحية للذكاء الاصطناعي" loading="lazy" />
-            <div class="competition-card__body">
-              <div class="card-topline">
-                <span class="pill">الذكاء الاصطناعي</span>
-                <span class="status-badge status-badge--closed">ينتهي لاحقًا</span>
-              </div>
-              <h3>تحدي تطبيقات الذكاء الاصطناعي</h3>
-              <p>توظيف أدوات الذكاء الاصطناعي في حل مشكلة تعليمية أو مجتمعية.</p>
+              <h3>مسابقات الطائرات بلاطيار</h3>
+              <p>يتنافس الطلبة في برمجة طائرات بلا طيار لتنفيذ مهام محددة عبر عدة جولات</p>
               <ul class="meta-list">
                 <li><strong>الفئة:</strong> فرق طلابية</li>
-                <li><strong>الموعد:</strong> يعلن لاحقًا</li>
+                <li><strong>الموعد:</strong> 28 أكتوبر 2026م</li>
               </ul>
-              <a class="btn btn--secondary btn--full" href="#">التفاصيل والتسجيل</a>
+              <div class="competition-card__actions">
+                <a class="btn btn--secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSdvUwnOTRL9txr6FmcTQXUT0jEN3UWctJxxRhb6f_3P6DQJsQ/viewform?pli=1">التسجيل</a>
+                <a class="btn btn--ghost" href="https://drive.google.com/drive/folders/1jC3mibMUTb-47yafRR62Kt29GRLVlsYR?usp=sharing">التفاصيل</a>
+              </div>
             </div>
           </article>
         </div>

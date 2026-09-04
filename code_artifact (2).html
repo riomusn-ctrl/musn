@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مركز مسندم للثقافة والابتكار | Musandam Culture & Innovation Center</title>
+
+  <!-- Google Fonts: Alexandria & IBM Plex Sans Arabic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            alexandria: ['Alexandria', 'sans-serif'],
+            ibm: ['IBM Plex Sans Arabic', 'sans-serif']
+          },
+          colors: {
+            brand: {
+              gold: '#c5a059',
+              goldLight: '#e0c082',
+              dark: '#080d16',
+              navy: '#0f172a',
+              ocean: '#0c2238'
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      background-color: #080d16;
+      color: #f8fafc;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .font-heading {
+      font-family: 'Alexandria', sans-serif;
+    }
+
+    /* تأثير Ken Burns البطيء والسينمائي للصور */
+    @keyframes kenBurnsSlow {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.07);
+      }
+    }
+
+    .slide-active .media-zoom {
+      animation: kenBurnsSlow 9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    }
+
+    /* حركة ظهور النصوص مع التدريج الزمني (Staggered Fade-Up) */
+    @keyframes heroFadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-badge {
+      animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+    }
+
+    .animate-title {
+      animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+    }
+
+    .animate-sub {
+      animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
+    }
+
+    .animate-desc {
+      animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+    }
+
+    .animate-actions {
+      animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.75s both;
+    }
+
+    /* مؤشر النزول للأسفل */
+    @keyframes scrollPulse {
+      0%, 100% {
+        transform: translateY(0);
+        opacity: 0.6;
+      }
+      50% {
+        transform: translateY(9px);
+        opacity: 1;
+      }
+    }
+
+    .scroll-bounce {
+      animation: scrollPulse 2.2s infinite ease-in-out;
+    }
+
+    /* تأثيرات التدرج اللوني فوق الشرائط والوسائط */
+    .hero-radial-overlay {
+      background: radial-gradient(
+        ellipse at 80% 40%,
+        rgba(12, 34, 56, 0.4) 0%,
+        rgba(8, 13, 22, 0.82) 65%,
+        rgba(8, 13, 22, 0.96) 100%
+      );
+    }
+
+    /* شريط التمرير المخصص */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #080d16;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #23334d;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #c5a059;
+    }
+  </style>
+</head>
+<body class="selection:bg-brand-gold selection:text-slate-900">
+
+  <!-- =========================================================================
+       1. الشريط العلوي الرئاسي (NAVBAR)
+       - يبدأ شفافاً فوق الـ Hero
+       - يتحول تلقائياً مع التمرير لأسفل إلى Glassmorphism بلوري فخم
+       - يتضمن مساحة مخصصة للشعار الرسمي بدون صور افتراضية
+       ========================================================================= -->
+  <header
+    id="navbar"
+    class="fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-out py-5 px-4 md:px-10 lg:px-16"
+  >
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- منطقة الشعار الرسمي (مخصصة لإدراج الشعار لاحقاً بدون أي شعار افتراضي) -->
+      <a href="#" class="group flex items-center gap-3.5 focus:outline-none" aria-label="الصفحة الرئيسية">
+        <!-- رمز أيقوني هندسي معبّر عن الثقافة والابتكار -->
+        <div class="w-11 h-11 rounded-xl border border-brand-gold/40 bg-brand-gold/10 flex items-center justify-center backdrop-blur-md transition-all duration-300 group-hover:border-brand-gold group-hover:bg-brand-gold/20 shadow-[0_0_20px_rgba(197,160,89,0.15)]">
+          <svg class="w-6 h-6 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+            <path d="M2 17l10 5 10-5" />
+            <path d="M2 12l10 5 10-5" />
+          </svg>
+        </div>
+        
+        <div class="flex flex-col">
+          <span class="text-xs uppercase tracking-widest text-slate-400 font-medium">سلطنة عُمان • محافظة مسندم</span>
+          <span class="text-base sm:text-lg font-bold font-heading text-white tracking-wide group-hover:text-brand-goldLight transition-colors">
+            مركز مسندم للثقافة والابتكار
+          </span>
+        </div>
+      </a>
+
+      <!-- روابط القائمة الرئيسية - Desktop -->
+      <nav class="hidden xl:flex items-center gap-7" aria-label="القائمة الرئيسية">
+        <a href="#hero-section" class="nav-link text-white font-medium text-sm hover:text-brand-gold transition-colors relative py-1">الرئيسية</a>
+        <a href="#about" class="nav-link text-slate-300 font-medium text-sm hover:text-brand-gold transition-colors relative py-1">عن المركز</a>
+        <a href="#tracks" class="nav-link text-slate-300 font-medium text-sm hover:text-brand-gold transition-colors relative py-1">البرامج</a>
+        <a href="#events" class="nav-link text-slate-300 font-medium text-sm hover:text-brand-gold transition-colors relative py-1">الفعاليات</a>
+        <a href="#workshops" class="nav-link text-slate-300 font-medium text-sm hover:text-brand-gold transition-colors relative py-1">الورش التدريبية</a>
+        <a href="#news" class="nav-link text-slate-300 font-medium text-sm hover:text-brand-gold transition-colors relative py-1">الأخبار</a>
+        <a href="#gallery" class="nav-link text-slate-300 font-medium text-sm hover:text-brand-gold transition-colors relative py-1">معرض الصور</a>
+      </nav>
+
+      <!-- أزرار الإجراء السريع والقائمة على الجوال -->
+      <div class="flex items-center gap-4">
+        <!-- زر التسجيل المباشر -->
+        <a
+          href="#register"
+          class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full text-xs font-semibold text-slate-900 bg-brand-gold hover:bg-brand-goldLight transition-all duration-300 shadow-[0_0_20px_rgba(197,160,89,0.3)] hover:scale-105 active:scale-95"
+        >
+          التسجيل
+        </a>
+
+        <!-- زر تواصل معنا -->
+        <a
+          href="#contact"
+          class="hidden md:inline-flex items-center justify-center px-4 py-2 rounded-full text-xs font-medium text-slate-200 border border-white/20 hover:border-brand-gold hover:text-brand-gold transition-all duration-300 backdrop-blur-sm"
+        >
+          تواصل معنا
+        </a>
+
+        <!-- زر الهامبرغر للقائمة المتنقلة (Mobile Toggle) -->
+        <button
+          id="menuToggle"
+          type="button"
+          class="xl:hidden w-11 h-11 rounded-xl border border-white/15 bg-white/5 flex items-center justify-center text-white hover:border-brand-gold transition-colors"
+          aria-label="فتح القائمة"
+        >
+          <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- القائمة الجانبية المنسدلة للشاشات الصغيرة والمتوسطة (Mobile Drawer) -->
+    <div
+      id="mobileMenu"
+      class="hidden xl:hidden fixed inset-x-4 top-24 p-6 bg-slate-900/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl transition-all duration-300"
+    >
+      <div class="flex flex-col gap-4 text-center">
+        <a href="#hero-section" class="mobile-link text-white font-medium text-base py-2 border-b border-white/5 hover:text-brand-gold transition-colors">الرئيسية</a>
+        <a href="#about" class="mobile-link text-slate-300 font-medium text-base py-2 border-b border-white/5 hover:text-brand-gold transition-colors">عن المركز</a>
+        <a href="#tracks" class="mobile-link text-slate-300 font-medium text-base py-2 border-b border-white/5 hover:text-brand-gold transition-colors">البرامج</a>
+        <a href="#events" class="mobile-link text-slate-300 font-medium text-base py-2 border-b border-white/5 hover:text-brand-gold transition-colors">الفعاليات</a>
+        <a href="#workshops" class="mobile-link text-slate-300 font-medium text-base py-2 border-b border-white/5 hover:text-brand-gold transition-colors">الورش التدريبية</a>
+        <a href="#news" class="mobile-link text-slate-300 font-medium text-base py-2 border-b border-white/5 hover:text-brand-gold transition-colors">الأخبار</a>
+        <a href="#gallery" class="mobile-link text-slate-300 font-medium text-base py-2 border-b border-white/5 hover:text-brand-gold transition-colors">معرض الصور</a>
+        <div class="pt-2 flex flex-col gap-3">
+          <a href="#register" class="mobile-link py-3 bg-brand-gold text-slate-900 font-bold text-sm rounded-xl">التسجيل في المركز</a>
+          <a href="#contact" class="mobile-link py-3 border border-white/20 text-white font-medium text-sm rounded-xl">تواصل معنا</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. قسم الـ HERO الرئيسي (CINEMATIC FULL-SCREEN SLIDER)
+       - التسلسل: صورة -> فيديو -> صورة -> فيديو -> صورة -> دوران لا نهائي
+       - وسائط نظيفة جاهزة لاستقبال ملفاتك:
+         hero-01.jpg | hero-video-01.mp4 | hero-02.jpg | hero-video-02.mp4 | hero-03.jpg
+       - بدون وميض أو شاشات سوداء وبأعلى سلاسة
+       ========================================================================= -->
+  <section
+    id="hero-section"
+    class="relative w-full h-[100vh] min-h-[700px] overflow-hidden select-none bg-brand-dark flex items-center"
+    aria-label="الواجهة السينمائية الترحيبية"
+  >
+
+    <!-- حاوية الشرائح (Slider Container) -->
+    <div id="sliderWrapper" class="absolute inset-0 w-full h-full">
+      <!-- يتم حقن الشرائح تلقائياً وسلساً عبر JavaScript من مصفوفة heroSlides -->
+    </div>
+
+    <!-- طبقات التدرج اللوني الفخمة (Overlays) لضمان وضوح النصوص وحفظ جمالية المشهد -->
+    <!-- تدرج من اليمين (لدعم قراءة المحتوى العربي RTL) -->
+    <div class="absolute inset-0 pointer-events-none z-20 bg-gradient-to-l from-[#080d16]/95 via-[#080d16]/60 to-transparent w-full md:w-[75%] lg:w-[60%]"></div>
+    
+    <!-- تدرج من الأسفل للأعلى لربط الـ Hero مع بقية الصفحة بسلاسة -->
+    <div class="absolute inset-0 pointer-events-none z-20 bg-gradient-to-t from-[#080d16] via-[#080d16]/30 to-[#080d16]/40"></div>
+    
+    <!-- نمط شبكي ناعم جداً يعكس بُعد الابتكار والتقنية -->
+    <div class="absolute inset-0 pointer-events-none z-20 opacity-[0.04] bg-[radial-gradient(#c5a059_1px,transparent_1px)] [background-size:24px_24px]"></div>
+
+    <!-- المحتوى النصي للـ Hero (متحرك ومحدث ديناميكياً مع كل شريحة) -->
+    <div class="relative z-30 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pt-20 md:pt-12">
+      <div id="heroTextContainer" class="max-w-3xl text-right transition-opacity duration-300">
+        
+        <!-- شارة الهوية المؤسسية -->
+        <div id="heroBadgeWrapper" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/10 backdrop-blur-md mb-6 animate-badge">
+          <span class="w-2 h-2 rounded-full bg-brand-gold animate-ping"></span>
+          <span id="heroBadge" class="text-xs md:text-sm font-medium text-brand-goldLight tracking-wide">
+            البوابة الثقافية والمعرفية لمحافظة مسندم
+          </span>
+        </div>
+
+        <!-- العنوان الرئيسي الضخم -->
+        <h1
+          id="heroTitle"
+          class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.2] md:leading-[1.15] mb-5 font-heading tracking-tight animate-title drop-shadow-lg"
+        >
+          مركز مسندم للثقافة والابتكار
+        </h1>
+
+        <!-- العبارة الفرعية الرمزية -->
+        <h2
+          id="heroSubtitle"
+          class="text-xl sm:text-2xl md:text-3xl font-semibold text-brand-goldLight mb-6 font-heading animate-sub drop-shadow"
+        >
+          حيث يلتقي إرث مسندم بمستقبل الابتكار
+        </h2>
+
+        <!-- الوصف الموجز المُلهم -->
+        <p
+          id="heroDesc"
+          class="text-sm sm:text-base md:text-lg text-slate-200/90 leading-relaxed max-w-2xl mb-8 md:mb-10 font-normal animate-desc drop-shadow"
+        >
+          بيئة ملهمة تجمع الثقافة والمعرفة والتقنية، وتصنع مساحات جديدة للتعلم والإبداع والابتكار في قلب شبه جزيرة مسندم الاستراتيجية.
+        </p>
+
+        <!-- أزرار الدعوة للإجراء (Call to Action Buttons) -->
+        <div id="heroActions" class="flex flex-wrap items-center gap-4 animate-actions">
+          <a
+            href="#about"
+            class="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-heading font-semibold text-sm md:text-base text-slate-950 bg-gradient-to-l from-brand-gold to-brand-goldLight hover:from-brand-goldLight hover:to-white transition-all duration-300 shadow-[0_4px_25px_rgba(197,160,89,0.35)] hover:scale-[1.03] active:scale-[0.98]"
+          >
+            <span>اكتشف المركز</span>
+            <svg class="w-5 h-5 transition-transform duration-300 group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+          </a>
+
+          <a
+            href="#events"
+            class="group inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl font-heading font-semibold text-sm md:text-base text-white border border-white/20 bg-white/5 hover:bg-white/10 hover:border-brand-gold transition-all duration-300 backdrop-blur-md hover:scale-[1.03] active:scale-[0.98]"
+          >
+            <span>برامجنا وفعالياتنا</span>
+            <svg class="w-5 h-5 text-brand-gold transition-transform duration-300 group-hover:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- عناصر التحكم المينيمال الفاخرة (Minimal Slider Controls) -->
+    <!-- أسهم التنقل يمين ويسار -->
+    <div class="absolute inset-y-0 left-4 md:left-8 z-30 flex flex-col justify-center gap-3 pointer-events-none">
+      <button
+        id="prevSlideBtn"
+        type="button"
+        class="pointer-events-auto w-12 h-12 rounded-full border border-white/20 bg-slate-900/60 hover:bg-brand-gold hover:text-slate-950 text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 shadow-lg group focus:outline-none"
+        aria-label="الشريحة السابقة"
+      >
+        <svg class="w-5 h-5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      <button
+        id="nextSlideBtn"
+        type="button"
+        class="pointer-events-auto w-12 h-12 rounded-full border border-white/20 bg-slate-900/60 hover:bg-brand-gold hover:text-slate-950 text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 shadow-lg group focus:outline-none"
+        aria-label="الشريحة التالية"
+      >
+        <svg class="w-5 h-5 transition-transform group-hover:-translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- الشريط السفلي للـ Hero: عدّاد الشرائح + النقاط (Dots) + مؤشر النزول -->
+    <div class="absolute bottom-8 inset-x-0 z-30 px-6 sm:px-10 lg:px-16 flex items-center justify-between pointer-events-none">
+      
+      <!-- عداد الشرائح المينيمال (01 / 05) -->
+      <div class="flex items-center gap-3 pointer-events-auto">
+        <span id="currentSlideNum" class="text-xl md:text-2xl font-bold font-heading text-brand-goldLight tracking-widest">
+          01
+        </span>
+        <span class="w-8 h-[1px] bg-white/30"></span>
+        <span id="totalSlidesNum" class="text-xs md:text-sm font-medium text-slate-400 font-heading tracking-wider">
+          05
+        </span>
+        <!-- شارة نوع الوسيط الحالي (صورة / فيديو) -->
+        <span id="mediaTypeBadge" class="hidden sm:inline-flex items-center gap-1.5 mr-2 px-2.5 py-0.5 rounded text-[11px] font-mono text-slate-300 bg-white/10 border border-white/10 uppercase">
+          صورة
+        </span>
+      </div>
+
+      <!-- نقاط التنقل (Pagination Dots) مع إمكانية النقر -->
+      <div id="dotsContainer" class="flex items-center gap-2.5 pointer-events-auto">
+        <!-- يتم حقن النقاط عبر JavaScript -->
+      </div>
+
+      <!-- مؤشر النزول للأسفل (Scroll Down Indicator) -->
+      <a
+        href="#about"
+        class="hidden md:flex items-center gap-3 text-slate-400 hover:text-brand-gold pointer-events-auto transition-colors group cursor-pointer"
+        aria-label="النزول للأسفل"
+      >
+        <span class="text-xs uppercase tracking-wider font-medium">استكشف المركز</span>
+        <div class="w-6 h-10 rounded-full border border-white/25 flex items-start justify-center p-1.5 group-hover:border-brand-gold transition-colors">
+          <div class="w-1.5 h-2 rounded-full bg-brand-gold scroll-bounce"></div>
+        </div>
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- =========================================================================
+       3. قسم "عن المركز" (ABOUT SECTION)
+       - يعكس هوية المركز المعمارية والثقافية والابتكارية
+       ========================================================================= -->
+  <section id="about" class="relative py-28 px-6 sm:px-10 lg:px-16 bg-[#0a101b] border-t border-white/5">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <!-- نصوص الرؤية والرسالة -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-gold/10 border border-brand-gold/20 text-brand-gold text-xs font-semibold">
+            عن الصرح المعرفي
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-white leading-tight">
+            منصة وطنية رائدة تحتفي بالإرث وتصنع المستقبل
+          </h2>
+          <p class="text-slate-300 leading-relaxed text-base sm:text-lg font-light">
+            يُعد <strong class="text-white font-medium">مركز مسندم للثقافة والابتكار</strong> منارة حضارية وفضاءً حيوياً متكاملاً صُمم ليكون وجهة مجتمعية تلتقي فيها عراقة تاريخ محافظة مسندم العمانية وتراثها البحري الفريد مع أحدث معارف الثورة الصناعية والذكاء الاصطناعي وعلوم المستقبل.
+          </p>
+          <p class="text-slate-400 leading-relaxed text-sm sm:text-base">
+            يسعى المركز إلى تمكين المبتكرين والباحثين والمبدعين من أبناء المحافظة وسلطنة عُمان، عبر توفير مختبرات رقمية، ومكتبات ذكية، وقاعات للمؤتمرات والمعارض الفنية التي تثري المشهد الثقافي وتخلق فرصاً استثمارية قائمة على المعرفة.
+          </p>
+
+          <!-- بطاقات الأرقام والمؤشرات -->
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10">
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold font-heading text-brand-gold">04+</div>
+              <div class="text-xs sm:text-sm text-slate-400 mt-1">مسارات رئيسية</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold font-heading text-brand-gold">15k+</div>
+              <div class="text-xs sm:text-sm text-slate-400 mt-1">مساحة تفاعلية م²</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold font-heading text-brand-gold">100+</div>
+              <div class="text-xs sm:text-sm text-slate-400 mt-1">فعالية سنوية</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- إطار بصري أنيق لمساحات المركز -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-slate-800/40 p-3 shadow-2xl backdrop-blur-sm">
+            <div class="rounded-xl overflow-hidden bg-gradient-to-br from-brand-ocean to-slate-900 aspect-[4/3] flex flex-col justify-between p-8 relative">
+              <div class="space-y-3 relative z-10">
+                <span class="text-xs font-mono text-brand-gold tracking-widest uppercase">رؤية عمان 2040</span>
+                <h3 class="text-2xl font-bold font-heading text-white">بيئة محفزة للابتكار والتعليم المستدام</h3>
+              </div>
+
+              <div class="relative z-10 pt-4 flex items-center justify-between text-xs text-slate-300 border-t border-white/10">
+                <span>محافظة مسندم، سلطنة عُمان</span>
+                <span class="text-brand-goldLight">صرح مستقبلي متكامل</span>
+              </div>
+
+              <!-- زخارف هندسية ضوئية -->
+              <div class="absolute -bottom-10 -left-10 w-48 h-48 rounded-full bg-brand-gold/15 blur-3xl pointer-events-none"></div>
+              <div class="absolute -top-10 -right-10 w-48 h-48 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. مسارات وبرامج المركز (CORE TRACKS)
+       ========================================================================= -->
+  <section id="tracks" class="py-28 px-6 sm:px-10 lg:px-16 bg-[#080d16] relative">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-gold/10 border border-brand-gold/20 text-brand-gold text-xs font-semibold">
+          منظومة العمل
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold font-heading text-white">
+          ركائز مركز مسندم
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          تتكامل مسارات المركز لتقديم تجربة معرفية وثقافية ثرية تخدم جميع فئات المجتمع وتدعم التنمية المستدامة.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- بطاقة 1: الثقافة والتراث -->
+        <div class="group rounded-2xl border border-white/10 bg-slate-900/40 p-8 hover:border-brand-gold/50 hover:bg-slate-900/80 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5 shadow-xl">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold mb-6 group-hover:scale-110 transition-transform">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-white mb-3 group-hover:text-brand-goldLight transition-colors">
+              التراث والثقافة
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              توثيق الفنون التقليدية، التاريخ الملاحي العريق، وتراث مسندم غير المادي عبر معارض تفاعلية وندوات متخصصة.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+            <span>المعارض والأرشيف</span>
+            <span class="text-brand-gold">←</span>
+          </div>
+        </div>
+
+        <!-- بطاقة 2: مختبرات الابتكار والتقنية -->
+        <div class="group rounded-2xl border border-white/10 bg-slate-900/40 p-8 hover:border-brand-gold/50 hover:bg-slate-900/80 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5 shadow-xl">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-white mb-3 group-hover:text-cyan-300 transition-colors">
+              مختبرات الابتكار (FabLab)
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              أجهزة الطباعة ثلاثية الأبعاد، الروبوتات، والذكاء الاصطناعي لتمكين الشباب من تحويل أفكارهم إلى نماذج أولية ومشاريع قائمة.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+            <span>التصنيع الرقمي</span>
+            <span class="text-cyan-400">←</span>
+          </div>
+        </div>
+
+        <!-- بطاقة 3: التدريب والمهارات المستقبلية -->
+        <div class="group rounded-2xl border border-white/10 bg-slate-900/40 p-8 hover:border-brand-gold/50 hover:bg-slate-900/80 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5 shadow-xl">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-white mb-3 group-hover:text-emerald-300 transition-colors">
+              الورش والمهارات
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              برامج بناء القدرات في البرمجة، ريادة الأعمال الإبداعية، التصميم، والمهارات القيادية الموجهة لجميع الفئات العمرية.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+            <span>التعليم المستمر</span>
+            <span class="text-emerald-400">←</span>
+          </div>
+        </div>
+
+        <!-- بطاقة 4: الفعاليات والمجتمع -->
+        <div class="group rounded-2xl border border-white/10 bg-slate-900/40 p-8 hover:border-brand-gold/50 hover:bg-slate-900/80 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5 shadow-xl">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition-transform">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-white mb-3 group-hover:text-amber-300 transition-colors">
+              المجتمع والملتقيات
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              أمسيات ثقافية، ملتقيات للمبتكرين، ومهرجانات علمية تشرك أهالي مسندم وتستقطب الزوار من مختلف أنحاء العالم.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+            <span>التفاعل المجتمعي</span>
+            <span class="text-amber-400">←</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. الفوتر المؤسسي الرسمي (FOOTER)
+       ========================================================================= -->
+  <footer id="contact" class="bg-[#05080e] border-t border-white/10 pt-16 pb-12 px-6 sm:px-10 lg:px-16 text-slate-400 text-sm">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
+      
+      <!-- العمود الأول: الهوية -->
+      <div class="space-y-4">
+        <h4 class="text-white font-bold font-heading text-lg">مركز مسندم للثقافة والابتكار</h4>
+        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+          صرح وطني يعنى بتعزيز الحراك الثقافي، ورعاية الموهوبين، ودعم الابتكار التقني والتنمية الشاملة بمحافظة مسندم.
+        </p>
+        <div class="text-xs text-brand-gold">
+          سلطنة عُمان — محافظة مسندم
+        </div>
+      </div>
+
+      <!-- العمود الثاني: روابط سريعة -->
+      <div>
+        <h4 class="text-white font-bold font-heading text-base mb-4">روابط سريعة</h4>
+        <ul class="space-y-2.5 text-xs sm:text-sm">
+          <li><a href="#hero-section" class="hover:text-brand-gold transition-colors">الرئيسية</a></li>
+          <li><a href="#about" class="hover:text-brand-gold transition-colors">عن المركز</a></li>
+          <li><a href="#tracks" class="hover:text-brand-gold transition-colors">البرامج والمسارات</a></li>
+          <li><a href="#events" class="hover:text-brand-gold transition-colors">جدول الفعاليات</a></li>
+        </ul>
+      </div>
+
+      <!-- العمود الثالث: المشاركة والتسجيل -->
+      <div>
+        <h4 class="text-white font-bold font-heading text-base mb-4">الخدمات الرقمية</h4>
+        <ul class="space-y-2.5 text-xs sm:text-sm">
+          <li><a href="#register" class="hover:text-brand-gold transition-colors">التسجيل في عضوية المركز</a></li>
+          <li><a href="#workshops" class="hover:text-brand-gold transition-colors">حجز مقعد في ورشة عمل</a></li>
+          <li><a href="#" class="hover:text-brand-gold transition-colors">حجز قاعات ومختبرات الابتكار</a></li>
+          <li><a href="#" class="hover:text-brand-gold transition-colors">بوابة المتطوعين</a></li>
+        </ul>
+      </div>
+
+      <!-- العمود الرابع: التواصل والموقع -->
+      <div>
+        <h4 class="text-white font-bold font-heading text-base mb-4">التواصل والاستفسارات</h4>
+        <p class="text-xs sm:text-sm leading-relaxed mb-4">
+          يسرنا استقبال مقترحاتكم واستفساراتكم طوال أيام الأسبوع.
+        </p>
+        <div class="space-y-2 text-xs">
+          <p class="text-slate-300">البريد الإلكتروني: <span class="font-mono text-brand-gold">info@musandam-cic.om</span></p>
+          <p class="text-slate-300">الموقع: خصب، محافظة مسندم، سلطنة عُمان</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- سطر الحقوق الملكية -->
+    <div class="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <p>© جميع الحقوق محفوظة لـ مركز مسندم للثقافة والابتكار — سلطنة عُمان</p>
+      <p class="text-[11px] text-slate-600">تصميم وتطوير مستدام بمعايير تقنية حديثة</p>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       6. محرك الـ HERO والتفاعلات الحركية الكاملة (JAVASCRIPT ENGINE)
+       ========================================================================= -->
+  <script>
+    /**
+     * =======================================================================
+     * مصفوفة بيانات شرائح الـ Hero (heroSlides)
+     * =======================================================================
+     * تم إدراج صورتك الليلية ومقطع الفيديو الجوي في بداية الشرائح (صورة -> فيديو).
+     * يدعم الكود مسار الملف المباشر والمسار البديل القياسي hero-01.jpg و hero-video-01.mp4.
+     */
+    const heroSlides = [
+      {
+        id: 1,
+        type: 'image',
+        // اسم ملف صورتك الليلية لواجهة المركز + مسار بديل مرن
+        src: 'ChatGPT Image Sep 4, 2026, 08_55_08 AM.png',
+        altSrc: 'hero-01.jpg',
+        duration: 8000, // مدة العرض بالمللي ثانية
+        badge: 'الصرح المعماري في محافظة مسندم',
+        title: 'مركز مسندم للثقافة والابتكار',
+        subtitle: 'حيث يلتقي إرث مسندم بمستقبل الابتكار',
+        description: 'بيئة استثنائية تحتضن الثقافة والمعرفة والتقنيات الحديثة، وتصنع مساحات رحبة للتعلم والإبداع في سلطنة عُمان.'
+      },
+      {
+        id: 2,
+        type: 'video',
+        // مسار ملف الفيديو المرفق للواجهة البانورامية والجبال
+        src: 'hero-video-01.mp4',
+        altSrc: 'musandam-drone-intro.mp4',
+        poster: 'ChatGPT Image Sep 4, 2026, 08_55_08 AM.png', // استخدام الصورة كغلاف سينمائي للفيديو
+        badge: 'مشهد جوي يعانق الطبيعة الخلابة',
+        title: 'عمارة حديثة تنبض في قلب الجبال',
+        subtitle: 'فضاءات متقدمة للابتكار والتصنيع الرقمي',
+        description: 'تصميم معماري فريد يستلهم عراقة مسندم البحرية والجبلية ليقدّم صرحاً معرفياً متكاملاً بمعايير عالمية.'
+      },
+      {
+        id: 3,
+        type: 'image',
+        src: 'hero-02.jpg',
+        altSrc: '',
+        duration: 7500,
+        badge: 'الإرث الثقافي والفنون الأصيلة',
+        title: 'أصالة التراث وعراقة مضيق هرمز',
+        subtitle: 'حفظ وتوثيق الذاكرة الثقافية برؤية معاصرة',
+        description: 'منصات أرشيفية تفاعلية ومعارض فنية تجسد عمق تاريخ مسندم وثرائها الجغرافي والإنساني الفريد.'
+      },
+      {
+        id: 4,
+        type: 'video',
+        src: 'hero-video-02.mp4',
+        altSrc: '',
+        poster: 'hero-02.jpg',
+        badge: 'المجتمع والتعليم المستمر',
+        title: 'ملتقى المجتمع والإبداع المعرفي',
+        subtitle: 'ورش عمل نوعية ومحاضرات تلهم الأجيال',
+        description: 'مساحات مرنة للقراءة والتفكير الحر، وفعاليات دورية تحتضن أصحاب المواهب والاهتمامات المتنوعة.'
+      },
+      {
+        id: 5,
+        type: 'image',
+        src: 'hero-03.jpg',
+        altSrc: '',
+        duration: 7500,
+        badge: 'الاستدامة والبحث التطبيقي',
+        title: 'نحو آفاق استدامة وتنمية واعدة',
+        subtitle: 'استشراف المستقبل من قلب جبال وبحار مسندم',
+        description: 'مبادرات خضراء وأبحاث تطبيقية ترتبط بالبيئة البحرية والطبيعية الفريدة لمحافظة مسندم.'
+      }
+    ];
+
+    // عناصر الـ DOM الرئيسية
+    const sliderWrapper = document.getElementById('sliderWrapper');
+    const dotsContainer = document.getElementById('dotsContainer');
+    const prevSlideBtn = document.getElementById('prevSlideBtn');
+    const nextSlideBtn = document.getElementById('nextSlideBtn');
+    const currentSlideNumEl = document.getElementById('currentSlideNum');
+    const totalSlidesNumEl = document.getElementById('totalSlidesNum');
+    const mediaTypeBadgeEl = document.getElementById('mediaTypeBadge');
+
+    // عناصر النصوص التفاعلية في الـ Hero
+    const heroBadge = document.getElementById('heroBadge');
+    const heroTitle = document.getElementById('heroTitle');
+    const heroSubtitle = document.getElementById('heroSubtitle');
+    const heroDesc = document.getElementById('heroDesc');
+    const heroTextContainer = document.getElementById('heroTextContainer');
+
+    // متغيرات حالة الـ Slider
+    let currentIndex = 0;
+    let timer = null;
+    let isTransitioning = false;
+    let isUserInteracting = false;
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    /**
+     * بناء عناصر الشرائح (Slides DOM) داخل الحاوية مع دعم المسارات البديلة
+     */
+    function initializeSlider() {
+      totalSlidesNumEl.textContent = String(heroSlides.length).padStart(2, '0');
+      sliderWrapper.innerHTML = '';
+      dotsContainer.innerHTML = '';
+
+      heroSlides.forEach((slide, idx) => {
+        // 1. إنشاء حاوية الشريحة
+        const slideEl = document.createElement('div');
+        slideEl.id = `hero-slide-${idx}`;
+        slideEl.className = `absolute inset-0 w-full h-full transition-opacity duration-[1200ms] ease-out ${
+          idx === 0 ? 'opacity-100 z-10 slide-active' : 'opacity-0 z-0 pointer-events-none'
+        }`;
+
+        // خلفية تدرج احتياطية مؤسسية أنيقة
+        const fallbackBg = document.createElement('div');
+        fallbackBg.className = 'absolute inset-0 w-full h-full bg-gradient-to-br from-[#0b1727] via-[#091f33] to-[#040810]';
+        slideEl.appendChild(fallbackBg);
+
+        if (slide.type === 'image') {
+          // عنصر الصورة
+          const img = document.createElement('img');
+          img.src = slide.src;
+          img.alt = slide.title;
+          img.className = 'media-zoom absolute inset-0 w-full h-full object-cover object-center transition-transform duration-[8000ms] ease-out';
+          img.loading = idx === 0 ? 'eager' : 'lazy';
+
+          // عند حدوث خطأ يتم تجربة المسار البديل أولاً قبل الشارة التوضيحية
+          img.onerror = function () {
+            if (slide.altSrc && this.src !== slide.altSrc) {
+              this.src = slide.altSrc;
+            } else {
+              this.style.display = 'none';
+              showMediaPlaceholder(slideEl, slide.src, 'صورة');
+            }
+          };
+
+          slideEl.appendChild(img);
+
+        } else if (slide.type === 'video') {
+          // عنصر الفيديو
+          const video = document.createElement('video');
+          video.src = slide.src;
+          video.poster = slide.poster || '';
+          video.muted = true;
+          video.playsInline = true;
+          video.autoplay = false;
+          video.setAttribute('muted', '');
+          video.setAttribute('playsinline', '');
+          video.className = 'absolute inset-0 w-full h-full object-cover object-center';
+
+          // محاولة تشغيل المسار البديل إذا تعذر المسار الأول
+          video.onerror = function () {
+            if (slide.altSrc && this.src !== slide.altSrc) {
+              this.src = slide.altSrc;
+            } else {
+              this.style.display = 'none';
+              showMediaPlaceholder(slideEl, slide.src, 'فيديو');
+            }
+          };
+
+          // الانتقال التلقائي للشريحة التالية فور انتهاء الفيديو
+          video.addEventListener('ended', () => {
+            if (!isUserInteracting) {
+              goToNextSlide();
+            }
+          });
+
+          slideEl.appendChild(video);
+        }
+
+        sliderWrapper.appendChild(slideEl);
+
+        // 2. إنشاء نقطة التنقل (Dot)
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.setAttribute('aria-label', `انتقل إلى الشريحة ${idx + 1}`);
+        dot.className = `h-2 rounded-full transition-all duration-500 ${
+          idx === 0 ? 'w-8 bg-brand-gold' : 'w-2 bg-white/30 hover:bg-white/60'
+        }`;
+        dot.addEventListener('click', () => {
+          if (idx !== currentIndex) {
+            goToSlide(idx);
+          }
+        });
+        dotsContainer.appendChild(dot);
+      });
+
+      // ضبط محتوى الشريحة الأولى
+      updateHeroContent(0);
+      playCurrentSlideMedia(0);
+      startSlideTimer(0);
+    }
+
+    /**
+     * عنصر إرشادي جمالي يظهر في حال لم يكن الملف متوفراً محلياً مع زر لاختياره مباشرة
+     */
+    function showMediaPlaceholder(container, fileName, typeName) {
+      if (container.querySelector('.placeholder-badge')) return;
+      const badge = document.createElement('div');
+      badge.className = 'placeholder-badge absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10';
+      badge.innerHTML = `
+        <div class="p-5 rounded-2xl border border-brand-gold/30 bg-slate-900/80 backdrop-blur-md max-w-md shadow-2xl">
+          <div class="w-10 h-10 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center mx-auto mb-3">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <div class="text-xs font-mono text-brand-goldLight mb-1.5 font-bold">بانتظار ملف: ${fileName}</div>
+          <div class="text-[12px] text-slate-300 leading-relaxed mb-4">
+            ضع الملف في مجلد المشروع، أو انقر أدناه لمعاينته فوراً من جهازك داخل المتصفح:
+          </div>
+          <label class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-slate-900 bg-brand-gold hover:bg-brand-goldLight cursor-pointer transition-colors shadow-md pointer-events-auto">
+            <span>اختر ملف ${typeName} من جهازك</span>
+            <input type="file" accept="${typeName === 'فيديو' ? 'video/*' : 'image/*'}" class="hidden" onchange="previewLocalFile(event, '${container.id}', '${typeName}')" />
+          </label>
+        </div>
+      `;
+      container.appendChild(badge);
+    }
+
+    /**
+     * إمكانية المعاينة الحية المباشرة لأي ملف فيديو أو صورة يتم اختياره محلياً
+     */
+    window.previewLocalFile = function(e, slideId, type) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const url = URL.createObjectURL(file);
+      const slideEl = document.getElementById(slideId);
+      if (!slideEl) return;
+
+      const placeholder = slideEl.querySelector('.placeholder-badge');
+      if (placeholder) placeholder.remove();
+
+      if (type === 'صورة') {
+        let img = slideEl.querySelector('img');
+        if (!img) {
+          img = document.createElement('img');
+          img.className = 'media-zoom absolute inset-0 w-full h-full object-cover object-center';
+          slideEl.appendChild(img);
+        }
+        img.src = url;
+        img.style.display = 'block';
+      } else {
+        let video = slideEl.querySelector('video');
+        if (!video) {
+          video = document.createElement('video');
+          video.className = 'absolute inset-0 w-full h-full object-cover object-center';
+          video.muted = true;
+          video.playsInline = true;
+          video.setAttribute('muted', '');
+          video.setAttribute('playsinline', '');
+          video.addEventListener('ended', () => {
+            if (!isUserInteracting) goToNextSlide();
+          });
+          slideEl.appendChild(video);
+        }
+        video.src = url;
+        video.style.display = 'block';
+        video.play().catch(() => {});
+      }
+    };
+
+          slideEl.appendChild(img);
+
+        } else if (slide.type === 'video') {
+          // عنصر الفيديو
+          const video = document.createElement('video');
+          video.src = slide.src;
+          video.poster = slide.poster || '';
+          video.muted = true;
+          video.playsInline = true;
+          video.autoplay = false; // سنقوم بتشغيله برمجياً عند تفعيل الشريحة
+          video.setAttribute('muted', '');
+          video.setAttribute('playsinline', '');
+          video.className = 'absolute inset-0 w-full h-full object-cover object-center';
+
+          // الانتقال التلقائي للشريحة التالية فور انتهاء الفيديو!
+          video.addEventListener('ended', () => {
+            if (!isUserInteracting) {
+              goToNextSlide();
+            }
+          });
+
+          // عند حدوث خطأ في تحميل الفيديو (قبل رفع الملفات)
+          video.onerror = function () {
+            this.style.display = 'none';
+            showMediaPlaceholder(slideEl, slide.src, 'فيديو');
+          };
+
+          slideEl.appendChild(video);
+        }
+
+        sliderWrapper.appendChild(slideEl);
+
+        // 2. إنشاء نقطة التنقل (Dot)
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.setAttribute('aria-label', `انتقل إلى الشريحة ${idx + 1}`);
+        dot.className = `h-2 rounded-full transition-all duration-500 ${
+          idx === 0 ? 'w-8 bg-brand-gold' : 'w-2 bg-white/30 hover:bg-white/60'
+        }`;
+        dot.addEventListener('click', () => {
+          if (idx !== currentIndex) {
+            goToSlide(idx);
+          }
+        });
+        dotsContainer.appendChild(dot);
+      });
+
+      // ضبط محتوى الشريحة الأولى
+      updateHeroContent(0);
+      playCurrentSlideMedia(0);
+      startSlideTimer(0);
+    }
+
+    /**
+     * عنصر إرشادي جمالي يظهر في حال لم تكن ملفات الوسائط مرفوعة بعد داخل المجلد
+     */
+    function showMediaPlaceholder(container, fileName, typeName) {
+      if (container.querySelector('.placeholder-badge')) return;
+      const badge = document.createElement('div');
+      badge.className = 'placeholder-badge absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10 pointer-events-none opacity-40';
+      badge.innerHTML = `
+        <div class="p-4 rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur-md max-w-sm">
+          <div class="text-xs font-mono text-brand-gold mb-1">موضع جاهز للملف: ${fileName}</div>
+          <div class="text-[11px] text-slate-300">سيتم عرض الـ ${typeName} فور إضافة الملف للمشروع</div>
+        </div>
+      `;
+      container.appendChild(badge);
+    }
+
+    /**
+     * تشغيل وسائط الشريحة المحددة وتوقيتها
+     */
+    function playCurrentSlideMedia(index) {
+      const slide = heroSlides[index];
+      const slideEl = document.getElementById(`hero-slide-${index}`);
+      if (!slideEl) return;
+
+      if (slide.type === 'video') {
+        const video = slideEl.querySelector('video');
+        if (video) {
+          video.currentTime = 0;
+          const playPromise = video.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(() => {
+              // في حال منع المتصفح للتشغيل التلقائي يتم تشغيل المؤقت الزمني كبديل
+              startSlideTimer(index, 8000);
+            });
+          }
+        }
+      }
+    }
+
+    /**
+     * إيقاف تشغيل وسائط الشريحة عند مغادرتها
+     */
+    function stopSlideMedia(index) {
+      const slide = heroSlides[index];
+      const slideEl = document.getElementById(`hero-slide-${index}`);
+      if (!slideEl) return;
+
+      if (slide.type === 'video') {
+        const video = slideEl.querySelector('video');
+        if (video) {
+          video.pause();
+        }
+      }
+    }
+
+    /**
+     * بدء المؤقت الزمني للانتقال
+     */
+    function startSlideTimer(index, customDuration) {
+      clearTimeout(timer);
+      const slide = heroSlides[index];
+      
+      // إذا كان فيديو فإنه ينتقل عند حدث 'ended' الخاص بالفيديو، 
+      // إلا إذا حُدد وقت بديل احتياطي
+      if (slide.type === 'image' || customDuration) {
+        const duration = customDuration || slide.duration || 7000;
+        timer = setTimeout(() => {
+          goToNextSlide();
+        }, duration);
+      }
+    }
+
+    /**
+     * تحديث النصوص وإعادة تشغيل Animation النصوص بانسيابية
+     */
+    function updateHeroContent(index) {
+      const slide = heroSlides[index];
+
+      // تحديث رقم الشريحة والشارة
+      currentSlideNumEl.textContent = String(index + 1).padStart(2, '0');
+      mediaTypeBadgeEl.textContent = slide.type === 'video' ? 'فيديو' : 'صورة';
+
+      // تحديث النقاط (Dots)
+      const dots = dotsContainer.children;
+      for (let i = 0; i < dots.length; i++) {
+        if (i === index) {
+          dots[i].className = 'h-2 w-8 rounded-full bg-brand-gold transition-all duration-500';
+        } else {
+          dots[i].className = 'h-2 w-2 rounded-full bg-white/30 hover:bg-white/60 transition-all duration-500';
+        }
+      }
+
+      // إعادة تفعيل الأنيميشن للعناوين والنصوص
+      const elementsToAnimate = [
+        { el: document.getElementById('heroBadgeWrapper'), animClass: 'animate-badge', textEl: heroBadge, val: slide.badge },
+        { el: heroTitle, animClass: 'animate-title', textEl: heroTitle, val: slide.title },
+        { el: heroSubtitle, animClass: 'animate-sub', textEl: heroSubtitle, val: slide.subtitle },
+        { el: heroDesc, animClass: 'animate-desc', textEl: heroDesc, val: slide.description },
+        { el: document.getElementById('heroActions'), animClass: 'animate-actions' }
+      ];
+
+      elementsToAnimate.forEach(item => {
+        if (item.el) {
+          item.el.classList.remove(item.animClass);
+          void item.el.offsetWidth; // Trigger DOM reflow لإعادة تشغيل الأنيميشن
+          if (item.textEl && item.val !== undefined) {
+            item.textEl.textContent = item.val;
+          }
+          item.el.classList.add(item.animClass);
+        }
+      });
+    }
+
+    /**
+     * الانتقال إلى شريحة محددة
+     */
+    function goToSlide(newIndex) {
+      if (isTransitioning || newIndex === currentIndex) return;
+      isTransitioning = true;
+      clearTimeout(timer);
+
+      const oldIndex = currentIndex;
+      const oldSlide = document.getElementById(`hero-slide-${oldIndex}`);
+      const newSlide = document.getElementById(`hero-slide-${newIndex}`);
+
+      // إيقاف وسائط الشريحة السابقة
+      stopSlideMedia(oldIndex);
+
+      // إخفاء الشريحة السابقة وإظهار الشريحة الجديدة
+      if (oldSlide) {
+        oldSlide.classList.remove('opacity-100', 'z-10', 'slide-active');
+        oldSlide.classList.add('opacity-0', 'z-0', 'pointer-events-none');
+      }
+
+      if (newSlide) {
+        newSlide.classList.remove('opacity-0', 'z-0', 'pointer-events-none');
+        newSlide.classList.add('opacity-100', 'z-10', 'slide-active');
+      }
+
+      currentIndex = newIndex;
+      updateHeroContent(newIndex);
+      playCurrentSlideMedia(newIndex);
+      startSlideTimer(newIndex);
+
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 1200); // متوافق مع مدة الـ Crossfade
+    }
+
+    function goToNextSlide() {
+      const nextIndex = (currentIndex + 1) % heroSlides.length;
+      goToSlide(nextIndex);
+    }
+
+    function goToPrevSlide() {
+      const prevIndex = (currentIndex - 1 + heroSlides.length) % heroSlides.length;
+      goToSlide(prevIndex);
+    }
+
+    // ربط أزرار التحكم
+    nextSlideBtn.addEventListener('click', () => {
+      goToNextSlide();
+    });
+
+    prevSlideBtn.addEventListener('click', () => {
+      goToPrevSlide();
+    });
+
+    /**
+     * دعم إيقاف الحركة مؤقتاً عند تفاعل المستخدم واستئنافها بسلاسة
+     */
+    const heroSection = document.getElementById('hero-section');
+    heroSection.addEventListener('mouseenter', () => {
+      isUserInteracting = true;
+    });
+
+    heroSection.addEventListener('mouseleave', () => {
+      isUserInteracting = false;
+      startSlideTimer(currentIndex);
+    });
+
+    /**
+     * دعم السحب والتمرير باللمس على الهواتف والأجهزة اللوحية (Touch Swipe)
+     */
+    heroSection.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    heroSection.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipeGesture();
+    }, { passive: true });
+
+    function handleSwipeGesture() {
+      const swipeDistance = touchEndX - touchStartX;
+      const threshold = 45; // مسافة حساسية السحب
+      if (Math.abs(swipeDistance) > threshold) {
+        if (swipeDistance > 0) {
+          // سحب لليمين (في الاتجاه العربي RTL ينتقل للشريحة التالية/السابقة)
+          goToPrevSlide();
+        } else {
+          // سحب لليسار
+          goToNextSlide();
+        }
+      }
+    }
+
+    /**
+     * تفاعلات الشريط العلوي (Navbar Scroll Effect & Mobile Menu)
+     */
+    const navbar = document.getElementById('navbar');
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        navbar.classList.add('bg-slate-900/85', 'backdrop-blur-xl', 'border-b', 'border-white/10', 'py-3.5', 'shadow-2xl');
+        navbar.classList.remove('py-5');
+      } else {
+        navbar.classList.remove('bg-slate-900/85', 'backdrop-blur-xl', 'border-b', 'border-white/10', 'py-3.5', 'shadow-2xl');
+        navbar.classList.add('py-5');
+      }
+    });
+
+    // تبديل القائمة المتنقلة
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // تشغيل الـ Slider بمجرد تحميل الصفحة
+    window.addEventListener('DOMContentLoaded', () => {
+      initializeSlider();
+    });
+  </script>
+
+</body>
+</html>

@@ -660,6 +660,17 @@ button {
   color: var(--color-muted);
 }
 
+
+.competition-card__actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.competition-card__actions .btn {
+  width: 100%;
+}
+
 .meta-list {
   list-style: none;
   padding: 0;
@@ -1363,5 +1374,13 @@ button {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* أزرار بطاقات المسابقات على الشاشات الصغيرة جدًا */
+@media (max-width: 420px) {
+  .competition-card__actions {
+    grid-template-columns: 1fr;
   }
 }
