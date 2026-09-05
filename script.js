@@ -2,7 +2,7 @@
    JavaScript بسيط لتشغيل الوظائف التفاعلية في النسخة الثابتة
    - قائمة الجوال
    - Countdown
-   - المرشد الذكي
+   - المساعد زيد
    - زر العودة للأعلى
    - تحريك الأرقام عند ظهور الإحصائيات
 
@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* --------------------------------------------------------
-     3) المرشد الذكي - واجهة تجريبية فقط
+     3) المساعد زيد - واجهة تجريبية فقط
      في النسخة الفعلية استبدل الرد التجريبي بطلب API.
      -------------------------------------------------------- */
   const chatPanel = document.querySelector(".chat-panel");
@@ -243,4 +243,94 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     counters.forEach(animateCounter);
   }
+  /* --------------------------------------------------------
+     6) معرض صور الأخبار - 3 صور بأسلوب إنستغرام
+     يدعم: الأسهم، النقاط، لوحة المفاتيح، والسحب على الجوال.
+     -------------------------------------------------------- */
+  document.querySelectorAll("[data-news-carousel]").forEach((carousel) => {
+    const track = carousel.querySelector(".news-carousel__track");
+    const slides = Array.from(carousel.querySelectorAll(".news-carousel__slide"));
+    const dots = Array.from(carousel.querySelectorAll(".news-carousel__dot"));
+    const counter = carousel.querySelector(".news-carousel__counter");
+    const prevButton = carousel.querySelector(".news-carousel__nav--prev");
+    const nextButton = carousel.querySelector(".news-carousel__nav--next");
+
+    if (!track || slides.length === 0) return;
+
+    let currentIndex = 0;
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    const goToSlide = (index) => {
+      const total = slides.length;
+      currentIndex = (index + total) % total;
+
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle("is-active", slideIndex === currentIndex);
+      });
+
+      dots.forEach((dot, dotIndex) => {
+        const isActive = dotIndex === currentIndex;
+        dot.classList.toggle("is-active", isActive);
+        dot.setAttribute("aria-pressed", String(isActive));
+      });
+
+      if (counter) {
+        counter.textContent = `${currentIndex + 1} / ${total}`;
+      }
+    };
+
+    prevButton?.addEventListener("click", () => goToSlide(currentIndex - 1));
+    nextButton?.addEventListener("click", () => goToSlide(currentIndex + 1));
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => goToSlide(index));
+    });
+
+    carousel.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        goToSlide(currentIndex - 1);
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        goToSlide(currentIndex + 1);
+      }
+    });
+
+    carousel.addEventListener(
+      "touchstart",
+      (event) => {
+        const touch = event.changedTouches[0];
+        touchStartX = touch.clientX;
+        touchStartY = touch.clientY;
+      },
+      { passive: true }
+    );
+
+    carousel.addEventListener(
+      "touchend",
+      (event) => {
+        const touch = event.changedTouches[0];
+        const deltaX = touch.clientX - touchStartX;
+        const deltaY = touch.clientY - touchStartY;
+
+        // يمنع تغيير الصورة عند التمرير العمودي العادي للصفحة.
+        if (Math.abs(deltaX) < 45 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+
+        if (deltaX < 0) {
+          goToSlide(currentIndex + 1);
+        } else {
+          goToSlide(currentIndex - 1);
+        }
+      },
+      { passive: true }
+    );
+
+    goToSlide(0);
+  });
+
 });

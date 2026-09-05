@@ -1,24 +1,67 @@
 /* ==========================================================
    منصة مسندم للابتكار والمسابقات العلمية
-   ملف CSS الرئيسي
+   ملف CSS الرئيسي — نسخة موثقة لسهولة البحث والتعديل
 
-   فكرة التنظيم:
-   1) متغيرات الألوان والخطوط
-   2) Reset + عناصر عامة
-   3) مكونات مشتركة
-   4) أقسام الصفحة
-   5) Responsive
+   طريقة الاستخدام السريعة:
+   1) افتح الملف في VS Code أو أي محرر نصوص.
+   2) استخدم Ctrl + F وابحث عن أحد الرموز أدناه مثل: [CSS-HERO-TITLE]
+   3) ستصل مباشرة إلى الجزء المسؤول عن العنصر المطلوب.
+
+   ==========================================================
+   دليل البحث السريع داخل الملف
+   ==========================================================
+   [CSS-FONT]             الخط الرئيسي للموقع
+   [CSS-COLORS]           ألوان الموقع والظلال والحواف
+   [CSS-GLOBAL]           الإعدادات العامة والحاويات والمسافات
+   [CSS-SECTION-TITLES]   أحجام عناوين الأقسام H2
+   [CSS-BUTTONS]          جميع الأزرار العامة — نسخة مدمجة بحجم أصغر
+   [CSS-OFFICIAL-HEADER]  الشريط العلوي والشعارات
+   [CSS-NAVBAR]           شريط التنقل والقائمة
+
+   [CSS-HERO]             قسم الواجهة الرئيسية بالكامل
+   [CSS-HERO-IMAGE]       صورة الـ Hero وموضعها
+   [CSS-HERO-OVERLAY]     التدرج الداكن فوق صورة الـ Hero
+   [CSS-HERO-TITLE]       عنوان Hero الرئيسي H1 وحجمه
+   [CSS-HERO-TITLE-COLOR] لون السطر الثاني من عنوان Hero
+   [CSS-HERO-DESC]        وصف Hero أسفل العنوان
+   [CSS-HERO-BUTTONS]     أزرار Hero
+   [CSS-HERO-SCROLL]      زر «اكتشف المزيد» أسفل Hero
+
+   [CSS-HALLS]            قسم القاعات وبطاقاته وشريط التمرير
+   [CSS-COMPETITIONS]     بطاقات المسابقات
+   [CSS-NEWS]             بطاقات الأخبار
+   [CSS-NEWS-IMAGES]      صور الأخبار والسلايدر
+   [CSS-JOURNEY]          قسم رحلة المتسابق
+   [CSS-EXTRA-COMPETITIONS] قسم المسابقات الإضافية
+   [CSS-PROGRAMS]         قسم البرامج والورش
+   [CSS-DOCUMENTS]        قسم الأدلة والملفات
+   [CSS-STATS]            قسم «مسندم تبتكر» والإحصائيات
+   [CSS-STATS-TITLE]      عنوان «مسندم تبتكر»
+   [CSS-GALLERY]          معرض الصور
+   [CSS-CTA]              قسم الدعوة للتسجيل
+   [CSS-FOOTER]           تذييل الموقع
+   [CSS-CHAT]             المساعد زيد والأزرار العائمة
+   [CSS-RESPONSIVE]       تنسيقات التابلت والهاتف
+   [CSS-MOBILE-HERO]      تعديلات Hero الخاصة بالهاتف
+
+   ملاحظة:
+   لا تغيّر اسم الـ class إلا إذا عدّلته أيضًا داخل index.html.
+   لتغيير الحجم غالبًا ابحث عن font-size.
+   لتغيير اللون ابحث عن color أو background.
+   لتغيير المسافات ابحث عن padding أو margin أو gap.
    ========================================================== */
 
 /* ----------------------------------------------------------
-   1) الخط
+   [CSS-FONT] 1) الخط الرئيسي
+   المسؤول عن نوع الخط المستخدم في الموقع بالكامل.
    يمكن استبدال IBM Plex Sans Arabic بخط Tajawal مثلًا.
    ---------------------------------------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap");
 
 /* ----------------------------------------------------------
-   2) Design Tokens
-   عدّل هذه القيم لتغيير هوية الموقع بالكامل من مكان واحد.
+   [CSS-COLORS] 2) ألوان وهوية الموقع — Design Tokens
+   عدّل هذه القيم لتغيير الألوان والظلال والحواف في أغلب الموقع
+   من مكان واحد دون البحث داخل كل قسم على حدة.
    ---------------------------------------------------------- */
 :root {
   --color-bg: #ffffff;
@@ -49,7 +92,8 @@
 }
 
 /* ----------------------------------------------------------
-   3) Reset أساسي
+   [CSS-GLOBAL] 3) Reset أساسي وإعدادات عامة
+   يضبط السلوك الأساسي للعناصر، الخط، الخلفية، الروابط والصور.
    ---------------------------------------------------------- */
 *,
 *::before,
@@ -95,7 +139,8 @@ button {
 }
 
 /* ----------------------------------------------------------
-   4) Utilities / عناصر عامة
+   [CSS-GLOBAL] 4) عناصر عامة / Utilities
+   هنا تتحكم بعرض الحاوية، مسافات الأقسام، الشبكات والعناوين العامة.
    ---------------------------------------------------------- */
 .container {
   width: min(calc(100% - 32px), var(--container));
@@ -133,12 +178,18 @@ button {
   display: block;
 }
 
+/* ==========================================================
+   [CSS-SECTION-TITLES] عناوين الأقسام H2
+   عدّل font-size لتكبير/تصغير عناوين مثل: المسابقات، البرامج والورش.
+   القيم الحالية متجاوبة تلقائيًا باستخدام clamp().
+   ========================================================== */
 .section-heading h2,
 .split-section h2,
 .cta-panel h2 {
   margin: 4px 0 12px;
-  font-size: clamp(2rem, 3vw, 3rem);
-  line-height: 1.25;
+  font-size: clamp(1.75rem, 2.2vw, 2rem);
+  line-height: 1.3;
+  font-weight: 700;
 }
 
 .section-heading p,
@@ -192,12 +243,14 @@ button {
 }
 
 /* ----------------------------------------------------------
-   5) Buttons
+   [CSS-BUTTONS] 5) الأزرار العامة
+   يتحكم بحجم الأزرار، الحواف، الألوان وحركة Hover.
    ---------------------------------------------------------- */
 .btn {
-  min-height: 48px;
-  padding: 11px 20px;
-  border-radius: 14px;
+  min-height: 40px;
+  padding: 8px 14px;
+  border-radius: 11px;
+  font-size: 0.88rem;
   border: 1px solid transparent;
   display: inline-flex;
   align-items: center;
@@ -245,8 +298,9 @@ button {
 }
 
 .btn--small {
-  min-height: 42px;
-  padding: 8px 14px;
+  min-height: 36px;
+  padding: 6px 11px;
+  font-size: 0.82rem;
 }
 
 .btn--full {
@@ -254,7 +308,8 @@ button {
 }
 
 /* ----------------------------------------------------------
-   6) Official header
+   [CSS-OFFICIAL-HEADER] 6) الشريط الرسمي العلوي
+   يتحكم بمساحة الشعارات واسم الجهة أعلى الموقع.
    ---------------------------------------------------------- */
 .official-header {
   background: var(--color-white);
@@ -271,19 +326,26 @@ button {
 
 .official-logos {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
 }
 
-.logo-placeholder {
-  width: 104px;
-  height: 54px;
-  border: 1px dashed rgba(23, 35, 51, 0.22);
-  border-radius: 12px;
-  color: var(--color-muted);
-  display: grid;
-  place-items: center;
-  font-size: 0.78rem;
-  background: #fbfcfd;
+/* الشعارات الرسمية الفعلية بدل مربعات placeholder */
+.official-logo {
+  display: block;
+  width: auto;
+  max-width: 132px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.official-logo--ministry {
+  height: 62px;
+}
+
+.official-logo--center {
+  height: 64px;
 }
 
 .official-header__name {
@@ -293,7 +355,8 @@ button {
 }
 
 /* ----------------------------------------------------------
-   7) Navbar
+   [CSS-NAVBAR] 7) شريط التنقل Navbar
+   يتحكم بالشعار النصي، روابط القائمة، القائمة الثابتة وقائمة الجوال.
    ---------------------------------------------------------- */
 .navbar {
   position: sticky;
@@ -387,9 +450,9 @@ button {
 }
 
 /* ----------------------------------------------------------
-   8) Hero
-   تنسيق مستوحى من النموذج المرجعي: صورة واضحة في الجهة اليسرى،
-   تدرج أزرق داكن في جهة المحتوى، عنوان كبير وأزرار مؤسسية.
+   [CSS-HERO] 8) الواجهة الرئيسية Hero
+   أهم قسم في أعلى الصفحة: الصورة، التدرج الداكن، العنوان، الوصف،
+   الأزرار، العبارة السفلية وزر «اكتشف المزيد».
    ---------------------------------------------------------- */
 .hero {
   min-height: clamp(465px, 32.25vw, 536px);
@@ -416,6 +479,10 @@ button {
     linear-gradient(135deg, #2b79b8, #082746 72%);
 }
 
+/* [CSS-HERO-IMAGE] صورة Hero
+   - object-fit: طريقة ملء الصورة للمساحة
+   - object-position: مكان التركيز داخل الصورة
+*/
 .hero__media img,
 .hero__media video {
   display: block;
@@ -426,6 +493,9 @@ button {
   transform: scale(1.003);
 }
 
+/* [CSS-HERO-OVERLAY] الطبقة الداكنة فوق صورة Hero
+   عدّل قيم rgba إذا أردت الصورة أفتح أو أغمق.
+*/
 .hero__overlay {
   z-index: 1;
   background:
@@ -491,18 +561,29 @@ button {
   box-shadow: 0 0 14px rgba(39, 183, 239, 0.4);
 }
 
+/* ==========================================================
+   [CSS-HERO-TITLE] عنوان Hero الرئيسي H1
+   هذا هو المكان الأساسي لتعديل حجم «نصنع الفكرة... ونقودها نحو المستقبل».
+   أهم الخصائص:
+   - font-size: حجم العنوان
+   - line-height: المسافة بين سطري العنوان
+   - font-weight: سماكة الخط
+   ========================================================== */
 .hero h1 {
   max-width: 720px;
   margin: 0;
   color: #ffffff;
-  font-size: clamp(2.75rem, 4.1vw, 4.6rem);
-  line-height: 1.16;
-  letter-spacing: -0.035em;
+  font-size: clamp(.8rem, 3.2vw, 2.0rem);
+  line-height: 1.22;
+  letter-spacing: -0.025em;
   font-weight: 700;
   text-wrap: balance;
   text-shadow: 0 5px 30px rgba(0, 14, 31, 0.16);
 }
 
+/* [CSS-HERO-TITLE-COLOR] لون السطر الثاني من عنوان Hero
+   يتحكم بالتدرج السماوي لعبارة «ونقودها نحو المستقبل».
+*/
 .hero h1 span {
   display: inline-block;
   color: #8ee5ff;
@@ -512,15 +593,21 @@ button {
   -webkit-text-fill-color: transparent;
 }
 
+/* [CSS-HERO-DESC] وصف Hero أسفل العنوان
+   عدّل font-size للحجم و margin للمسافة عن العنوان.
+*/
 .hero__description {
   max-width: 650px;
   margin: 28px 0 0;
   color: rgba(255, 255, 255, 0.90);
-  font-size: clamp(1.05rem, 1.45vw, 1.28rem);
+  font-size: clamp(0.05rem, 1.45vw, 1.0rem);
   line-height: 1.8;
   font-weight: 400;
 }
 
+/* [CSS-HERO-BUTTONS] مجموعة أزرار Hero
+   gap = المسافة بين الأزرار، margin-top = المسافة عن الوصف.
+*/
 .hero__actions {
   margin-top: 24px;
   display: flex;
@@ -529,10 +616,10 @@ button {
 }
 
 .hero__actions .hero__btn {
-  min-height: 44px;
-  padding-inline: 17px;
-  border-radius: 12px;
-  font-size: 0.88rem;
+  min-height: 40px;
+  padding-inline: 14px;
+  border-radius: 11px;
+  font-size: 0.84rem;
   box-shadow: none;
 }
 
@@ -553,7 +640,7 @@ button {
 }
 
 .hero__actions .btn--primary {
-  min-width: 162px;
+  min-width: 145px;
   background: linear-gradient(180deg, #0b8bd3, #0875bb);
   border-color: rgba(69, 197, 255, 0.72);
   box-shadow: 0 12px 28px rgba(0, 99, 164, 0.24), inset 0 1px 0 rgba(255,255,255,.18);
@@ -565,7 +652,7 @@ button {
 }
 
 .hero__actions .btn--light {
-  min-width: 122px;
+  min-width: 110px;
   color: #0b2948;
   background: rgba(255, 255, 255, 0.97);
   border-color: rgba(255, 255, 255, 0.88);
@@ -573,7 +660,7 @@ button {
 }
 
 .hero__actions .btn--outline-light {
-  min-width: 166px;
+  min-width: 145px;
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0.66);
   background: rgba(4, 36, 68, 0.30);
@@ -605,6 +692,7 @@ button {
   background: #25b8f2;
 }
 
+/* [CSS-HERO-SCROLL] زر «اكتشف المزيد» أسفل Hero */
 .scroll-indicator {
   position: absolute;
   left: 50%;
@@ -753,7 +841,8 @@ button {
 }
 
 /* ----------------------------------------------------------
-   11) Halls / قاعات المركز
+   [CSS-HALLS] 11) قاعات المركز
+   يتحكم بعرض بطاقات القاعات، حجم الصور، شريط التمرير والمسافات.
    ---------------------------------------------------------- */
 .halls-container {
   width: min(calc(100% - 32px), 1600px);
@@ -761,6 +850,12 @@ button {
 
 .halls-heading {
   max-width: 900px;
+}
+
+/* توسيط وصف قسم القاعات داخل العنوان */
+.halls-heading > p {
+  margin-inline: auto;
+  text-align: center;
 }
 
 .halls-summary {
@@ -983,6 +1078,19 @@ button {
   font-weight: 800;
 }
 
+
+/* أيقونات القاعات — SVG موحّدة ومرتبطة بنوع كل قاعة */
+.hall-card__icon svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .hall-card__body > p {
   min-height: 72px;
   margin: 12px 0 18px;
@@ -1073,15 +1181,48 @@ button {
   font-size: 0.9rem;
 }
 
-.hall-booking-note__badge {
-  padding: 8px 12px;
-  color: var(--color-primary);
-  background: white;
-  border: 1px solid rgba(19, 93, 145, 0.12);
-  border-radius: 999px;
+/* [CSS-HALLS-WHATSAPP] زر واتساب إدارة المركز لحجز القاعات */
+.hall-booking-note__whatsapp {
+  min-height: 46px;
+  padding: 9px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: #ffffff;
+  background: #25d366;
+  border: 1px solid rgba(22, 164, 79, 0.16);
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.18);
   white-space: nowrap;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 700;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.hall-booking-note__whatsapp:hover {
+  color: #ffffff;
+  background: #1fba59;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.26);
+}
+
+.hall-booking-note__whatsapp-icon {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 24px;
+}
+
+.hall-booking-note__whatsapp-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 @media (max-width: 720px) {
@@ -1094,14 +1235,16 @@ button {
     grid-template-columns: auto 1fr;
   }
 
-  .hall-booking-note__badge {
+  .hall-booking-note__whatsapp {
     grid-column: 1 / -1;
-    width: fit-content;
+    width: 100%;
+    margin-top: 2px;
   }
 }
 
 /* ----------------------------------------------------------
-   12) Competition cards / News cards
+   [CSS-COMPETITIONS] [CSS-NEWS] 12) بطاقات المسابقات والأخبار
+   تنسيقات البطاقات المشتركة: الحواف، الظلال، الصور والمحتوى.
    ---------------------------------------------------------- */
 .competition-card,
 .news-card {
@@ -1119,12 +1262,155 @@ button {
   box-shadow: var(--shadow-md);
 }
 
-.competition-card > img,
-.news-card > img {
+.competition-card > img {
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
   background: #e8eef4;
+}
+
+/* ==========================================================
+   [CSS-NEWS-IMAGES] صور الأخبار والسلايدر
+   نسبة الصورة وحجمها موجودان في .news-carousel__viewport أدناه.
+   غيّر aspect-ratio لتغيير شكل الصورة و max-height لتغيير ارتفاعها.
+   ========================================================== */
+.news-carousel {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(23, 35, 51, 0.08);
+  outline: none;
+}
+
+.news-carousel:focus-visible {
+  outline: 3px solid rgba(84, 185, 232, 0.7);
+  outline-offset: -3px;
+}
+
+.news-carousel__viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 220px;
+  overflow: hidden;
+  background: #e8eef4;
+  direction: ltr;
+}
+
+.news-carousel__track {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: transform 320ms cubic-bezier(.22,.61,.36,1);
+  will-change: transform;
+}
+
+.news-carousel__slide {
+  width: 100%;
+  height: 100%;
+  flex: 0 0 100%;
+  object-fit: cover;
+  object-position: center;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.news-carousel__counter {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 3;
+  min-width: 48px;
+  height: 34px;
+  padding-inline: 10px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  color: #ffffff;
+  background: rgba(7, 35, 61, 0.78);
+  backdrop-filter: blur(8px);
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.news-carousel__nav {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #0b2948;
+  background: rgba(255, 255, 255, 0.90);
+  box-shadow: 0 6px 18px rgba(3, 29, 57, 0.14);
+  font-size: 2rem;
+  line-height: 1;
+  transform: translateY(-50%);
+  transition: background var(--transition), transform var(--transition);
+}
+
+.news-carousel__nav:hover {
+  background: #ffffff;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.news-carousel__nav--prev {
+  left: 12px;
+}
+
+.news-carousel__nav--next {
+  right: 12px;
+}
+
+.news-carousel__dots {
+  min-height: 34px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  direction: ltr;
+  background: #ffffff;
+}
+
+.news-carousel__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #c8d3df;
+  transition: width var(--transition), background var(--transition), transform var(--transition);
+}
+
+.news-carousel__dot.is-active {
+  width: 22px;
+  background: var(--color-primary);
+}
+
+.news-carousel__dot:hover {
+  transform: scale(1.15);
+}
+
+@media (max-width: 720px) {
+  .news-carousel__viewport {
+    max-height: none;
+    aspect-ratio: 16 / 9;
+  }
+
+  .news-carousel__nav {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .news-carousel__track {
+    transition: none;
+  }
 }
 
 .competition-card__body,
@@ -1175,39 +1461,60 @@ button {
 }
 
 /* ----------------------------------------------------------
-   13) Journey
+   [CSS-JOURNEY] 13) رحلة المتسابق
+   يتحكم ببطاقات خطوات المسابقة وترتيبها على الكمبيوتر والهاتف.
    ---------------------------------------------------------- */
+#journey .container {
+  width: min(calc(100% - 32px), 1360px);
+}
+
 .journey {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 11px;
 }
 
 .journey li {
   position: relative;
-  min-height: 138px;
-  padding: 20px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 18px;
+  min-height: 118px;
+  padding: 14px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.045);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 24px rgba(0, 12, 28, 0.08);
+  transition: transform 220ms ease, background 220ms ease, border-color 220ms ease;
+}
+
+.journey li:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.075);
+  border-color: rgba(84, 185, 232, 0.38);
+}
+
+.journey li strong {
+  line-height: 1.5;
+  font-size: 0.84rem;
+  font-weight: 700;
 }
 
 .journey li span {
-  width: 38px;
-  height: 38px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: grid;
   place-items: center;
   background: var(--color-turquoise);
+  box-shadow: 0 5px 14px rgba(24, 166, 166, 0.22);
+  font-size: 0.82rem;
   font-weight: 800;
 }
 
@@ -1215,8 +1522,8 @@ button {
   content: "";
   position: absolute;
   top: 50%;
-  inset-inline-end: -14px;
-  width: 14px;
+  inset-inline-end: -11px;
+  width: 11px;
   height: 1px;
   background: rgba(255, 255, 255, 0.25);
 }
@@ -1226,53 +1533,583 @@ button {
 }
 
 /* ----------------------------------------------------------
-   14) Programs
+   [CSS-EXTRA-COMPETITIONS] مسابقات إضافية
+   بطاقات احترافية وواضحة كعناصر قابلة للضغط:
+   - البطاقة كاملة رابط قابل للنقر
+   - زر بصري واضح داخل كل بطاقة
+   - شريط لوني علوي + شارة + Hover وFocus
    ---------------------------------------------------------- */
-.program-card {
-  padding: 28px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  background: var(--color-white);
-  box-shadow: var(--shadow-sm);
+.extra-competitions-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 92% 8%, rgba(84, 185, 232, 0.11), transparent 28%),
+    radial-gradient(circle at 8% 92%, rgba(24, 166, 166, 0.08), transparent 25%),
+    linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);
 }
 
-.program-card__icon {
-  width: 54px;
-  height: 54px;
-  margin-bottom: 18px;
+.extra-competitions-heading {
+  max-width: 760px;
+  margin-inline: auto;
+  margin-bottom: 38px;
+}
+
+.extra-competitions-heading p {
+  max-width: 650px;
+  margin-inline: auto;
+}
+
+.extra-competitions-grid {
   display: grid;
-  place-items: center;
-  border-radius: 16px;
-  color: var(--color-white);
-  background: var(--color-primary-dark);
-  font-weight: 800;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
 }
 
-.program-card h3 {
-  margin: 16px 0 8px;
+.extra-competition-link {
+  --card-accent: #1676ad;
+  --card-accent-rgb: 22, 118, 173;
+  position: relative;
+  isolation: isolate;
+  min-height: 285px;
+  padding: 24px;
+  border: 1px solid rgba(18, 70, 105, 0.10);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow:
+    0 16px 42px rgba(15, 35, 55, 0.07),
+    0 2px 8px rgba(15, 35, 55, 0.03);
+  text-decoration: none;
+  cursor: pointer;
+  transform: translateY(0);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
 }
 
-.program-card p {
-  color: var(--color-muted);
-  min-height: 72px;
+.extra-competition-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(145deg, rgba(var(--card-accent-rgb), 0.055), transparent 45%);
+  opacity: 0;
+  transition: opacity 220ms ease;
 }
 
-.program-card__footer {
-  padding-top: 16px;
-  margin-top: 18px;
-  border-top: 1px solid var(--color-border);
+.extra-competition-link:hover,
+.extra-competition-link:focus-visible {
+  transform: translateY(-7px);
+  border-color: rgba(var(--card-accent-rgb), 0.28);
+  box-shadow:
+    0 24px 52px rgba(15, 35, 55, 0.12),
+    0 6px 18px rgba(var(--card-accent-rgb), 0.08);
+  outline: none;
+}
+
+.extra-competition-link:hover::before,
+.extra-competition-link:focus-visible::before {
+  opacity: 1;
+}
+
+.extra-competition-link:focus-visible {
+  box-shadow:
+    0 0 0 4px rgba(var(--card-accent-rgb), 0.14),
+    0 24px 52px rgba(15, 35, 55, 0.12);
+}
+
+.extra-competition-link__topline {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(var(--card-accent-rgb), 0.55), var(--card-accent));
+}
+
+.extra-competition-link--ai {
+  --card-accent: #126fa6;
+  --card-accent-rgb: 18, 111, 166;
+}
+
+.extra-competition-link--cyber {
+  --card-accent: #0c8585;
+  --card-accent-rgb: 12, 133, 133;
+}
+
+.extra-competition-link--more {
+  --card-accent: #9a762f;
+  --card-accent-rgb: 154, 118, 47;
+}
+
+.extra-competition-link__head {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
 }
 
-.program-card__footer a {
-  color: var(--color-primary);
-  font-weight: 700;
+.extra-competition-link__icon {
+  width: 62px;
+  height: 62px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  color: var(--card-accent);
+  background: linear-gradient(145deg, rgba(var(--card-accent-rgb), 0.16), rgba(var(--card-accent-rgb), 0.06));
+  box-shadow: inset 0 0 0 1px rgba(var(--card-accent-rgb), 0.07);
+  transition: transform 220ms ease;
+}
+
+.extra-competition-link:hover .extra-competition-link__icon,
+.extra-competition-link:focus-visible .extra-competition-link__icon {
+  transform: scale(1.06) rotate(-2deg);
+}
+
+.extra-competition-link__icon svg {
+  width: 33px;
+  height: 33px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.extra-competition-link__badge {
+  max-width: 48%;
+  padding: 7px 11px;
+  border: 1px solid rgba(var(--card-accent-rgb), 0.13);
+  border-radius: 999px;
+  color: var(--card-accent);
+  background: rgba(var(--card-accent-rgb), 0.07);
+  font-size: 0.72rem;
+  line-height: 1.25;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.extra-competition-link__content {
+  min-width: 0;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.extra-competition-link__content strong {
+  color: var(--color-primary-dark);
+  font-size: 1.08rem;
+  line-height: 1.65;
+  font-weight: 800;
+}
+
+.extra-competition-link__content small {
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  line-height: 1.75;
+}
+
+.extra-competition-link__cta {
+  min-height: 40px;
+  padding: 7px 11px;
+  border: 1px solid rgba(var(--card-accent-rgb), 0.18);
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--card-accent), rgba(var(--card-accent-rgb), 0.82));
+  box-shadow: 0 10px 22px rgba(var(--card-accent-rgb), 0.16);
+  font-size: 0.80rem;
+  font-weight: 800;
+  transition: transform 220ms ease, box-shadow 220ms ease, filter 220ms ease;
+}
+
+.extra-competition-link:hover .extra-competition-link__cta,
+.extra-competition-link:focus-visible .extra-competition-link__cta {
+  transform: translateY(-1px);
+  filter: saturate(1.08);
+  box-shadow: 0 14px 26px rgba(var(--card-accent-rgb), 0.24);
+}
+
+.extra-competition-link__arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  color: var(--card-accent);
+  background: rgba(255, 255, 255, 0.95);
+  font-size: 1rem;
+  font-weight: 900;
+  transition: transform 220ms ease;
+}
+
+.extra-competition-link:hover .extra-competition-link__arrow,
+.extra-competition-link:focus-visible .extra-competition-link__arrow {
+  transform: translateX(-4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .extra-competition-link,
+  .extra-competition-link::before,
+  .extra-competition-link__icon,
+  .extra-competition-link__cta,
+  .extra-competition-link__arrow {
+    transition: none !important;
+  }
 }
 
 /* ----------------------------------------------------------
-   15) Documents
+   [CSS-PROGRAMS] 14) مسارات التعلم والابتكار
+   تنسيق مستوحى من النموذج المرفق:
+   - خلفية فاتحة بزخارف هندسية هادئة
+   - عنوان ووصف وخط لوني
+   - 3 بطاقات متناسقة بألوان مختلفة
+   - نقاط تحقق دائرية وبطاقات مدمجة بألوان أكثر عمقًا
+   ---------------------------------------------------------- */
+.programs-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 70px 0 78px;
+  background:
+    radial-gradient(circle at 8% 10%, rgba(84, 185, 232, 0.10) 0 9%, transparent 9.2%),
+    radial-gradient(circle at 96% 74%, rgba(87, 137, 225, 0.08) 0 11%, transparent 11.2%),
+    linear-gradient(180deg, #fbfdff 0%, #f7fbff 54%, #ffffff 100%);
+}
+
+.programs-section::before,
+.programs-section::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 145px;
+  height: 145px;
+  opacity: 0.52;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(77, 161, 230, 0.30) 2px, transparent 2.2px);
+  background-size: 18px 18px;
+}
+
+.programs-section::before {
+  inset-inline-start: -22px;
+  top: 205px;
+}
+
+.programs-section::after {
+  inset-inline-end: -18px;
+  bottom: 38px;
+}
+
+.programs-container {
+  width: min(calc(100% - 48px), 1180px);
+}
+
+.programs-heading {
+  align-items: center;
+  margin-bottom: 34px;
+}
+
+.programs-heading__copy {
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.programs-heading h2 {
+  margin: 0 0 6px;
+  color: #0b2345;
+  font-size: clamp(2rem, 3vw, 2rem);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.programs-heading p {
+  max-width: 760px;
+  color: #64728a;
+  font-size: clamp(0.92rem, 1.2vw, 1.08rem);
+  line-height: 1.8;
+}
+
+.programs-heading__line {
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: 0;
+  width: 62px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #18a6a6, #54b9e8);
+  box-shadow: 0 5px 16px rgba(24, 166, 166, 0.16);
+}
+
+.programs-all-link {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 4px;
+  color: #144fb4;
+  font-size: 0.96rem;
+  font-weight: 700;
+}
+
+.programs-all-link__arrow {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(40, 109, 205, 0.05);
+  transition: transform var(--transition), background var(--transition);
+}
+
+.programs-all-link:hover {
+  color: #0f66c9;
+}
+
+.programs-all-link:hover .programs-all-link__arrow {
+  transform: translateX(-4px);
+  background: rgba(40, 109, 205, 0.10);
+}
+
+.programs-grid {
+  gap: 22px;
+  align-items: stretch;
+}
+
+.program-card {
+  --program-accent: #315bdc;
+  --program-accent-rgb: 49, 91, 220;
+  position: relative;
+  isolation: isolate;
+  min-height: 360px;
+  padding: 24px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid rgba(var(--program-accent-rgb), 0.22);
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(var(--program-accent-rgb), 0.065) 0%, rgba(255, 255, 255, 0.96) 33%, #ffffff 100%);
+  box-shadow: 0 14px 34px rgba(35, 64, 102, 0.07);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+.program-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -88px;
+  inset-inline-start: -76px;
+  width: 215px;
+  height: 215px;
+  border-radius: 50%;
+  border: 24px solid rgba(var(--program-accent-rgb), 0.055);
+  box-shadow:
+    0 0 0 25px rgba(var(--program-accent-rgb), 0.035),
+    0 0 0 54px rgba(var(--program-accent-rgb), 0.018);
+}
+
+.program-card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -118px;
+  inset-inline-end: -78px;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--program-accent-rgb), 0.06), transparent 67%);
+}
+
+.program-card--ai {
+  --program-accent: #233fb4;
+  --program-accent-rgb: 35, 63, 180;
+}
+
+.program-card--innovation {
+  --program-accent: #087a76;
+  --program-accent-rgb: 8, 122, 118;
+}
+
+.program-card--olympiad {
+  --program-accent: #0b4f9f;
+  --program-accent-rgb: 11, 79, 159;
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(var(--program-accent-rgb), 0.25);
+  box-shadow: 0 22px 46px rgba(35, 64, 102, 0.11);
+}
+
+/* الأيقونة الكبيرة أعلى كل بطاقة */
+.program-card__icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 12px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  color: var(--program-accent);
+  background:
+    linear-gradient(145deg, rgba(var(--program-accent-rgb), 0.10), rgba(var(--program-accent-rgb), 0.035));
+  border: 1px solid rgba(var(--program-accent-rgb), 0.13);
+  box-shadow: 0 12px 26px rgba(var(--program-accent-rgb), 0.08);
+}
+
+.program-card__icon svg {
+  width: 36px;
+  height: 36px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.45;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.program-card h3 {
+  width: 100%;
+  margin: 0;
+  color: #0b2345;
+  text-align: center;
+  font-size: clamp(1.06rem, 1.35vw, 1.28rem);
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.program-card__label {
+  margin-top: 4px;
+  color: var(--program-accent);
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+/* قائمة البرامج بنقاط تحقق دائرية مثل النموذج */
+.program-card__list {
+  width: 100%;
+  margin: 14px 0 0;
+  padding: 14px 0 0;
+  display: grid;
+  gap: 7px;
+  list-style: none;
+  text-align: right;
+  border-top: 1px solid rgba(77, 111, 153, 0.14);
+}
+
+.program-card__list li {
+  position: relative;
+  min-height: 28px;
+  padding-inline-start: 34px;
+  display: flex;
+  align-items: center;
+  color: #43536b;
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.program-card__list li::before {
+  content: "✓";
+  position: absolute;
+  inset-inline-start: 0;
+  top: 50%;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  color: var(--program-accent);
+  background: rgba(var(--program-accent-rgb), 0.13);
+  font-size: 0.87rem;
+  line-height: 1;
+  font-weight: 800;
+}
+
+
+/* استجابة قسم المسارات فقط */
+@media (max-width: 980px) {
+  .programs-container {
+    width: min(calc(100% - 36px), 900px);
+  }
+
+  .programs-heading {
+    align-items: flex-start;
+  }
+
+  .program-card {
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 760px) {
+  .programs-section {
+    padding: 68px 0 74px;
+  }
+
+  .programs-heading {
+    display: grid;
+    gap: 18px;
+    margin-bottom: 28px;
+  }
+
+  .programs-all-link {
+    justify-self: start;
+  }
+
+  .programs-grid {
+    grid-template-columns: 1fr;
+    max-width: 570px;
+    margin-inline: auto;
+  }
+
+  .program-card {
+    min-height: 0;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .programs-container {
+    width: min(calc(100% - 28px), 460px);
+  }
+
+  .programs-heading h2 {
+    font-size: 1.85rem;
+  }
+
+  .program-card {
+    padding: 22px 18px 20px;
+    border-radius: 20px;
+  }
+
+  .program-card__icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .program-card__list li {
+    font-size: 0.87rem;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   [CSS-DOCUMENTS] 15) الأدلة والملفات
+   يتحكم بقسم المستندات وصفوف الملفات والأزرار المرتبطة بها.
    ---------------------------------------------------------- */
 .split-section {
   display: grid;
@@ -1319,56 +2156,10 @@ button {
   font-weight: 700;
 }
 
-/* ----------------------------------------------------------
-   16) Calendar preview
-   ---------------------------------------------------------- */
-.timeline-cards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.date-card {
-  padding: 24px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  background: var(--color-white);
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-areas:
-    "day content"
-    "month content";
-  column-gap: 18px;
-  align-items: center;
-}
-
-.date-card__day {
-  grid-area: day;
-  font-size: 2.4rem;
-  font-weight: 800;
-  color: var(--color-primary);
-  line-height: 1;
-}
-
-.date-card__month {
-  grid-area: month;
-  color: var(--color-muted);
-  font-size: 0.8rem;
-}
-
-.date-card > div {
-  grid-area: content;
-}
-
-.date-card small {
-  display: block;
-  color: var(--color-muted);
-}
 
 /* ----------------------------------------------------------
-   17) Statistics / مسندم تبتكر
-   بطاقات مؤسسية مستوحاة من التصميم المرجعي مع أيقونات خطية
-   وألوان متدرجة مختلفة لكل مؤشر.
+   [CSS-STATS] 17) قسم «مسندم تبتكر» والإحصائيات
+   يتحكم بعنوان القسم، أرقام الإحصائيات، البطاقات، الأيقونات والمسافات.
    ---------------------------------------------------------- */
 .stats-section {
   position: relative;
@@ -1404,7 +2195,8 @@ button {
 }
 
 .stats-container {
-  width: min(calc(100% - 32px), 1420px);
+  /* عرض أضيق يجعل البطاقات أكثر توازنًا على الشاشات الكبيرة */
+  width: min(calc(100% - 40px), 1200px);
 }
 
 .stats-heading {
@@ -1446,13 +2238,16 @@ button {
   left: calc(100% + 18px);
 }
 
+/* [CSS-STATS-TITLE] عنوان «مسندم تبتكر»
+   عدّل font-size هنا إذا أردت تغيير حجم هذا العنوان وحده.
+*/
 .stats-heading h2 {
   margin: 0;
   color: #0b3458;
-  font-size: clamp(2.25rem, 3.5vw, 3.45rem);
+  font-size: clamp(1.95rem, 2.5vw, 2.65rem);
   font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.035em;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
 }
 
 .stats-heading p {
@@ -1474,7 +2269,7 @@ button {
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+  gap: 20px;
 }
 
 .stat-card {
@@ -1483,27 +2278,27 @@ button {
   --stat-accent-2: #0f4c77;
   --stat-accent-soft: #2f7aae;
   position: relative;
-  min-height: 168px;
-  padding: 22px 22px 28px;
+  min-height: 136px;
+  padding: 17px 18px 21px;
   overflow: hidden;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 74px;
+  grid-template-columns: minmax(0, 1fr) 60px;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
   color: #ffffff;
   background: linear-gradient(145deg, var(--stat-accent-soft) 0%, var(--stat-accent) 52%, var(--stat-accent-2) 100%);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 19px;
-  box-shadow: 0 16px 38px color-mix(in srgb, var(--stat-accent-2) 35%, transparent);
+  border-radius: 17px;
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--stat-accent-2) 30%, transparent);
   transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
 }
 
 .stat-card::before {
   content: "";
   position: absolute;
-  width: 190px;
-  height: 190px;
-  inset: -95px -65px auto auto;
+  width: 150px;
+  height: 150px;
+  inset: -78px -52px auto auto;
   z-index: 0;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
@@ -1520,9 +2315,9 @@ button {
 }
 
 .stat-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   border-color: rgba(255, 255, 255, 0.34);
-  box-shadow: 0 22px 50px color-mix(in srgb, var(--stat-accent-2) 48%, transparent);
+  box-shadow: 0 16px 36px color-mix(in srgb, var(--stat-accent-2) 42%, transparent);
 }
 
 .stat-card__content,
@@ -1543,7 +2338,7 @@ button {
   direction: ltr;
   unicode-bidi: isolate;
   color: #ffffff;
-  font-size: clamp(2.45rem, 3.3vw, 3.35rem);
+  font-size: clamp(2.05rem, 2.7vw, 2.7rem);
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: -0.045em;
@@ -1553,25 +2348,25 @@ button {
 
 .stat-card__label {
   display: block;
-  margin-top: 9px;
+  margin-top: 7px;
   color: rgba(255, 255, 255, 0.97);
-  font-size: 1.02rem;
+  font-size: 0.94rem;
   font-weight: 700;
   line-height: 1.45;
 }
 
 .stat-card small {
   display: block;
-  margin-top: 5px;
+  margin-top: 3px;
   color: rgba(255, 255, 255, 0.76);
-  font-size: 0.84rem;
+  font-size: 0.76rem;
   font-weight: 500;
   line-height: 1.55;
 }
 
 .stat-card__icon {
-  width: 74px;
-  height: 74px;
+  width: 60px;
+  height: 60px;
   display: grid;
   place-items: center;
   color: #ffffff;
@@ -1583,8 +2378,8 @@ button {
 }
 
 .stat-card__icon svg {
-  width: 41px;
-  height: 41px;
+  width: 32px;
+  height: 32px;
   fill: none;
   stroke: currentColor;
   stroke-width: 2.8;
@@ -1618,7 +2413,9 @@ button {
 }
 
 /* ----------------------------------------------------------
-   18) Gallery
+   [CSS-GALLERY] 18) معرض الصور والفيديو
+   - الفيديو الرئيسي كبير في الجهة اليمنى على الشاشات الكبيرة.
+   - أربع صور مرتبة 2 × 2 في الجهة اليسرى.
    ---------------------------------------------------------- */
 .gallery-grid {
   display: grid;
@@ -1627,19 +2424,33 @@ button {
   gap: 14px;
 }
 
-.gallery-grid img {
+.gallery-grid img,
+.gallery-grid video {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 18px;
+  background: #0b2948;
+  overflow: hidden;
 }
 
-.gallery-grid img:first-child {
+.gallery-grid__featured {
   grid-row: 1 / 3;
 }
 
+.gallery-grid img {
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.gallery-grid img:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
 /* ----------------------------------------------------------
-   19) CTA
+   [CSS-CTA] 19) قسم الدعوة للتسجيل CTA
+   يتحكم بلوحة التسجيل والأزرار الموجودة داخلها.
    ---------------------------------------------------------- */
 .cta-panel {
   padding: 46px;
@@ -1665,7 +2476,8 @@ button {
 }
 
 /* ----------------------------------------------------------
-   20) Footer
+   [CSS-FOOTER] 20) تذييل الموقع Footer
+   يتحكم بخلفية التذييل، الأعمدة، الروابط والنص السفلي.
    ---------------------------------------------------------- */
 .footer {
   padding-top: 72px;
@@ -1716,7 +2528,8 @@ button {
 }
 
 /* ----------------------------------------------------------
-   21) Floating buttons + chat
+   [CSS-CHAT] 21) المساعد زيد والأزرار العائمة
+   يتحكم بزر المرشد، نافذة المحادثة وزر العودة للأعلى.
    ---------------------------------------------------------- */
 .chat-fab {
   position: fixed;
@@ -1858,15 +2671,18 @@ button {
 }
 
 /* ----------------------------------------------------------
-   22) Responsive
+   [CSS-RESPONSIVE] 22) Responsive — التابلت والهاتف
+   أي تغيير هنا يطبق حسب عرض الشاشة. افحص هذا القسم إذا كان
+   التصميم جيدًا على الكمبيوتر لكنه مختلف على الهاتف أو التابلت.
    ---------------------------------------------------------- */
 @media (max-width: 1100px) {
   .hero__copy {
     width: min(650px, 60%);
   }
 
+  /* [CSS-MOBILE-HERO] حجم عنوان Hero على الشاشات المتوسطة */
   .hero h1 {
-    font-size: clamp(2.55rem, 4.6vw, 4rem);
+    font-size: clamp(2.2rem, 3.8vw, 3.2rem);
   }
 
   .hero__motto {
@@ -1888,6 +2704,18 @@ button {
 
   .journey li::after {
     display: none;
+  }
+
+  .extra-competitions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .extra-competition-link--more {
+    grid-column: 1 / -1;
+  }
+
+  .extra-competition-link {
+    min-height: 260px;
   }
 
   .stats-grid {
@@ -1962,8 +2790,7 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .card-grid--3,
-  .timeline-cards {
+  .card-grid--3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1981,11 +2808,12 @@ button {
   }
 
   .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 220px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: 320px repeat(2, 220px);
   }
 
-  .gallery-grid img:first-child {
+  .gallery-grid__featured {
+    grid-column: 1 / -1;
     grid-row: auto;
   }
 
@@ -2011,9 +2839,20 @@ button {
     min-height: 76px;
   }
 
-  .logo-placeholder {
-    width: 88px;
-    height: 46px;
+  .official-logos {
+    gap: 12px;
+  }
+
+  .official-logo {
+    max-width: 104px;
+  }
+
+  .official-logo--ministry {
+    height: 48px;
+  }
+
+  .official-logo--center {
+    height: 50px;
   }
 
   .brand__text small {
@@ -2063,9 +2902,10 @@ button {
     flex-basis: 30px;
   }
 
+  /* [CSS-MOBILE-HERO] حجم عنوان Hero على الهاتف */
   .hero h1 {
-    font-size: clamp(2.15rem, 9.5vw, 3.05rem);
-    line-height: 1.18;
+    font-size: clamp(2rem, 8vw, 2.65rem);
+    line-height: 1.22;
   }
 
   .hero__description {
@@ -2088,10 +2928,10 @@ button {
   .hero__actions .btn--outline-light {
     width: 100%;
     min-width: 0;
-    min-height: 48px;
-    padding-inline: 12px;
-    border-radius: 12px;
-    font-size: 0.84rem;
+    min-height: 42px;
+    padding-inline: 10px;
+    border-radius: 10px;
+    font-size: 0.80rem;
     white-space: nowrap;
   }
 
@@ -2124,8 +2964,7 @@ button {
 
   .meta-grid,
   .card-grid--3,
-  .card-grid--4,
-  .timeline-cards {
+  .card-grid--4 {
     grid-template-columns: 1fr;
   }
 
@@ -2163,10 +3002,42 @@ button {
 
   .journey li {
     min-height: auto;
-    padding: 16px;
+    padding: 12px 14px;
     flex-direction: row;
     justify-content: flex-start;
+    gap: 10px;
     text-align: right;
+  }
+
+  .extra-competitions-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .extra-competition-link--more {
+    grid-column: auto;
+  }
+
+  .extra-competition-link {
+    min-height: 0;
+    padding: 20px;
+    gap: 15px;
+    border-radius: 20px;
+  }
+
+  .extra-competition-link__icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+  }
+
+  .extra-competition-link__icon svg {
+    width: 29px;
+    height: 29px;
+  }
+
+  .extra-competition-link__content strong {
+    font-size: 1rem;
   }
 
   .documents-preview {
@@ -2186,8 +3057,13 @@ button {
     grid-template-rows: none;
   }
 
+  .gallery-grid__featured,
   .gallery-grid img {
     height: 240px;
+  }
+
+  .gallery-grid__featured {
+    grid-column: auto;
   }
 
   .cta-panel {
@@ -2249,11 +3125,11 @@ button {
 
   .stats-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
+    gap: 16px;
   }
 
   .stat-card {
-    min-height: 160px;
+    min-height: 142px;
   }
 }
 
@@ -2263,7 +3139,7 @@ button {
   }
 
   .stats-container {
-    width: min(calc(100% - 24px), 1420px);
+    width: min(calc(100% - 24px), 1200px);
   }
 
   .stats-heading .eyebrow::before,
@@ -2272,7 +3148,7 @@ button {
   }
 
   .stats-heading h2 {
-    font-size: 2.35rem;
+    font-size: 2rem;
   }
 
   .stats-heading p {
@@ -2285,35 +3161,35 @@ button {
   }
 
   .stat-card {
-    min-height: 154px;
-    padding: 22px 20px 28px;
-    grid-template-columns: minmax(0, 1fr) 68px;
-    gap: 14px;
-    border-radius: 18px;
+    min-height: 138px;
+    padding: 18px 18px 22px;
+    grid-template-columns: minmax(0, 1fr) 60px;
+    gap: 12px;
+    border-radius: 17px;
   }
 
   .stat-card strong {
-    font-size: 2.7rem;
+    font-size: 2.4rem;
   }
 
   .stat-card__label {
-    margin-top: 9px;
-    font-size: 0.96rem;
+    margin-top: 7px;
+    font-size: 0.92rem;
   }
 
   .stat-card small {
-    margin-top: 5px;
-    font-size: 0.78rem;
+    margin-top: 3px;
+    font-size: 0.74rem;
   }
 
   .stat-card__icon {
-    width: 68px;
-    height: 68px;
+    width: 60px;
+    height: 60px;
   }
 
   .stat-card__icon svg {
-    width: 38px;
-    height: 38px;
+    width: 32px;
+    height: 32px;
   }
 }
 
@@ -2338,7 +3214,7 @@ button {
   }
 
   .hero__actions .hero__btn {
-    min-height: 46px;
+    min-height: 42px;
   }
 }
 
@@ -2363,16 +3239,16 @@ button {
   .hero__actions .btn--outline-light {
     width: 100% !important;
     min-width: 0 !important;
-    height: 48px !important;
-    min-height: 48px !important;
-    max-height: 48px !important;
-    padding: 0 12px !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    max-height: 42px !important;
+    padding: 0 10px !important;
     display: inline-flex !important;
     flex-direction: row !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 8px !important;
-    border-radius: 12px !important;
+    border-radius: 10px !important;
     line-height: 1.2 !important;
     white-space: nowrap;
     overflow: hidden;

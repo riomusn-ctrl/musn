@@ -25,15 +25,22 @@
 <body>
   <!-- =========================================================
        1) شريط علوي مخصص للشعارات الرسمية
-       لاستبدال العناصر الحالية بالشعارات:
-       ضع ملفاتك داخل assets/images/
-       ثم استبدل div.logo-placeholder بعنصر img.
+       تم إدراج شعار وزارة التربية والتعليم وشعار مركز مسندم
+       من مجلد assets/images/ مع تنسيق متجاوب.
        ========================================================= -->
   <header class="official-header">
     <div class="container official-header__inner">
-      <div class="official-logos" aria-label="منطقة الشعارات الرسمية">
-        <div class="logo-placeholder">الشعار الأول</div>
-        <div class="logo-placeholder">الشعار الثاني</div>
+      <div class="official-logos" aria-label="الشعارات الرسمية">
+        <img
+          class="official-logo official-logo--ministry"
+          src="./assets/images/ministry-logo.png"
+          alt="شعار وزارة التربية والتعليم"
+        />
+        <img
+          class="official-logo official-logo--center"
+          src="./assets/images/musandam-center-logo.png"
+          alt="شعار مركز مسندم للثقافة والابتكار"
+        />
       </div>
 
       <p class="official-header__name">
@@ -76,13 +83,12 @@
         <a href="#programs">البرامج</a>
         <a href="#halls">القاعات</a>
         <a href="#journey">التحديات</a>
-        <a href="#calendar">التقويم</a>
         <a href="#news">الأخبار</a>
         <a href="#gallery">معرض الصور</a>
 
         <a href="#register" class="btn btn--primary btn--small">التسجيل</a>
         <button class="btn btn--ghost btn--small js-open-chat" type="button">
-          المرشد الذكي
+          المساعد زيد
         </button>
       </div>
     </div>
@@ -144,20 +150,20 @@
               <span>استكشف المسابقات</span>
             </a>
 
-            <a href="#register" class="btn btn--light hero__btn">
+            <a href="./second-page/index.html" class="btn btn--light hero__btn">
               <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <circle cx="12" cy="8" r="3"></circle>
-                <path d="M5.5 20v-1.5c0-3.3 2.9-5.5 6.5-5.5s6.5 2.2 6.5 5.5V20"></path>
+                <rect x="5" y="4" width="14" height="17" rx="2"></rect>
+                <path d="M9 4V3h6v1M8.5 9.5l1.3 1.3 2.2-2.4M13.5 10h2.5M8.5 15.5l1.3 1.3 2.2-2.4M13.5 16h2.5"></path>
               </svg>
-              <span>سجّل الآن</span>
+              <span>الخطة الإجرائية</span>
             </a>
 
             <button class="btn btn--outline-light hero__btn js-open-chat" type="button">
               <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path d="M5 6.5A2.5 2.5 0 0 1 7.5 4h9A2.5 2.5 0 0 1 19 6.5v6A2.5 2.5 0 0 1 16.5 15H11l-4.5 3v-3.4A2.5 2.5 0 0 1 5 12.5v-6Z"></path>
               </svg>
-              <span class="hero__label-desktop">اسأل المرشد الذكي</span>
-              <span class="hero__label-mobile">المرشد الذكي</span>
+              <span class="hero__label-desktop">المساعد زيد</span>
+              <span class="hero__label-mobile">المساعد زيد</span>
             </button>
           </div>
         </div>
@@ -210,7 +216,7 @@
 
           <article class="stat-card stat-card--students">
             <div class="stat-card__content">
-              <strong data-count="500">0+</strong>
+              <strong data-count="230">0+</strong>
               <span class="stat-card__label">طالب وطالبة</span>
               <small>طاقات تصنع المستقبل</small>
             </div>
@@ -227,7 +233,7 @@
 
           <article class="stat-card stat-card--schools">
             <div class="stat-card__content">
-              <strong data-count="30">0+</strong>
+              <strong data-count="10">0+</strong>
               <span class="stat-card__label">مدرسة مشاركة</span>
               <small>شركاء في صناعة التميز</small>
             </div>
@@ -253,6 +259,87 @@
                 <path d="m24 13 1.5 3 3.4.5-2.5 2.4.6 3.4-3-1.6-3 1.6.6-3.4-2.5-2.4 3.4-.5 1.5-3Z"></path>
               </svg>
             </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         5) البرامج والورش
+         ========================================================= -->
+    <section class="section programs-section" id="programs" aria-labelledby="programs-title">
+      <div class="container programs-container">
+        <div class="section-heading programs-heading">
+          <div class="programs-heading__copy">
+            <h2 id="programs-title">مسارات التعلم والابتكار</h2>
+            <p>برامج متخصصة لدعم الطلبة وتنمية مهاراتهم في التقنية والابتكار والعلوم</p>
+            <span class="programs-heading__line" aria-hidden="true"></span>
+          </div>
+
+          <a class="text-link programs-all-link" href="#">
+            <span>عرض جميع البرامج</span>
+            <span class="programs-all-link__arrow" aria-hidden="true">←</span>
+          </a>
+        </div>
+
+        <div class="card-grid card-grid--3 programs-grid">
+          <article class="program-card program-card--ai">
+            <div class="program-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" focusable="false">
+                <rect x="14" y="18" width="36" height="30" rx="9"></rect>
+                <path d="M32 18v-7M26 11h12"></path>
+                <circle cx="25" cy="31" r="2.5"></circle>
+                <circle cx="39" cy="31" r="2.5"></circle>
+                <path d="M24 40c4.5 3 11.5 3 16 0M14 29H9v10h5M50 29h5v10h-5"></path>
+              </svg>
+            </div>
+
+            <h3>مجال الذكاء الاصطناعي</h3>
+            <span class="program-card__label">تدريب · دعم · تمكين</span>
+
+            <ul class="program-card__list">
+              <li>روبوت VEX IQ</li>
+              <li>روبوت Spike</li>
+              <li>روبوت ماتاتالاب وفينشي بوت</li>
+              <li>الذكاء الاصطناعي والبرمجة</li>
+            </ul>
+          </article>
+
+          <article class="program-card program-card--innovation">
+            <div class="program-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" focusable="false">
+                <path d="M32 9c-10 0-18 7.5-18 17 0 6.2 3.6 10.7 8.6 14.1 2.6 1.8 3.4 4 3.4 6.9h12c0-2.9.8-5.1 3.4-6.9C46.4 36.7 50 32.2 50 26c0-9.5-8-17-18-17Z"></path>
+                <path d="M26 53h12M27 47h10M24 27l5 5 11-12"></path>
+              </svg>
+            </div>
+
+            <h3>مجال الابتكار العلمي</h3>
+            <span class="program-card__label">تدريب · دعم · تمكين</span>
+
+            <ul class="program-card__list">
+              <li>توليد الأفكار وحل المشكلات بطرق ابتكارية</li>
+              <li>مشاريع بالمايكروبت</li>
+              <li>عالم الإلكترونيات والهندسة</li>
+            </ul>
+          </article>
+
+          <article class="program-card program-card--olympiad">
+            <div class="program-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" focusable="false">
+                <path d="M18 12h28v10c0 11-6.3 19-14 19s-14-8-14-19V12Z"></path>
+                <path d="M18 17h-8v5c0 8 4.7 13 11.2 13M46 17h8v5c0 8-4.7 13-11.2 13M32 41v8M23 55h18M26 49h12"></path>
+                <path d="m32 18 2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5-3.6-3.5 5-.7L32 18Z"></path>
+              </svg>
+            </div>
+
+            <h3>مجال الأولمبيادات العلمية</h3>
+            <span class="program-card__label">تدريب · دعم · تمكين</span>
+
+            <ul class="program-card__list">
+              <li>الرياضيات والحساب الذهني وحل المسائل</li>
+              <li>العلوم والتجارب والاستقصاء العلمي</li>
+              <li>متابعة الطلبة المشاركين في أولمبياد الرياضيات والعلوم</li>
+            </ul>
           </article>
         </div>
       </div>
@@ -287,8 +374,8 @@
               <h3>مسابقات الروبوت</h3>
               <p>مسابقات الروبوت والذكاء الاصطناعي ضمن الأولمبياد الوطني تُقسم إلى ثلاث فئات للصفوف (5–6)، (7–8)، و(9–11)، وتتأهل الفرق للمنافسة على المستوى الوطني</p>
               <ul class="meta-list">
-                <li><strong>الفئة:</strong> طلبة المدارس</li>
-                <li><strong>الموعد:</strong> 26 أكتوبر 2026م</li>
+                <li><strong>آخر موعد للتسجيل:</strong> 15 أكتوبر 2026</li>
+                <li><strong>موعد المسابقة:</strong> 26 أكتوبر 2026م</li>
               </ul>
               <div class="competition-card__actions">
                 <a class="btn btn--secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSdvUwnOTRL9txr6FmcTQXUT0jEN3UWctJxxRhb6f_3P6DQJsQ/viewform?pli=1">التسجيل</a>
@@ -307,11 +394,11 @@
               <h3>مسابقة الابتكارات العلمية </h3>
               <p>تشمل مسابقة الابتكارات العلمية أربعة مجالات رئيسية: الهندسة والطاقة، الأحياء والبيئة، العلوم والرياضيات، وتقنية المعلومات.</p>
               <ul class="meta-list">
-                <li><strong>الفئة:</strong> طلبة المدارس</li>
-                <li><strong>الموعد:</strong> 27 أكتوبر 2026م</li>
+                <li><strong>آخر موعد للتسجيل:</strong> 15 أكتوبر 2026</li>
+                <li><strong>موعد المسابقة:</strong> 27 أكتوبر 2026م</li>
               </ul>
               <div class="competition-card__actions">
-                <a class="btn btn--secondary" href="#https://docs.google.com/forms/d/e/1FAIpQLScKKNgu25cI7d8DBXmYXVrX1fPC_IbvuwHqQW4zH4r9CQgqVA/viewform">التسجيل</a>
+                <a class="btn btn--secondary" href="https://docs.google.com/forms/d/e/1FAIpQLScKKNgu25cI7d8DBXmYXVrX1fPC_IbvuwHqQW4zH4r9CQgqVA/viewform">التسجيل</a>
                 <a class="btn btn--ghost" href="https://drive.google.com/drive/folders/1bbLcBCMUAAQXDsoCAa3sDbFLIUdagB5J?usp=sharing">التفاصيل</a>
               </div>
             </div>
@@ -327,8 +414,8 @@
               <h3>مسابقات الطائرات بلاطيار</h3>
               <p>يتنافس الطلبة في برمجة طائرات بلا طيار لتنفيذ مهام محددة عبر عدة جولات</p>
               <ul class="meta-list">
-                <li><strong>الفئة:</strong> فرق طلابية</li>
-                <li><strong>الموعد:</strong> 28 أكتوبر 2026م</li>
+                <li><strong>آخر موعد للتسجيل:</strong> 15 أكتوبر 2026</li>
+                <li><strong>موعد المسابقة:</strong> 28 أكتوبر 2026م</li>
               </ul>
               <div class="competition-card__actions">
                 <a class="btn btn--secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSdvUwnOTRL9txr6FmcTQXUT0jEN3UWctJxxRhb6f_3P6DQJsQ/viewform?pli=1">التسجيل</a>
@@ -348,7 +435,7 @@
     <section class="section section--dark" id="journey">
       <div class="container">
         <div class="section-heading section-heading--light section-heading--center">
-          <span class="eyebrow">من البداية حتى النتائج</span>
+          <span class="eyebrow">من البداية حتى التصفيات الوطنية</span>
           <h2>رحلتك في المسابقة</h2>
           <p>مسار واضح يساعد الطالب والمدرب على معرفة الخطوة التالية.</p>
         </div>
@@ -358,158 +445,116 @@
           <li><span>2</span><strong>اقرأ الدليل</strong></li>
           <li><span>3</span><strong>سجّل</strong></li>
           <li><span>4</span><strong>استعد</strong></li>
-          <li><span>5</span><strong>التصفيات</strong></li>
-          <li><span>6</span><strong>النهائيات</strong></li>
-          <li><span>7</span><strong>النتائج</strong></li>
+          <li><span>5</span><strong>التصفيات على مستوى المحافظة</strong></li>
+          <li><span>6</span><strong>التصفيات على مستوى السلطنة للفرق المتأهلة</strong></li>
         </ol>
       </div>
     </section>
 
     <!-- =========================================================
-         8) البرامج والورش
+         8) مسابقات إضافية
+         ملاحظة مهمة: استبدل روابط example.com أدناه بروابط المسابقات الفعلية.
          ========================================================= -->
-    <section class="section" id="programs">
+    <!-- =========================================================
+         8) مسابقات إضافية
+         بطاقات واضحة بالكامل كروابط، مع زر بصري داخل كل بطاقة.
+         ========================================================= -->
+    <section class="section extra-competitions-section" id="extra-competitions" aria-labelledby="extra-competitions-title">
       <div class="container">
-        <div class="section-heading">
-          <div>
-            <span class="eyebrow eyebrow--blue">تعلّم وطبّق</span>
-            <h2>البرامج والورش</h2>
-          </div>
-          <a class="text-link" href="#">عرض جميع البرامج ←</a>
+        <div class="section-heading section-heading--center extra-competitions-heading">
+          <span class="eyebrow eyebrow--blue">فرص أخرى للطلبة</span>
+          <h2 id="extra-competitions-title">مسابقات إضافية</h2>
+          <p>اختر المسابقة التي ترغب في استكشافها، ثم اضغط على البطاقة أو زر التفاصيل.</p>
         </div>
 
-        <div class="card-grid card-grid--3">
-          <article class="program-card">
-            <div class="program-card__icon">🤖</div>
-            <span class="pill">الروبوت التعليمي</span>
-            <h3>مختبر الروبوت والبرمجة</h3>
-            <p>ورشة تطبيقية تجمع بين البناء والبرمجة والعمل الجماعي.</p>
-            <div class="program-card__footer">
-              <span>المقاعد: 20</span>
-              <a href="#">التفاصيل ←</a>
-            </div>
-          </article>
+        <div class="extra-competitions-grid">
+          <a
+            class="extra-competition-link extra-competition-link--ai"
+            href="https://drive.google.com/file/d/17k6ygFLW9whZzQNfrCBgMagENXj7TUcw/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="استكشف مسابقة التطبيقات المعززة بالذكاء الاصطناعي"
+          >
+            <span class="extra-competition-link__topline" aria-hidden="true"></span>
+            <span class="extra-competition-link__head">
+              <span class="extra-competition-link__icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" focusable="false">
+                  <rect x="10" y="12" width="28" height="24" rx="7"></rect>
+                  <path d="M24 12V7M19 7h10M10 21H6v8h4M38 21h4v8h-4"></path>
+                  <circle cx="19" cy="23" r="2"></circle>
+                  <circle cx="29" cy="23" r="2"></circle>
+                  <path d="M18 30c3.6 2.6 8.4 2.6 12 0"></path>
+                  <path d="m34 9 .9 2.1L37 12l-2.1.9L34 15l-.9-2.1L30 12l2.1-.9L34 9Z"></path>
+                </svg>
+              </span>
+              <span class="extra-competition-link__badge">ذكاء اصطناعي</span>
+            </span>
+            <span class="extra-competition-link__content">
+              <strong>مسابقة التطبيقات المعززة بالذكاء الاصطناعي</strong>
+              <small>ابتكر تطبيقات ونماذج ذكية تسهم في حل المشكلات وتحسين جودة الحياة.</small>
+            </span>
+            <span class="extra-competition-link__cta">
+              <span>استكشف المسابقة</span>
+              <span class="extra-competition-link__arrow" aria-hidden="true">←</span>
+            </span>
+          </a>
 
-          <article class="program-card">
-            <div class="program-card__icon">AI</div>
-            <span class="pill">الذكاء الاصطناعي</span>
-            <h3>الذكاء الاصطناعي في التعليم</h3>
-            <p>مقدمة عملية لاستخدام الأدوات الذكية بفاعلية ومسؤولية.</p>
-            <div class="program-card__footer">
-              <span>المقاعد: 25</span>
-              <a href="#">التفاصيل ←</a>
-            </div>
-          </article>
+          <a
+            class="extra-competition-link extra-competition-link--cyber"
+            href="./second-page/index.html"
+            aria-label="استكشف مسابقة الأمن السيبراني لطلبة المدارس"
+          >
+            <span class="extra-competition-link__topline" aria-hidden="true"></span>
+            <span class="extra-competition-link__head">
+              <span class="extra-competition-link__icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" focusable="false">
+                  <path d="M24 6 38 11v10c0 9.4-5.7 16.6-14 21-8.3-4.4-14-11.6-14-21V11L24 6Z"></path>
+                  <rect x="18" y="21" width="12" height="10" rx="2.5"></rect>
+                  <path d="M20.5 21v-3a3.5 3.5 0 0 1 7 0v3M24 25v3"></path>
+                </svg>
+              </span>
+              <span class="extra-competition-link__badge">أمن سيبراني</span>
+            </span>
+            <span class="extra-competition-link__content">
+              <strong>مسابقة الأمن السيبراني لطلبة المدارس</strong>
+              <small>طوّر مهاراتك من خلال تحديات عملية في التشفير والتحليل الرقمي والحماية.</small>
+            </span>
+            <span class="extra-competition-link__cta">
+              <span>عرض التفاصيل</span>
+              <span class="extra-competition-link__arrow" aria-hidden="true">←</span>
+            </span>
+          </a>
 
-          <article class="program-card">
-            <div class="program-card__icon">⌘</div>
-            <span class="pill">البرمجة</span>
-            <h3>أساسيات التفكير البرمجي</h3>
-            <p>تحديات مبسطة لتطوير المنطق والخوارزميات وحل المشكلات.</p>
-            <div class="program-card__footer">
-              <span>المقاعد: 24</span>
-              <a href="#">التفاصيل ←</a>
-            </div>
-          </article>
+          <a
+            class="extra-competition-link extra-competition-link--more"
+            href="./second-page/index.html"
+            aria-label="استعرض المزيد من المسابقات"
+          >
+            <span class="extra-competition-link__topline" aria-hidden="true"></span>
+            <span class="extra-competition-link__head">
+              <span class="extra-competition-link__icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" focusable="false">
+                  <circle cx="24" cy="24" r="17"></circle>
+                  <path d="M24 16v16M16 24h16"></path>
+                </svg>
+              </span>
+              <span class="extra-competition-link__badge">فرص إضافية</span>
+            </span>
+            <span class="extra-competition-link__content">
+              <strong>للمزيد من المسابقات</strong>
+              <small>استعرض مجموعة إضافية من المسابقات والبرامج العلمية المتاحة للطلبة.</small>
+            </span>
+            <span class="extra-competition-link__cta">
+              <span>عرض جميع المسابقات</span>
+              <span class="extra-competition-link__arrow" aria-hidden="true">←</span>
+            </span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================
-         10) التقويم - Preview
-         ========================================================= -->
-    <section class="section" id="calendar">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <span class="eyebrow eyebrow--blue">تقويم الفعاليات</span>
-            <h2>مواعيد لا تفوّتها</h2>
-          </div>
-          <a class="text-link" href="#">فتح التقويم الكامل ←</a>
-        </div>
-
-        <div class="timeline-cards">
-          <article class="date-card">
-            <span class="date-card__day">27</span>
-            <span class="date-card__month">أكتوبر</span>
-            <div>
-              <strong>مسابقات الروبوت والذكاء الاصطناعي</strong>
-              <small>مركز مسندم للثقافة والابتكار</small>
-            </div>
-          </article>
-
-          <article class="date-card">
-            <span class="date-card__day">28</span>
-            <span class="date-card__month">أكتوبر</span>
-            <div>
-              <strong>الابتكارات العلمية الطلابية</strong>
-              <small>مركز مسندم للثقافة والابتكار</small>
-            </div>
-          </article>
-
-          <article class="date-card">
-            <span class="date-card__day">29</span>
-            <span class="date-card__month">أكتوبر</span>
-            <div>
-              <strong>مسابقات الطائرات بلا طيار</strong>
-              <small>مركز مسندم للثقافة والابتكار</small>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         11) آخر الأخبار
-         مصدر الصور:
-         assets/images/news-1.svg ... news-3.svg
-         ========================================================= -->
-    <section class="section section--soft" id="news">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <span class="eyebrow eyebrow--blue">المستجدات</span>
-            <h2>آخر الأخبار</h2>
-          </div>
-          <a class="text-link" href="#">جميع الأخبار ←</a>
-        </div>
-
-        <div class="card-grid card-grid--3">
-          <article class="news-card">
-            <img src="assets/images/news-1.svg" alt="صورة خبر تجريبية" loading="lazy" />
-            <div class="news-card__body">
-              <time datetime="2026-09-01">1 سبتمبر 2026</time>
-              <h3>انطلاق الاستعدادات للموسم العلمي الجديد</h3>
-              <p>استعدادات متكاملة للمسابقات والبرامج والفعاليات العلمية للعام الدراسي الجديد.</p>
-              <a href="#">اقرأ الخبر ←</a>
-            </div>
-          </article>
-
-          <article class="news-card">
-            <img src="assets/images/news-2.svg" alt="صورة خبر تجريبية" loading="lazy" />
-            <div class="news-card__body">
-              <time datetime="2026-08-25">25 أغسطس 2026</time>
-              <h3>تحديث برامج الروبوت والذكاء الاصطناعي</h3>
-              <p>حزمة برامج تدريبية جديدة لتوسيع فرص المشاركة والتعلّم التطبيقي.</p>
-              <a href="#">اقرأ الخبر ←</a>
-            </div>
-          </article>
-
-          <article class="news-card">
-            <img src="assets/images/news-3.svg" alt="صورة خبر تجريبية" loading="lazy" />
-            <div class="news-card__body">
-              <time datetime="2026-08-15">15 أغسطس 2026</time>
-              <h3>تعزيز المسارات العلمية والابتكارية</h3>
-              <p>تطوير مسارات جديدة تجمع بين العلوم والهندسة والبرمجة والتقنيات الحديثة.</p>
-              <a href="#">اقرأ الخبر ←</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         12) قاعات مركز مسندم للثقافة والابتكار
+        <!-- =========================================================
+         11) قاعات مركز مسندم للثقافة والابتكار
 
          صور القاعات:
          assets/images/hall-vr.jpg
@@ -543,138 +588,171 @@
           <div class="halls-grid">
             <article class="hall-card">
               <div class="hall-card__media hall-card__media--vr">
-                <img src="assets/images/hall-vr.jpg" alt="قاعة الواقع الافتراضي في مركز مسندم للثقافة والابتكار" loading="lazy" onerror="this.hidden=true" />
-                <span class="hall-card__type">واقع افتراضي</span>
+                <img src="assets/images/mp.JPEG" alt="قاعة متعددة الأغراض" loading="lazy" onerror="this.hidden=true" />
+                <span class="hall-card__type">ورش ومؤتمرات</span>
               </div>
               <div class="hall-card__body">
                 <div class="hall-card__title-row">
                   <div>
-                    <span class="hall-card__kicker">تجارب رقمية</span>
-                    <h3>قاعة الواقع الافتراضي</h3>
+                    <span class="hall-card__kicker">القاعة الكبرى</span>
+                    <h3>قاعة متعددة الأغراض</h3>
                   </div>
-                  <span class="hall-card__icon" aria-hidden="true">VR</span>
+                  <span class="hall-card__icon" aria-hidden="true" title="قاعة متعددة الأغراض">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <rect x="3" y="4" width="18" height="12" rx="2"></rect>
+                      <path d="M7 20h10M12 16v4M7.5 9h9M7.5 12h6"></path>
+                    </svg>
+                  </span>
                 </div>
-                <p>مساحة مناسبة للعروض والتجارب الرقمية والأنشطة التعليمية التفاعلية.</p>
-
-                <div class="hall-specs" aria-label="تجهيزات قاعة الواقع الافتراضي">
-                  <div><span>المقاعد</span><strong>—</strong><small>مقعد</small></div>
-                  <div><span>الشاشات التفاعلية</span><strong>—</strong><small>شاشة</small></div>
-                  <div><span>الطاولات</span><strong>—</strong><small>طاولة</small></div>
+                <p>قاعة متعددة الاستخدامات بمساحة مناسبة للاجتماعات والورش التدريبية والفعاليات المختلفة.</p>
+                <div class="hall-specs" aria-label="تجهيزات قاعة متعددة الأغراض">
+                  <div><span>المقاعد</span><strong>200</strong><small>مقعد</small></div>
+                  <div><span>شاشة عرض كبيرة</span><strong>1</strong><small>شاشة</small></div>
+                  <div><span>الطاولات</span><strong>20</strong><small>طاولة</small></div>
                 </div>
               </div>
             </article>
 
             <article class="hall-card">
               <div class="hall-card__media hall-card__media--energy">
-                <img src="assets/images/hall-renewable.jpg" alt="قاعة الطاقة المتجددة في مركز مسندم للثقافة والابتكار" loading="lazy" onerror="this.hidden=true" />
-                <span class="hall-card__type">علوم واستدامة</span>
+                <img src="assets/images/rr.JPEG" alt="روبوت وبرمجة" loading="lazy" onerror="this.hidden=true" />
+                <span class="hall-card__type">روبوت وبرمجة</span>
               </div>
               <div class="hall-card__body">
                 <div class="hall-card__title-row">
                   <div>
-                    <span class="hall-card__kicker">تجارب علمية</span>
-                    <h3>قاعة الطاقة المتجددة</h3>
+                    <span class="hall-card__kicker">عالم التقنية</span>
+                    <h3>قاعة الروبوت التعليمي</h3>
                   </div>
-                  <span class="hall-card__icon" aria-hidden="true">☀</span>
+                  <span class="hall-card__icon" aria-hidden="true" title="قاعة الروبوت التعليمي">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <rect x="5" y="7" width="14" height="11" rx="3"></rect>
+                      <path d="M12 7V4M9 4h6M8.5 12h.01M15.5 12h.01M9 15h6M5 11H3v4h2M19 11h2v4h-2"></path>
+                    </svg>
+                  </span>
                 </div>
-                <p>مساحة ملائمة للورش العلمية والأنشطة المرتبطة بالطاقة والاستدامة والتجارب التطبيقية.</p>
+                <p>قاعة الروبوت التعليمي لتعلّم برمجة روبوتات SPIKE وVEX IQ وMatatalab وغيرها من التقنيات التعليمية.</p>
 
                 <div class="hall-specs" aria-label="تجهيزات قاعة الطاقة المتجددة">
-                  <div><span>المقاعد</span><strong>—</strong><small>مقعد</small></div>
-                  <div><span>الشاشات التفاعلية</span><strong>—</strong><small>شاشة</small></div>
-                  <div><span>الطاولات</span><strong>—</strong><small>طاولة</small></div>
+                  <div><span>المقاعد</span><strong>30</strong><small>مقعد</small></div>
+                  <div><span>الشاشات التفاعلية</span><strong>1</strong><small>شاشة</small></div>
+                  <div><span>الطاولات</span><strong>22</strong><small>طاولة</small></div>
                 </div>
               </div>
             </article>
 
             <article class="hall-card">
               <div class="hall-card__media hall-card__media--innovation">
-                <img src="assets/images/hall-innovation.jpg" alt="قاعة الابتكار في مركز مسندم للثقافة والابتكار" loading="lazy" onerror="this.hidden=true" />
-                <span class="hall-card__type">ابتكار وتدريب</span>
+                <img src="assets/images/3d.PNG" alt="قاعة طابعة ثلاثية الأبعاد" loading="lazy" onerror="this.hidden=true" />
+                <span class="hall-card__type">تحويل فكرة إلى منتج</span>
               </div>
               <div class="hall-card__body">
                 <div class="hall-card__title-row">
                   <div>
-                    <span class="hall-card__kicker">أفكار وعروض</span>
-                    <h3>قاعة الابتكار</h3>
+                    <span class="hall-card__kicker">فكر وصمم</span>
+                    <h3>قاعة طابعة ثلاثية الأبعاد</h3>
                   </div>
-                  <span class="hall-card__icon" aria-hidden="true">✦</span>
+                  <span class="hall-card__icon" aria-hidden="true" title="قاعة الطباعة ثلاثية الأبعاد">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"></path>
+                      <path d="m4 7.5 8 4.5 8-4.5M12 12v9M8.5 5l8 4.5"></path>
+                    </svg>
+                  </span>
                 </div>
-                <p>قاعة مرنة للبرامج التدريبية والاجتماعات والعروض التقديمية وجلسات العصف الذهني.</p>
+                <p>قاعة متخصصة لتعلّم التصميم والنمذجة والطباعة ثلاثية الأبعاد وتنفيذ المشاريع الابتكارية.</p>
 
-                <div class="hall-specs" aria-label="تجهيزات قاعة الابتكار">
-                  <div><span>المقاعد</span><strong>—</strong><small>مقعد</small></div>
-                  <div><span>الشاشات التفاعلية</span><strong>—</strong><small>شاشة</small></div>
-                  <div><span>الطاولات</span><strong>—</strong><small>طاولة</small></div>
+                <div class="hall-specs" aria-label="تجهيزات قاعة طابعة ثلاثية الأبعاد">
+                  <div><span>المقاعد</span><strong>15</strong><small>مقعد</small></div>
+                  <div><span>الشاشات التفاعلية</span><strong>1</strong><small>شاشة</small></div>
+                  <div><span>الطاولات</span><strong>12</strong><small>طاولة</small></div>
                 </div>
               </div>
             </article>
 
             <article class="hall-card">
               <div class="hall-card__media hall-card__media--robotics">
-                <img src="assets/images/hall-robotics.jpg" alt="قاعة الروبوت التعليمي في مركز مسندم للثقافة والابتكار" loading="lazy" onerror="this.hidden=true" />
-                <span class="hall-card__type">روبوت وبرمجة</span>
+                <img src="assets/images/ir.JPEG" alt="قاعة الابتكار" loading="lazy" onerror="this.hidden=true" />
+                <span class="hall-card__type">مشاريع علمية</span>
               </div>
               <div class="hall-card__body">
                 <div class="hall-card__title-row">
                   <div>
-                    <span class="hall-card__kicker">تعلم تطبيقي</span>
-                    <h3>قاعة الروبوت التعليمي</h3>
+                    <span class="hall-card__kicker">ابتكار وحلول</span>
+                    <h3>قاعة الابتكار</h3>
                   </div>
-                  <span class="hall-card__icon" aria-hidden="true">🤖</span>
+                  <span class="hall-card__icon" aria-hidden="true" title="قاعة الابتكار">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M9 18h6M10 22h4"></path>
+                      <path d="M8.2 14.8A6 6 0 1 1 15.8 14.8C14.7 15.7 14 16.5 14 18h-4c0-1.5-.7-2.3-1.8-3.2Z"></path>
+                      <path d="M12 2V1M4.9 4.9l-.7-.7M19.1 4.9l.7-.7"></path>
+                    </svg>
+                  </span>
                 </div>
-                <p>مساحة مخصصة للتدريب العملي في البرمجة والروبوت والأنشطة التقنية الجماعية.</p>
+                <p>مساحة مخصصة لتطوير الأفكار وتنفيذ المشاريع الابتكارية والتجارب العملية والأنشطة الإبداعية الجماعية.</p>
 
-                <div class="hall-specs" aria-label="تجهيزات قاعة الروبوت التعليمي">
-                  <div><span>المقاعد</span><strong>—</strong><small>مقعد</small></div>
-                  <div><span>الشاشات التفاعلية</span><strong>—</strong><small>شاشة</small></div>
-                  <div><span>الطاولات</span><strong>—</strong><small>طاولة</small></div>
+                <div class="hall-specs" aria-label="تجهيزات قاعة الابتكار">
+                  <div><span>المقاعد</span><strong>24</strong><small>مقعد</small></div>
+                  <div><span>الشاشات التفاعلية</span><strong>1</strong><small>شاشة</small></div>
+                  <div><span>الطاولات</span><strong>4</strong><small>طاولة</small></div>
                 </div>
               </div>
             </article>
 
             <article class="hall-card">
               <div class="hall-card__media hall-card__media--five">
-                <img src="assets/images/hall-5.jpg" alt="القاعة الخامسة في مركز مسندم للثقافة والابتكار" loading="lazy" onerror="this.hidden=true" />
-                <span class="hall-card__type">قاعة إضافية</span>
+                <img src="assets/images/re.JPEG" alt="قاعة الطاقة المتجددة" loading="lazy" onerror="this.hidden=true" />
+                <span class="hall-card__type">علوم مستدامة</span>
               </div>
               <div class="hall-card__body">
                 <div class="hall-card__title-row">
                   <div>
-                    <span class="hall-card__kicker">قابلة للتخصيص</span>
-                    <h3>القاعة الخامسة</h3>
+                    <span class="hall-card__kicker">طاقة واستدامة</span>
+                    <h3>قاعة الطاقة المتجددة</h3>
                   </div>
-                  <span class="hall-card__icon" aria-hidden="true">05</span>
+                  <span class="hall-card__icon" aria-hidden="true" title="قاعة الطاقة المتجددة">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <circle cx="8" cy="8" r="3"></circle>
+                      <path d="M8 2V1M8 15v-1M2 8H1M15 8h-1M3.8 3.8l-.7-.7M12.2 12.2l-.7-.7M12.2 3.8l.7-.7M3.8 12.2l-.7.7"></path>
+                      <path d="M13 20c4.8 0 8-3.2 8-8-4.8 0-8 3.2-8 8Z"></path>
+                      <path d="M13 20c1.3-2.2 3.1-4 5.5-5.3"></path>
+                    </svg>
+                  </span>
                 </div>
-                <p>أضف اسم القاعة ووصفها الفعلي وتجهيزاتها بعد اعتماد بياناتها من إدارة المركز.</p>
+                <p>مساحة مخصصة للتجارب العملية والمشاريع التعليمية في الطاقة المتجددة والاستدامة وتطبيقاتها التقنية.</p>
 
                 <div class="hall-specs" aria-label="تجهيزات القاعة الخامسة">
-                  <div><span>المقاعد</span><strong>—</strong><small>مقعد</small></div>
-                  <div><span>الشاشات التفاعلية</span><strong>—</strong><small>شاشة</small></div>
-                  <div><span>الطاولات</span><strong>—</strong><small>طاولة</small></div>
+                  <div><span>المقاعد</span><strong>24</strong><small>مقعد</small></div>
+                  <div><span>الشاشات التفاعلية</span><strong>1</strong><small>شاشة</small></div>
+                  <div><span>الطاولات</span><strong>6</strong><small>طاولة</small></div>
                 </div>
               </div>
             </article>
 
             <article class="hall-card">
               <div class="hall-card__media hall-card__media--six">
-                <img src="assets/images/hall-6.jpg" alt="القاعة السادسة في مركز مسندم للثقافة والابتكار" loading="lazy" onerror="this.hidden=true" />
+                <img src="assets/images/vr.JPEG" alt="قاعة الواقع الإفتراضي" loading="lazy" onerror="this.hidden=true" />
                 <span class="hall-card__type">قاعة إضافية</span>
               </div>
               <div class="hall-card__body">
                 <div class="hall-card__title-row">
                   <div>
                     <span class="hall-card__kicker">قابلة للتخصيص</span>
-                    <h3>القاعة السادسة</h3>
+                    <h3>قاعة الواقع الإفتراضي</h3>
                   </div>
-                  <span class="hall-card__icon" aria-hidden="true">06</span>
+                  <span class="hall-card__icon" aria-hidden="true" title="قاعة الواقع الافتراضي">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M4.5 8.5h15l1.5 7.2a2.8 2.8 0 0 1-4.7 2.6l-2.2-2.1H9.9l-2.2 2.1A2.8 2.8 0 0 1 3 15.7l1.5-7.2Z"></path>
+                      <circle cx="8.5" cy="12.5" r="1.6"></circle>
+                      <circle cx="15.5" cy="12.5" r="1.6"></circle>
+                      <path d="M7 8.5 8 6h8l1 2.5"></path>
+                    </svg>
+                  </span>
                 </div>
-                <p>أضف اسم القاعة ووصفها الفعلي وتجهيزاتها بعد اعتماد بياناتها من إدارة المركز.</p>
-
+                <p>مساحة تفاعلية لخوض تجارب تعليمية غامرة باستخدام تقنيات الواقع الافتراضي والمحاكاة الرقمية.</p>
                 <div class="hall-specs" aria-label="تجهيزات القاعة السادسة">
-                  <div><span>المقاعد</span><strong>—</strong><small>مقعد</small></div>
-                  <div><span>الشاشات التفاعلية</span><strong>—</strong><small>شاشة</small></div>
-                  <div><span>الطاولات</span><strong>—</strong><small>طاولة</small></div>
+                  <div><span>المقاعد</span><strong>8</strong><small>مقعد</small></div>
+                  <div><span>الشاشات التفاعلية</span><strong>1</strong><small>شاشة</small></div>
+                  <div><span>الطاولات</span><strong>8</strong><small>طاولة</small></div>
                 </div>
               </div>
             </article>
@@ -692,14 +770,146 @@
               مع إدارة مركز مسندم للثقافة والابتكار مباشرة.
             </p>
           </div>
-          <span class="hall-booking-note__badge">الحجز عبر إدارة المركز</span>
+          <!-- [WHATSAPP-NUMBER]
+               رقم واتساب إدارة المركز الحالي: 96879212748
+               عند تغييره استخدم: رمز الدولة + الرقم بدون علامة + أو مسافات.
+               مثال: +968 9123 4567 يصبح 96891234567
+          -->
+          <a
+            class="hall-booking-note__whatsapp"
+            href="https://api.whatsapp.com/send?phone=96879212748&text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AD%D8%AC%D8%B2%20%D8%A5%D8%AD%D8%AF%D9%89%20%D9%82%D8%A7%D8%B9%D8%A7%D8%AA%20%D9%85%D8%B1%D9%83%D8%B2%20%D9%85%D8%B3%D9%86%D8%AF%D9%85%20%D9%84%D9%84%D8%AB%D9%82%D8%A7%D9%81%D8%A9%20%D9%88%D8%A7%D9%84%D8%A7%D8%A8%D8%AA%D9%83%D8%A7%D8%B1"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="التواصل مع إدارة المركز عبر واتساب لحجز القاعات"
+          >
+            <span class="hall-booking-note__whatsapp-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M12 3.5a8.2 8.2 0 0 0-7.1 12.3L4 20.5l4.8-1.3A8.2 8.2 0 1 0 12 3.5Z"></path>
+                <path d="M9.1 8.1c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.8 1.8c.1.3 0 .5-.1.7l-.6.8c-.1.2-.2.3 0 .6.5.9 1.3 1.7 2.2 2.2.3.2.5.1.7-.1l.8-1c.2-.2.4-.3.7-.2l1.9.9c.3.1.4.3.4.5 0 .3-.2 1.5-1.1 2.1-.7.5-1.6.7-2.5.5-1.2-.3-2.7-1-4.2-2.4-1.2-1.1-2.1-2.4-2.5-3.5-.4-1.1 0-2 .3-2.4.4-.4.8-.5 1-.5h.5Z"></path>
+              </svg>
+            </span>
+            <span>تواصل عبر واتساب</span>
+          </a>
         </div>
       </div>
     </section>
 
     <!-- =========================================================
-         13) معرض الصور - Preview
-         استبدل الملفات gallery-*.svg بصورك الحقيقية.
+         12) آخر الأخبار
+         كل بطاقة خبر تحتوي على معرض من 3 صور بأسلوب إنستغرام.
+         في النسخة الحالية تستخدم الصور news-1.svg ... news-3.svg كصور تجريبية.
+         يمكنك لاحقًا استبدال src لكل شريحة بصورة الخبر الحقيقية.
+         ========================================================= -->
+    <section class="section section--soft" id="news">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow eyebrow--blue">المستجدات</span>
+            <h2>آخر الأخبار</h2>
+          </div>
+          <a class="text-link" href="#">جميع الأخبار ←</a>
+        </div>
+
+        <div class="card-grid card-grid--3">
+          <article class="news-card">
+            <div class="news-carousel" data-news-carousel tabindex="0" aria-label="معرض صور الخبر - 3 صور">
+              <div class="news-carousel__viewport">
+                <div class="news-carousel__track">
+                  <img class="news-carousel__slide is-active" src="assets/images/11.JPEG" alt="صورة 1 للخبر 1" loading="eager" />
+                  <img class="news-carousel__slide" src="assets/images/12.JPEG" alt="صورة 2 للخبر 1" loading="lazy" />
+                  <img class="news-carousel__slide" src="assets/images/13.JPEG" alt="صورة 3 للخبر 1" loading="lazy" />
+                </div>
+
+                <span class="news-carousel__counter" aria-live="polite">1 / 3</span>
+
+                <button class="news-carousel__nav news-carousel__nav--prev" type="button" aria-label="الصورة السابقة">‹</button>
+                <button class="news-carousel__nav news-carousel__nav--next" type="button" aria-label="الصورة التالية">›</button>
+              </div>
+
+              <div class="news-carousel__dots" aria-label="اختيار صورة">
+                <button class="news-carousel__dot is-active" type="button" aria-label="عرض الصورة 1" aria-pressed="true"></button>
+                <button class="news-carousel__dot" type="button" aria-label="عرض الصورة 2" aria-pressed="false"></button>
+                <button class="news-carousel__dot" type="button" aria-label="عرض الصورة 3" aria-pressed="false"></button>
+              </div>
+            </div>
+
+            <div class="news-card__body">
+              <time datetime="2026-09-01">10-12 أغسطس 2026</time>
+              <h3>البرنامج الصيفي واحة الابتكار</h3>
+              <p>برنامج «واحة الابتكار» الصيفي، استهدف أكثر من 100 مشارك ومشاركة من مختلف الفئات العمرية، وقدم لهم ورشًا متنوعة في مجالات الرياضيات والهندسة والتقنيات الحديثة.
+</p>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-carousel" data-news-carousel tabindex="0" aria-label="معرض صور الخبر - 3 صور">
+              <div class="news-carousel__viewport">
+                <div class="news-carousel__track">
+                  <img class="news-carousel__slide is-active" src="assets/images/23.JPEG" alt="صورة 1 للخبر 2" loading="eager" />
+                  <img class="news-carousel__slide" src="assets/images/22.JPEG" alt="صورة 2 للخبر 2" loading="lazy" />
+                  <img class="news-carousel__slide" src="assets/images/21.JPEG" alt="صورة 3 للخبر 2" loading="lazy" />
+                </div>
+
+                <span class="news-carousel__counter" aria-live="polite">1 / 3</span>
+
+                <button class="news-carousel__nav news-carousel__nav--prev" type="button" aria-label="الصورة السابقة">‹</button>
+                <button class="news-carousel__nav news-carousel__nav--next" type="button" aria-label="الصورة التالية">›</button>
+              </div>
+
+              <div class="news-carousel__dots" aria-label="اختيار صورة">
+                <button class="news-carousel__dot is-active" type="button" aria-label="عرض الصورة 1" aria-pressed="true"></button>
+                <button class="news-carousel__dot" type="button" aria-label="عرض الصورة 2" aria-pressed="false"></button>
+                <button class="news-carousel__dot" type="button" aria-label="عرض الصورة 3" aria-pressed="false"></button>
+              </div>
+            </div>
+
+            <div class="news-card__body">
+              <time datetime="2026-08-25">23-12 يوليو 2026</time>
+              <h3>البرنامج الصيفي لطلبة المدارس لفتيات خصب</h3>
+              <p>برنامج صيفي لطالبات مدارس خصب، استهدف أكثر من 50 طالبة من أربع مدارس، وتضمّن ورشًا تفاعلية ورحلات علمية في مجالات العلوم والابتكار والإعلام والقيم والعمل التطوعي.
+</p>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-carousel" data-news-carousel tabindex="0" aria-label="معرض صور الخبر - 3 صور">
+              <div class="news-carousel__viewport">
+                <div class="news-carousel__track">
+                  <img class="news-carousel__slide is-active" src="assets/images/news-3.svg" alt="صورة 1 للخبر 3" loading="eager" />
+                  <img class="news-carousel__slide" src="assets/images/news-1.svg" alt="صورة 2 للخبر 3" loading="lazy" />
+                  <img class="news-carousel__slide" src="assets/images/news-2.svg" alt="صورة 3 للخبر 3" loading="lazy" />
+                </div>
+
+                <span class="news-carousel__counter" aria-live="polite">1 / 3</span>
+
+                <button class="news-carousel__nav news-carousel__nav--prev" type="button" aria-label="الصورة السابقة">‹</button>
+                <button class="news-carousel__nav news-carousel__nav--next" type="button" aria-label="الصورة التالية">›</button>
+              </div>
+
+              <div class="news-carousel__dots" aria-label="اختيار صورة">
+                <button class="news-carousel__dot is-active" type="button" aria-label="عرض الصورة 1" aria-pressed="true"></button>
+                <button class="news-carousel__dot" type="button" aria-label="عرض الصورة 2" aria-pressed="false"></button>
+                <button class="news-carousel__dot" type="button" aria-label="عرض الصورة 3" aria-pressed="false"></button>
+              </div>
+            </div>
+
+            <div class="news-card__body">
+              <time datetime="2026-08-15">5-8 يوليو 2026</time>
+              <h3>صيفي إبداع وابتكار</h3>
+              <p>برنامج صيفي متنوع للفئات العمرية المختلفة، نُفذ بالتعاون مع جمعية المرأة العُمانية بخصب، وتضمن ورشًا تفاعلية في الروبوت، والإلكترونيات، والطائرات بلا طيار، والبرمجة والتقنيات الحديثة.
+</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         13) معرض الصور والفيديو - Preview
+         الفيديو الرئيسي: assets/videos/inno.mp4
+         الصور الجانبية: assets/images/gallery-1.svg إلى gallery-4.svg
+         يمكنك استبدال هذه الملفات بوسائطك الحقيقية مع الإبقاء على الأسماء.
          ========================================================= -->
     <section class="section" id="gallery">
       <div class="container">
@@ -712,10 +922,27 @@
         </div>
 
         <div class="gallery-grid">
-          <img src="assets/images/gallery-1.svg" alt="صورة معرض تجريبية 1" loading="lazy" />
-          <img src="assets/images/gallery-2.svg" alt="صورة معرض تجريبية 2" loading="lazy" />
-          <img src="assets/images/gallery-3.svg" alt="صورة معرض تجريبية 3" loading="lazy" />
-          <img src="assets/images/gallery-4.svg" alt="صورة معرض تجريبية 4" loading="lazy" />
+          <!-- الفيديو الكبير على يمين المعرض في الشاشات الكبيرة -->
+          <video
+            class="gallery-grid__featured"
+            autoplay
+            muted
+            loop
+            playsinline
+            controls
+            preload="metadata"
+            poster="assets/images/gallery-1.svg"
+            aria-label="فيديو من فعاليات وبرامج الابتكار"
+          >
+            <source src="assets/videos/inno.mp4" type="video/mp4" />
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
+
+          <!-- أربع صور في الجهة اليسرى بدلًا من ثلاث -->
+          <img src="assets/images/24.JPEG" alt="صورة معرض تجريبية 1" loading="lazy" />
+          <img src="assets/images/26.JPEG" alt="صورة معرض تجريبية 2" loading="lazy" />
+          <img src="assets/images/27.JPEG" alt="صورة معرض تجريبية 3" loading="lazy" />
+          <img src="assets/images/25.JPEG" alt="صورة معرض تجريبية 4" loading="lazy" />
         </div>
       </div>
     </section>
@@ -760,15 +987,14 @@
       <div>
         <h3>الخدمات</h3>
         <a href="#register">التسجيل</a>
-        <a href="#calendar">التقويم</a>
         <a href="#gallery">معرض الصور</a>
-        <button class="footer-button js-open-chat" type="button">المرشد الذكي</button>
+        <button class="footer-button js-open-chat" type="button">المساعد زيد</button>
       </div>
     </div>
 
     <div class="container footer__bottom">
       <span>© 2026–2027 جميع الحقوق محفوظة</span>
-      <span>منصة مسندم للابتكار والمسابقات العلمية</span>
+      <span>تم بواسطة فاطمة تركي الظهوري_مبرمجة</span>
     </div>
   </footer>
 
@@ -776,13 +1002,13 @@
   <button class="back-to-top" type="button" aria-label="العودة إلى أعلى الصفحة">↑</button>
 
   <!-- =========================================================
-       16) المرشد الذكي - واجهة تجريبية
+       16) المساعد زيد - واجهة تجريبية
        في النسخة Full-Stack اربط النموذج مع:
        POST /api/assistant/chat
        ========================================================= -->
   <button class="chat-fab js-open-chat" type="button" aria-label="فتح مرشد مسندم الذكي">
     <span>✦</span>
-    <span>المرشد الذكي</span>
+    <span>المساعد زيد</span>
   </button>
 
   <div class="chat-panel" aria-hidden="true" aria-label="مرشد مسندم الذكي">
