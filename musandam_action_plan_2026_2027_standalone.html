@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الخطة الإجرائية لدائرة الابتكار العلمي والذكاء الاصطناعي بتعليمية مسندم 2026 – 2027م</title>
+    
+    <!-- Google Fonts: Noto Kufi Arabic & IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0d2238',
+                            navyLight: '#173656',
+                            crimson: '#8a1523',
+                            crimsonSoft: '#ab2131',
+                            green: '#1a4332',
+                            gold: '#b89047',
+                            goldLight: '#d6aa5c',
+                            surface: '#f8fafc',
+                            surfaceCard: '#ffffff',
+                            border: '#e2e8f0'
+                        }
+                    },
+                    fontFamily: {
+                        kufi: ['"Noto Kufi Arabic"', 'sans-serif'],
+                        sans: ['"IBM Plex Sans Arabic"', 'sans-serif']
+                    },
+                    boxShadow: {
+                        subtle: '0 2px 10px -2px rgba(13, 34, 56, 0.05), 0 1px 4px -1px rgba(13, 34, 56, 0.03)',
+                        elevated: '0 10px 25px -4px rgba(13, 34, 56, 0.08), 0 4px 10px -2px rgba(13, 34, 56, 0.04)',
+                        card: '0 4px 20px -2px rgba(13, 34, 56, 0.06)'
+                    }
+                }
+            }
+        }
+
+</script>
+    <style>
+/* Custom official geometry patterns with deep navy gradients */
+        .bg-pattern {
+            background-color: #0d2238;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(20, 50, 80, 0.75) 0%, transparent 60%),
+                radial-gradient(circle at 100% 100%, rgba(10, 26, 44, 0.9) 0%, transparent 55%),
+                linear-gradient(155deg, #071320 0%, #0d2238 35%, #153556 70%, #091726 100%),
+                radial-gradient(rgba(184, 144, 71, 0.22) 0.85px, transparent 0.85px), 
+                radial-gradient(rgba(147, 197, 253, 0.16) 0.85px, transparent 0.85px);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px, 28px 28px;
+            background-position: 0 0, 0 0, 0 0, 0 0, 14px 14px;
+            background-attachment: fixed;
+        }
+        
+        .border-ornament {
+            background-image: repeating-linear-gradient(45deg, #b89047, #b89047 10px, transparent 10px, transparent 20px);
+        }
+        
+        /* Accordion transition styles */
+        .accordion-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .accordion-content.expanded {
+            grid-template-rows: 1fr;
+        }
+        .accordion-inner {
+            overflow: hidden;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Touch optimization */
+        .touch-scroll {
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+        }
+        
+        /* Tap highlight removal for slick mobile feel */
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+</style>
+</head>
+<body class="bg-pattern font-sans text-slate-800 antialiased min-h-screen flex flex-col selection:bg-brand-gold selection:text-white overflow-x-hidden">
+
+    <header class="sticky top-0 z-40 bg-[#091b2e]/90 backdrop-blur-md border-b border-white/10 shadow-md transition-all">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Branding / Title in Header -->
+                <div class="flex items-center space-x-2.5 space-x-reverse min-w-0">
+                    <div class="flex items-center gap-1 flex-shrink-0">
+                        <div class="w-1.5 sm:w-2 h-7 sm:h-9 bg-brand-gold rounded-xs"></div>
+                        <div class="w-1 h-5 sm:h-7 bg-brand-crimsonSoft rounded-xs"></div>
+                        <div class="w-1 h-4 sm:h-5 bg-blue-400 rounded-xs"></div>
+                    </div>
+                    <div class="mr-1 sm:mr-2 truncate">
+                        <span class="block font-kufi font-bold text-sm sm:text-lg md:text-xl text-white leading-tight truncate">
+                            الخطة الإجرائية 2026 – 2027م
+                        </span>
+                        <span class="block text-[10px] sm:text-xs font-medium text-slate-300 truncate">
+                            دائرة الابتكار العلمي والذكاء الاصطناعي بتعليمية مسندم
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Navigation Links (Desktop) -->
+                <nav class="hidden md:flex items-center space-x-1 space-x-reverse text-sm font-medium">
+                    <a href="#hero" class="px-3 py-2 text-slate-200 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                        الرئيسية
+                    </a>
+                    <a href="#statistics" class="px-3 py-2 text-slate-200 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                        المؤشرات
+                    </a>
+                    <a href="#timeline-section" class="px-3 py-2 text-slate-200 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                        الخط الزمني
+                    </a>
+                    <a href="#programs-container" class="px-3 py-2 text-slate-200 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                        البرامج والمجالات
+                    </a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="flex items-center gap-2 flex-shrink-0">
+                    <button id="toggleAllBtn" aria-label="توسيع أو إغلاق جميع الأقسام" class="text-xs sm:text-sm px-3 py-2 sm:px-3.5 sm:py-2 bg-gradient-to-r from-amber-500 to-brand-gold text-slate-950 font-semibold rounded-lg active:scale-95 hover:brightness-110 transition shadow-md flex items-center gap-1.5 touch-manipulation">
+                        <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
+                        </svg>
+                        <span id="toggleAllBtnText">فتح الكل</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section id="hero" class="relative pt-8 pb-12 sm:pt-12 sm:pb-16 overflow-hidden">
+            <!-- Abstract subtle background ornamentation -->
+            <div class="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
+                <div class="absolute -right-20 -top-20 w-72 sm:w-96 h-72 sm:h-96 rounded-full border-[14px] sm:border-[18px] border-amber-400/40"></div>
+                <div class="absolute right-40 top-20 w-48 sm:w-64 h-48 sm:h-64 rotate-45 border-[8px] sm:border-[10px] border-brand-crimsonSoft/50"></div>
+                <div class="absolute left-10 -bottom-10 w-60 sm:w-80 h-60 sm:h-80 rounded-full border-[10px] sm:border-[14px] border-blue-400/30"></div>
+            </div>
+
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <!-- Main Official Title -->
+                <h1 class="font-kufi font-bold text-xl sm:text-3xl md:text-4xl lg:text-5xl text-white tracking-tight leading-snug sm:leading-tight mb-3 sm:mb-4 drop-shadow-sm">
+                    الخطة الإجرائية
+                    <span class="block text-lg sm:text-2xl md:text-3xl text-amber-300 mt-1.5 sm:mt-2 font-semibold">
+                        لدائرة الابتكار العلمي والذكاء الاصطناعي بتعليمية مسندم
+                    </span>
+                </h1>
+
+                <!-- Subtitle -->
+                <div class="inline-block relative">
+                    <p class="font-kufi text-sm sm:text-lg md:text-xl text-slate-200 font-medium tracking-wide">
+                        العام الدراسي 2026 / 2027م
+                    </p>
+                    <div class="w-20 sm:w-28 h-0.5 sm:h-1 bg-gradient-to-r from-amber-400 to-brand-gold mx-auto mt-2 sm:mt-3 rounded-full"></div>
+                </div>
+
+                <p class="mt-3 sm:mt-4 max-w-2xl mx-auto text-xs sm:text-base text-slate-300 leading-relaxed font-normal px-2">
+                    بوابة المتابعة الرقمية الرسمية لاستعراض البرامج والمسابقات الوطنية، خطط التدريب، الهاكثونات، والأولمبيادات العلمية.
+                </p>
+            </div>
+        </section>
+
+        <section id="statistics" class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 -mt-5 sm:-mt-6">
+            <div class="bg-white rounded-xl sm:rounded-2xl border border-slate-200 shadow-elevated p-3 sm:p-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-6 divide-y-0 divide-slate-100">
+                    
+                    <!-- KPI 1 -->
+                    <div class="flex items-center gap-2.5 sm:gap-4 p-2 sm:p-3 bg-slate-50/70 sm:bg-transparent rounded-lg sm:rounded-none border sm:border-0 border-slate-100">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-brand-navy flex-shrink-0">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-kufi font-bold text-xl sm:text-3xl text-brand-navy leading-none">4</div>
+                            <div class="text-[11px] sm:text-sm text-slate-500 font-medium mt-1">مجالات رئيسية</div>
+                        </div>
+                    </div>
+
+                    <!-- KPI 2 -->
+                    <div class="flex items-center gap-2.5 sm:gap-4 p-2 sm:p-3 bg-slate-50/70 sm:bg-transparent rounded-lg sm:rounded-none border sm:border-0 border-slate-100">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-brand-crimson flex-shrink-0">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-kufi font-bold text-xl sm:text-3xl text-brand-crimson leading-none">11</div>
+                            <div class="text-[11px] sm:text-sm text-slate-500 font-medium mt-1">برنامجاً ومسابقة</div>
+                        </div>
+                    </div>
+
+                    <!-- KPI 3 -->
+                    <div class="flex items-center gap-2.5 sm:gap-4 p-2 sm:p-3 bg-slate-50/70 sm:bg-transparent rounded-lg sm:rounded-none border sm:border-0 border-slate-100">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-brand-gold flex-shrink-0">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-kufi font-bold text-xl sm:text-3xl text-brand-gold leading-none">3</div>
+                            <div class="text-[11px] sm:text-sm text-slate-500 font-medium mt-1">فعاليات وطنية كبرى</div>
+                        </div>
+                    </div>
+
+                    <!-- KPI 4 -->
+                    <div class="flex items-center gap-2.5 sm:gap-4 p-2 sm:p-3 bg-slate-50/70 sm:bg-transparent rounded-lg sm:rounded-none border sm:border-0 border-slate-100">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-brand-green flex-shrink-0">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-kufi font-bold text-base sm:text-2xl text-brand-green tracking-tight leading-none">2026 → 2027</div>
+                            <div class="text-[11px] sm:text-sm text-slate-500 font-medium mt-1">نطاق التنفيذ</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline-section" class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 mt-8 sm:mt-12">
+            <div class="bg-white rounded-xl sm:rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 sm:pb-4 border-b border-slate-100 gap-2">
+                    <div>
+                        <h2 class="font-kufi font-bold text-base sm:text-lg text-brand-navy flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-brand-gold flex-shrink-0"></span>
+                            الخط الزمني الموحد للخطة (2026 – 2027م)
+                        </h2>
+                        <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5 sm:mt-1">
+                            نظرة أفقية تعاقبية للمحطات والمواعيد الرئيسية الواردة في الدليل الرسمي
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-end text-xs font-medium pt-1 sm:pt-0">
+                        <span class="md:hidden text-[10px] text-brand-navy bg-blue-50 px-2 py-0.5 rounded-full border border-blue-100 flex items-center gap-1">
+                            <span>اسحب</span>
+                            <svg class="w-3 h-3 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Timeline Horizontal Scroller with Touch Optimization -->
+                <div class="mt-4 sm:mt-6 overflow-x-auto touch-scroll pb-3 pt-2">
+                    <div class="min-w-[800px] relative px-3">
+                        <!-- Horizontal Connecting Line -->
+                        <div class="absolute top-5 left-6 right-6 h-1 bg-slate-200 -z-0"></div>
+
+                        <div class="grid grid-cols-7 gap-2.5 sm:gap-3 relative z-10 text-center">
+                            
+                            <!-- Milestone 1 -->
+                            <div class="group cursor-pointer touch-manipulation" onclick="scrollToProgram('ai-prog-cyber')">
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 mx-auto rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs ring-4 ring-white shadow transition transform group-hover:scale-110 active:scale-95">
+                                    09/26
+                                </div>
+                                <div class="mt-2 text-xs font-semibold text-brand-navy group-hover:text-brand-crimson transition">سبتمبر 2026</div>
+                                <div class="text-[11px] text-slate-500 leading-tight mt-0.5">انطلاق تسجيل في مسابقات الأولمبياد الوطني والأمن السيبراني</div>
+                            </div>
+
+                            <!-- Milestone 2 -->
+                            <div class="group cursor-pointer touch-manipulation" onclick="scrollToProgram('innov-prog-1')">
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 mx-auto rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs ring-4 ring-white shadow transition transform group-hover:scale-110 active:scale-95">
+                                    10/26
+                                </div>
+                                <div class="mt-2 text-xs font-semibold text-brand-navy group-hover:text-brand-crimson transition">أكتوبر 2026</div>
+                                <div class="text-[11px] text-slate-500 leading-tight mt-0.5">تدريب NXplorers، تقييم المحافظات، وقوائم الأولمبياد</div>
+                            </div>
+
+                            <!-- Milestone 3 -->
+                            <div class="group cursor-pointer touch-manipulation" onclick="scrollToProgram('nat-prog-science-fest')">
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 mx-auto rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs ring-4 ring-white shadow transition transform group-hover:scale-110 active:scale-95">
+                                    11/26
+                                </div>
+                                <div class="mt-2 text-xs font-semibold text-brand-navy group-hover:text-brand-crimson transition">نوفمبر 2026</div>
+                                <div class="text-[11px] text-slate-500 leading-tight mt-0.5">مهرجان عُمان للعلوم وحفل تكريم المجيدين</div>
+                            </div>
+
+                            <!-- Milestone 4 -->
+                            <div class="group cursor-pointer touch-manipulation" onclick="scrollToProgram('nat-prog-olympiad')">
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 mx-auto rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs ring-4 ring-white shadow transition transform group-hover:scale-110 active:scale-95">
+                                    12/26
+                                </div>
+                                <div class="mt-2 text-xs font-semibold text-brand-navy group-hover:text-brand-crimson transition">ديسمبر 2026</div>
+                                <div class="text-[11px] text-slate-500 leading-tight mt-0.5">الأولمبياد الوطني وتصفية الأولمبياد العلمي الأولى</div>
+                            </div>
+
+                            <!-- Milestone 5 -->
+                            <div class="group cursor-pointer touch-manipulation" onclick="scrollToProgram('ai-prog-vex')">
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 mx-auto rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs ring-4 ring-white shadow transition transform group-hover:scale-110 active:scale-95">
+                                    02/27
+                                </div>
+                                <div class="mt-2 text-xs font-semibold text-brand-navy group-hover:text-brand-crimson transition">فبراير 2027</div>
+                                <div class="text-[11px] text-slate-500 leading-tight mt-0.5">مسابقة VEX الوطنية والورش التأهيلية الخارجية</div>
+                            </div>
+
+                            <!-- Milestone 6 -->
+                            <div class="group cursor-pointer touch-manipulation" onclick="scrollToProgram('olymp-prog-stages')">
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 mx-auto rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs ring-4 ring-white shadow transition transform group-hover:scale-110 active:scale-95">
+                                    04/27
+                                </div>
+                                <div class="mt-2 text-xs font-semibold text-brand-navy group-hover:text-brand-crimson transition">أبريل 2027</div>
+                                <div class="text-[11px] text-slate-500 leading-tight mt-0.5">اختبارات التصفية النهائية للأولمبياد وإعلان دورة PDO 8</div>
+                            </div>
+
+                            <!-- Milestone 7 -->
+                            <div class="group cursor-pointer touch-manipulation" onclick="scrollToProgram('olymp-prog-stages')">
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 mx-auto rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs ring-4 ring-white shadow transition transform group-hover:scale-110 active:scale-95">
+                                    07/27
+                                </div>
+                                <div class="mt-2 text-xs font-semibold text-brand-navy group-hover:text-brand-crimson transition">يوليو - أغسطس 2027</div>
+                                <div class="text-[11px] text-slate-500 leading-tight mt-0.5">المعسكرات والمشاركات العالمية (الصين، بولندا، باكستان...)</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="programs-container" class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 mt-8 sm:mt-12 mb-16 sm:mb-20 space-y-4 sm:space-y-6">
+            
+            <!-- Section Header Control -->
+            <div class="flex flex-col xs:flex-row xs:items-center justify-between gap-1 px-1">
+                <div>
+                    <h2 class="font-kufi font-bold text-lg sm:text-xl text-white">الأقسام والبرامج التنفيذية</h2>
+                    <p class="text-[11px] sm:text-xs text-slate-300">اضغط على علامة (+) لتوسيع القسم أو البرنامج واستعراض تفاصيله وإجراءاته</p>
+                </div>
+                <div class="text-[11px] sm:text-xs text-amber-300 font-medium self-start xs:self-auto">
+                    المستويان: [مجال رئيسي] ⟵ [برنامج]
+                </div>
+            </div>
+
+            <!-- The 4 Main Accordion Sections will be rendered here dynamically via JS from verified planData -->
+            <div id="sectionsRoot" class="space-y-4 sm:space-y-6">
+                <!-- Dynamically Injected -->
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-brand-navy text-white border-t-4 border-brand-gold mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                
+                <div class="text-center md:text-right">
+                    <div class="font-kufi font-bold text-base sm:text-lg text-white">الخطة الإجرائية السنوية المعتمدة</div>
+                    <div class="text-xs sm:text-sm text-slate-300 mt-1 font-normal">
+                        دائرة الابتكار العلمي والذكاء الاصطناعي بتعليمية مسندم • العام الدراسي 2026 / 2027م
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center gap-2.5 sm:gap-3 text-xs text-slate-300 w-full sm:w-auto">
+                    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="px-3.5 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition border border-slate-700 w-full sm:w-auto text-center touch-manipulation">
+                        العودة للأعلى ↑
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-6 pt-5 border-t border-slate-700/60 text-center text-[11px] sm:text-xs text-slate-400">
+                <span>العام الدراسي 2026 – 2027م</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+/**
+         * Comprehensive Plan Data Structure
+         * Updated to remove all page references.
+         */
+        const planData = [
+            {
+                id: "sec-1",
+                categoryNumber: "1",
+                title: "الفعاليات والبرامج العلمية الوطنية للعام الدراسي 2026 / 2027م",
+                subtitle: "المسابقات والملتقيات المركزية السنوية",
+                accentColor: "crimson",
+                programs: [
+                    {
+                        id: "nat-prog-science-fest",
+                        title: "مهرجان عُمان للعلوم 2026م - النسخة الخامسة",
+                        tag: "فعالية وطنية كبرى",
+                        summary: "النسخة الخامسة من التظاهرة العلمية الوطنية الرائدة للعلوم والابتكار في سلطنة عُمان.",
+                        stages: [
+                            {
+                                stepNum: 1,
+                                stageTitle: "تنفيذ فعاليات المهرجان",
+                                action: "مهرجان عُمان للعلوم 2026م - النسخة الخامسة",
+                                date: "2 - 9 نوفمبر 2026م",
+                                year: "2026",
+                                month: "نوفمبر",
+                                notes: "الحدث العلمي الأكبر لتعزيز العلوم والتكنولوجيا والابتكار بين الطلبة والمجتمع."
+                            }
+                        ]
+                    },
+                    {
+                        id: "nat-prog-honoring",
+                        title: "الحفل السنوي لتكريم المجيدين في برامج المديرية العامة للابتكار العلمي والذكاء الاصطناعي للعام الدراسي 2025/2026م",
+                        tag: "تكريم سنوي",
+                        summary: "الاحتفاء بإنجازات الطلبة والمعلمين والمديريات التعليمية المجيدة في الدورة السابقة.",
+                        stages: [
+                            {
+                                stepNum: 2,
+                                stageTitle: "إقامة حفل التكريم الرسمي",
+                                action: "الحفل السنوي لتكريم المجيدين في برامج المديرية العامة للابتكار العلمي والذكاء الاصطناعي للعام الدراسي 2025/2026م",
+                                date: "5 نوفمبر 2026م",
+                                year: "2026",
+                                month: "نوفمبر",
+                                notes: "تكريم الإنجازات المحققة في مجالات الابتكار العلمي والروبوت والذكاء الاصطناعي والأولمبيادات العلمية."
+                            }
+                        ]
+                    },
+                    {
+                        id: "nat-prog-olympiad",
+                        title: "الأولمبياد الوطني للابتكارات العلمية والروبوت والذكاء الاصطناعي - النسخة الخامسة",
+                        tag: "أولمبياد وطني",
+                        summary: "الملتقى التنافسي الختامي لاختيار أفضل الابتكارات وفرق الروبوت والذكاء الاصطناعي بالسلطنة.",
+                        stages: [
+                            {
+                                stepNum: 3,
+                                stageTitle: "التصفيات والمنافسات المركزية",
+                                action: "الأولمبياد الوطني للابتكارات العلمية والروبوت والذكاء الاصطناعي - النسخة الخامسة",
+                                date: "2 - 3 ديسمبر 2026م",
+                                year: "2026",
+                                month: "ديسمبر",
+                                notes: "يضم المسابقات المؤهلة والتصفيات النهائية على المستوى المركزي لسلطنة عُمان."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: "sec-2",
+                categoryNumber: "2",
+                title: "برامج الابتكار العلمي",
+                subtitle: "مشروعات الطاقة والابتكار والشراكات الاستراتيجية",
+                accentColor: "navy",
+                programs: [
+                    {
+                        id: "innov-prog-1",
+                        title: "1- مسابقة الابتكارات العلمية ضمن النسخة الخامسة من الأولمبياد الوطني للابتكارات العلمية والروبوت والذكاء الاصطناعي",
+                        tag: "أولاً : البرامج على المستوى الوطني",
+                        summary: "مسار التنافس العلمي لابتكارات الطلبة من مختلف المدارس بمراحل التسجيل والتقييم اللامركزي ثم الأولمبياد المركزي والتأهيل الخارجي.",
+                        stages: [
+                            {
+                                stepNum: 1,
+                                stageTitle: "التسجيل والتقديم",
+                                action: "التسجيل عبر الرابط الإلكتروني",
+                                date: "11 مايو - 15 أكتوبر 2026م",
+                                year: "2026",
+                                month: "أكتوبر"
+                            },
+                            {
+                                stepNum: 2,
+                                stageTitle: "التقييم اللامركزي",
+                                action: "التقييم على مستوى المديريات التعليمية",
+                                date: "18 - 29 أكتوبر 2026م",
+                                year: "2026",
+                                month: "أكتوبر"
+                            },
+                            {
+                                stepNum: 4,
+                                stageTitle: "التصفيات المركزية",
+                                action: "الأولمبياد الوطني للابتكارات العلمية والروبوت والذكاء الاصطناعي",
+                                date: "2 - 3 ديسمبر 2026م",
+                                year: "2026",
+                                month: "ديسمبر"
+                            },
+                            {
+                                stepNum: 5,
+                                stageTitle: "التأهيل الخارجي",
+                                action: "الورشة التدريبية للفرق المشاركة في المسابقات الخارجية",
+                                date: "فبراير 2027م",
+                                year: "2027",
+                                month: "فبراير"
+                            }
+                        ]
+                    },
+                    {
+                        id: "innov-prog-pdo",
+                        title: "2- جائزة شركة تنمية نفط عُمان للطاقة المتجددة - الدورة السابعة",
+                        tag: "شراكة استراتيجية وتنمية مستدامة",
+                        summary: "جائزة وطنية نوعية بالشراكة مع PDO لتحفيز مشاريع وحلول الطاقة المتجددة وحماية الملكية الفكرية وإطلاق الدورة الثامنة.",
+                        stages: [
+                            {
+                                stepNum: 1,
+                                stageTitle: "إعلان الفائزين والترويج",
+                                action: "الإعلان عن الفرق الفائزة في الدورة السابعة - الإعلان عن نتيجة مسابقة أفضل حملة إعلامية ترويجية للجائزة في دورتها السابعة",
+                                date: "8 نوفمبر 2026م",
+                                year: "2026",
+                                month: "نوفمبر",
+                                notes: "إعلان نتائج الدورة السابعة ونتائج الحملة الإعلامية المرافقة."
+                            },
+                            {
+                                stepNum: 2,
+                                stageTitle: "حماية الابتكارات",
+                                action: "تقديم طلبات تسجيل حقوق الملكية الفكرية للابتكارات الفائزة",
+                                date: "ديسمبر 2026م",
+                                year: "2026",
+                                month: "ديسمبر",
+                                notes: "دعم وتسجيل الملكية الفكرية وبراءات الاختراع للابتكارات المتوجة."
+                            },
+                            {
+                                stepNum: 3,
+                                stageTitle: "تدشين الدورة الجديدة",
+                                action: "الإعلان والترويج عن الدورة الثامنة من الجائزة",
+                                date: "أبريل 2027م",
+                                year: "2027",
+                                month: "أبريل",
+                                notes: "انطلاق الحملة التعريفية للدورة الثامنة للجائزة."
+                            }
+                        ]
+                    },
+                    {
+                        id: "innov-prog-shell",
+                        title: "3- برنامج Shell NXplorers",
+                        tag: "برنامج تعليمي وتفكير منهجي",
+                        summary: "برنامج تدريبي ومنهجي عالمي لتطوير مهارات التفكير المعقد واستشراف الحلول المستدامة لمدارس التعليم الأساسي وما بعد الأساسي.",
+                        stages: [
+                            {
+                                stepNum: 1,
+                                stageTitle: "تدريب الطلبة (Junior)",
+                                action: "التدريب المركزي لمدارس Junior (5-8)",
+                                date: "4 أكتوبر - 30 نوفمبر 2026م",
+                                year: "2026",
+                                month: "أكتوبر",
+                                notes: "مستهدف: مدارس الصفوف من (5-8)."
+                            },
+                            {
+                                stepNum: 2,
+                                stageTitle: "تدريب الطلبة (Senior)",
+                                action: "التدريب المركزي لمدارس Senior (9-11)",
+                                date: "4 أكتوبر - 30 نوفمبر 2026م",
+                                year: "2026",
+                                month: "أكتوبر",
+                                notes: "مستهدف: مدارس الصفوف من (9-11)."
+                            },
+                            {
+                                stepNum: 3,
+                                stageTitle: "التقييم والمتابعة الإلكترونية",
+                                action: "تطبيق استبانات التقييم والمتابعة إلكترونياً (المعلمين والطلبة)",
+                                date: "4 أكتوبر - 30 نوفمبر 2026م",
+                                year: "2026",
+                                month: "نوفمبر",
+                                notes: "قياس جودة التدريب وأثر المنهجية المكتسبة."
+                            },
+                            {
+                                stepNum: 4,
+                                stageTitle: "تنفيذ المشاريع والتقييم اللامركزي",
+                                action: "تنفيذ المشاريع والمتابعة",
+                                date: "6 ديسمبر 2026م - مارس 2027م",
+                                year: "2026",
+                                month: "ديسمبر",
+                                notes: "فترة عمل الفرق المدرسية على إنجاز المشاريع المبتكرة."
+                            },
+                            {
+                                stepNum: 5,
+                                stageTitle: "الفرز والتقييم اللامركزي",
+                                action: "فرز المشاريع المترشحة والتقييم اللامركزي",
+                                date: "11 - 22 أبريل 2027م",
+                                year: "2027",
+                                month: "أبريل",
+                                notes: "تقييم المشروعات المترشحة في المحافظات التعليمية."
+                            },
+                            {
+                                stepNum: 7,
+                                stageTitle: "التقييم المركزي والحفل الختامي",
+                                action: "التقييم المركزي والحفل الختامي للبرنامج",
+                                date: "22 - 23 يونيو 2027م",
+                                year: "2027",
+                                month: "يونيو",
+                                notes: "التحكيم المركزي للمشاريع المتأهلة وإعلان وتكريم الفائزين."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: "sec-3",
+                categoryNumber: "3",
+                title: "برامج الذكاء الاصطناعي",
+                subtitle: "مسابقات الروبوت، الطائرات والأنظمة الذكية والسيبرانية",
+                accentColor: "green",
+                programs: [
+                    {
+                        id: "ai-prog-robot",
+                        title: "1- مسابقات الروبوت (ضمن الأولمبياد الوطني - النسخة الخامسة)",
+                        tag: "أولاً: مسابقات الأولمبياد الوطني",
+                        summary: "مسابقات تحديات وبرمجة الروبوتات التعليمية بمختلف مستوياتها وفئاتها للطلبة.",
+                        stages: [
+                            {
+                                stepNum: 1,
+                                stageTitle: "التسجيل",
+                                action: "التسجيل عبر الرابط الإلكتروني",
+                                date: "11 مايو - 15 أكتوبر 2026م",
+                                year: "2026",
+                                month: "أكتوبر"
+                            },
+                            {
+                                stepNum: 2,
+                                stageTitle: "التقييم اللامركزي",
+                                action: "التقييم على مستوى المديريات التعليمية",
+                                date: "18 - 29 أكتوبر 2026م",
+                                year: "2026",
+                                month: "أكتوبر"
+                            },
+                            {
+                                stepNum: 4,
+                                stageTitle: "المنافسة الوطنية",
+                                action: "الأولمبياد الوطني للابتكارات العلمية والروبوت والذكاء الاصطناعي",
+                                date: "2 - 3 ديسمبر 2026م",
+                                year: "2026",
+                                month: "ديسمبر"
+                            }
+                        ]
+                    },
+                    {
+                        id: "ai-prog-drones",
+                        title: "2- مسابقات الطائرات بلا طيار",
+                        tag: "أولاً: مسابقات الأولمبياد الوطني",
+                        summary: "منافسات التحكم والبرمجة والمناورة وتطبيقات الطائرات المسيرة بدون طيار (الدرونز).",
+                        stages: [
+                            {
+                                stepNum: 1,
+                                stageTitle: "التسجيل",
+                                action: "التسجيل عبر الرابط الإلكتروني",
+                                date: "11 مايو - 15 أكتوبر 2026م",
+                                year: "2026",
+                                month: "أكتوبر",
+                                notes: "التسجيل عبر الرابط المخصص لمسابقات الدرونز."
+                            },
+                            {
+                                stepNum: 2,
+                                stageTitle: "تقييم المحافظات",
+                                action: "التقييم على مستوى المديريات التعليمية",
+                                date: "18 - 29 أكتوبر 2026م",
+                                year: "2026",
+                                month: "أكتوبر",
+                                notes: "تقييم أداء الطائرات والفرق المتنافسة في المديريات."
+                            },
+                            {
+                                stepNum: 4,
+                                stageTitle: "التصفيات المركزية",
+                                action: "الأولمبياد الوطني للابتكارات العلمية والروبوت والذكاء الاصطناعي",
+                                date: "2 - 3 ديسمبر 2026م",
+                                year: "2026",
+                                month: "ديسمبر",
+                                notes: "التصفيات الختامية ضمن الأولمبياد الوطني."
+                            }
+                        ]
+                    },
+                    {
+                        id: "ai-prog-cyber",
+                        title: "3- مسابقة الأمن السيبراني لطلبة المدارس",
+                        tag: "أولاً: مسابقات الأولمبياد الوطني",
+                        summary: "مسابقة متخصصة بشراكة بين دائرة الذكاء الاصطناعي ودائرة أمن المعلومات الإلكترونية لتعزيز الحماية الرقمية والمهارات السيبرانية.",
+                        stages: [
+                            {
+                                stepNum: 1,
+                                stageTitle: "التسجيل الإلكتروني",
+                                action: "التسجيل عبر الرابط الإلكتروني",
+                                date: "6 - 17 سبتمبر 2026م",
+                                year: "2026",
+                                month: "سبتمبر",
+                                notes: "تسجيل الطلبة الراغبين في خوض تحدي الأمن السيبراني.",
+                                responsibility: "-"
+                            },
+                            {
+                                stepNum: 2,
+                                stageTitle: "التدريب والتقييم الأولي",
+                                action: "التدريب والتقييم الأولي للطلبة المسجلين",
+                                date: "20 - 30 سبتمبر 2026م",
+                                year: "2026",
+                                month: "سبتمبر",
+                                notes: "تهيئة المشاركين وتصفية أولية للقدرات الأساسية.",
+                                responsibility: "دائرة الذكاء الاصطناعي + دائرة أمن المعلومات الإلكترونية"
+                            },
+                            {
+                                stepNum: 3,
+                                stageTitle: "تشكيل الفرق",
+                                action: "تشكيل الفرق الطلابية في المديريات التعليمية",
+                                date: "4 - 8 أكتوبر 2026م",
+                                year: "2026",
+                                month: "أكتوبر",
+                                notes: "بناء الفرق الممثلة للمديريات التعليمية بالمحافظات.",
+                                responsibility: "-"
+                            },
+                            {
+                                stepNum: 4,
+                                stageTitle: "الجولة التمهيدية",
+                                action: "الجولة التمهيدية الأولى للفرق والتقييم قبل النهائي",
+                                date: "18 - 22 أكتوبر 2026م",
+                                year: "2026",
+                                month: "أكتوبر",
+                                notes: "منافسات سيبرانية محاكية لاختبار مهارات الدفاع الرقمي.",
+                                responsibility: "-"
+                            },
+                            {
+                                stepNum: 5,
+                                stageTitle: "إعلان المتأهلين للنهائي",
+                                action: "إعلان نتائج الفرق الثمانية المتأهلة للجولة النهائية",
+                                date: "1 - 5 نوفمبر 2026م",
+                                year: "2026",
+                                month: "نوفمبر",
+                                notes: "تحديد الفرق الـ 8 الأفضل للصعود للتحدي الوطني النهائي.",
+                                responsibility: "دائرة أمن المعلومات الإلكترونية"
+                            },
+                            {
+                                stepNum: 6,
+                                stageTitle: "النهائي الوطني",
+                                action: "الأولمبياد الوطني للابتكارات العلمية والروبوت والذكاء الاصطناعي",
+                                date: "2 - 3 ديسمبر 2026م",
+                                year: "2026",
+                                month: "ديسمبر",
+                                notes: "الجولة الختامية بين الفرق الـ 8 في الأولمبياد الوطني.",
+                                responsibility: "المديرية العامة للابتكار العلمي والذكاء الاصطناعي + دائرة أمن المعلومات الإلكترونية"
+                            }
+                        ]
+                    },
+                    {
+                        id: "ai-prog-apps",
+                        title: "4- مسابقة التطبيقات المعززة بالذكاء الاصطناعي",
+                        tag: "أولاً: مسابقات الأولمبياد الوطني",
+                        summary: "مسار برمجي تطبيقي يشمل ورش لغة بايثون وتطوير نماذج الذكاء الاصطناعي وريادة الأعمال وصولاً لهاكثون وطني مكثف.",
+                        stages: [
+                            {
+                                stepNum: 1,
+                                stageTitle: "التسجيل المبدئي",
+                                action: "التسجيل عبر الرابط الإلكتروني",
+                                date: "6 - 17 سبتمبر 2026م",
+                                year: "2026",
+                                month: "سبتمبر",
+                                notes: "تسجيل الطلبة الشغوفين ببرمجة الذكاء الاصطناعي."
+                            },
+                            {
+                                stepNum: 2,
+                                stageTitle: "ورشة بايثون والتصفية الأولى",
+                                action: "ورشة تدريبية في البايثون واختبار التصفية الأول وإعلان النتائج",
+                                date: "20 - 24 سبتمبر 2026م",
+                                year: "2026",
+                                month: "سبتمبر",
+                                notes: "تدريب مكثف على Python واختبار فرز وإعلان النتائج مباشرة."
+                            },
+                            {
+                                stepNum: 3,
+                                stageTitle: "تطوير النماذج والتصفية الثانية",
+                                action: "ورشة تدريبية للمتأهلين من التصفية الأولى في تطوير نموذج ذكاء اصطناعي واختبار التصفية الثاني في إحدى القاعات بالمديريات التعليمية",
+                                date: "4 - 8 أكتوبر 2026م",
+                                year: "2026",
+                                month: "أكتوبر",
+                                notes: "تدريب تطبيقي على Machine Learning ونماذج الذكاء الاصطناعي."
+                            },
+                            {
+                                stepNum: 4,
+                                stageTitle: "الابتكار وريادة الأعمال التقنية",
+                                action: "ورشة تدريبية للمتأهلين من التصفية الثانية في مهارات الابتكار وريادة الأعمال التقنية",
+                                date: "16 - 17 نوفمبر 2026م",
+                                year: "2026",
+                                month: "نوفمبر",
+                                notes: "تحويل النماذج البرمجية إلى منتجات ومشاريع ريادية قابلة للتطبيق."
+                            },
+                            {
+                                stepNum: 5,
+                                stageTitle: "الهاكثون الوطني",
+                                action: "هاكثون لمدة يومين ضمن الأولمبياد الوطني للابتكارات العلمية والروبوت والذكاء الاصطناعي",
+                                date: "2 - 3 ديسمبر 2026م",
+                                year: "2026",
+                                month: "ديسمبر",
+                                notes: "تحدي تطوير مكثف ومستمر لحل مشكلات واقعية بالذكاء الاصطناعي."
+                            }
+                        ]
+                    },
+                    {
+                        id: "ai-prog-vex",
+                        title: "5- مسابقة VEX",
+                        tag: "ثانياً: مسابقة VEX للروبوتات",
+                        summary: "برنامج ومسابقة هندسية وتصميمية قائمة على منصات VEX للروبوت بالمديريات التعليمية وصولاً للمنافسة المركزية.",
+                        stages: [
+                            {
+                                stepNum: 1,
+                                stageTitle: "تجهيز وتوزيع الحقائب",
+                                action: "توفير حقائب VEX لدوائر الابتكار العلمي والذكاء الاصطناعي بالمديريات التعليمية",
+                                date: "أكتوبر 2026م",
+                                year: "2026",
+                                month: "أكتوبر",
+                                notes: "تأمين العتاد والحقائب التدريبية اللازمة لجميع المحافظات."
+                            },
+                            {
+                                stepNum: 3,
+                                stageTitle: "تصفيات المحافظات",
+                                action: "تنفيذ تصفيات في المديريات التعليمية",
+                                date: "ديسمبر 2026م - يناير 2027م",
+                                year: "2026",
+                                month: "ديسمبر",
+                                notes: "إجراء المنافسات واختيار الفرق الممثلة للمحافظات."
+                            },
+                            {
+                                stepNum: 4,
+                                stageTitle: "البطولة الوطنية",
+                                action: "تنفيذ المسابقة على المستوى الوطني",
+                                date: "1 - 4 فبراير 2027م",
+                                year: "2027",
+                                month: "فبراير",
+                                notes: "البطولة الوطنية الختامية لفرق VEX على مستوى سلطنة عُمان."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: "sec-4",
+                categoryNumber: "4",
+                title: "برامج الأولمبياد العلمي",
+                subtitle: "مسارات التصفيات المؤهلة للمحافل الإقليمية والدولية",
+                accentColor: "gold",
+                programs: [
+                    {
+                        id: "olymp-prog-map",
+                        title: "1- خارطة الأولمبيادات العلمية الوطنية والإقليمية والدولية 2026 / 2027م",
+                        tag: "أولاً: المسارات الوطنية والعالمية المعتمدة",
+                        isCustomTable: true,
+                        summary: "ربط الأولمبيادات الوطنية السبعة بمسارات تمثيل سلطنة عُمان في المحافل الأولمبية الإقليمية والعالمية.",
+                        tableData: [
+                            {
+                                nat: "أولمبياد الرياضيات الوطني (10-12)",
+                                intl: "أولمبياد الرياضيات العالمي (هنغاريا - يوليو 2027م)",
+                                target: "الصفوف (10 - 12)",
+                                dest: "هنغاريا",
+                                time: "يوليو 2027م"
+                            },
+                            {
+                                nat: "أولمبياد الكيمياء الوطني (10-12)",
+                                intl: "أولمبياد الكيمياء العالمي (الصين - يوليو 2027م)",
+                                target: "الصفوف (10 - 12)",
+                                dest: "الصين",
+                                time: "يوليو 2027م"
+                            },
+                            {
+                                nat: "أولمبياد الفيزياء الوطني (10-12)",
+                                intl: "أولمبياد الفيزياء العالمي (هنغاريا - يوليو 2027م)",
+                                target: "الصفوف (10 - 12)",
+                                dest: "هنغاريا",
+                                time: "يوليو 2027م"
+                            },
+                            {
+                                nat: "أولمبياد العلوم النووية الوطني (10-12)",
+                                intl: "أولمبياد العلوم النووية العالمي (باكستان - أغسطس 2027م)",
+                                target: "الصفوف (10 - 12)",
+                                dest: "باكستان",
+                                time: "أغسطس 2027م"
+                            },
+                            {
+                                nat: "أولمبياد الأحياء الوطني (10-12)",
+                                intl: "أولمبياد الأحياء العالمي (بولندا - يوليو 2027م)",
+                                target: "الصفوف (10 - 12)",
+                                dest: "بولندا",
+                                time: "يوليو 2027م"
+                            },
+                            {
+                                nat: "أولمبياد العلوم الوطني للناشئين (7-9)",
+                                intl: "أولمبياد العلوم الدولي للناشئين (بلغاريا - ديسمبر 2026م)",
+                                target: "الصفوف (7 - 9)",
+                                dest: "بلغاريا",
+                                time: "ديسمبر 2026م"
+                            },
+                            {
+                                nat: "أولمبياد الرياضيات الوطني للناشئين (7-9)",
+                                intl: "المسار الوطني للناشئين المؤهل للاستحقاقات المتقدمة",
+                                target: "الصفوف (7 - 9)",
+                                dest: "مسار وطني تمكيني",
+                                time: "خلال 2026 / 2027م"
+                            }
+                        ]
+                    },
+                    {
+                        id: "olymp-prog-stages",
+                        title: "2- مراحل تنفيذ أولمبيادات الفيزياء والكيمياء والرياضيات والعلوم النووية والأحياء للصفوف (10-12)",
+                        tag: "ثانياً: خطة التطبيق - المسار المتقدم (10-12)",
+                        summary: "سلسلة الإجراءات المنهجية لتدريب وتصفية وتمثيل 280 طالباً لكل مادة علمية حتى المعسكرات والمشاركات العالمية.",
+                        stages: [
+                            {
+                                stepNum: 1,
+                                stageTitle: "تحديد الطلبة المؤهلين للمنافسة في الأولمبيادات العلمية",
+                                action: "استلام قوائم الطلبة المرشحين للمشاركة في الأولمبيادات العلمية من المديريات التعليمية",
+                                date: "أكتوبر 2026م",
+                                year: "2026",
+                                month: "أكتوبر",
+                                notes: "280 طالب لكل مادة مع الطلبة المنتقلين من أولمبيادات الناشئين - يتم ترشيح الطلبة حسب الشروط الموضحة في المخاطبات الرسمية."
+                            },
+                            {
+                                stepNum: 2,
+                                stageTitle: "تدريب التهيئة (افتراضي)",
+                                action: "تدريب وتهيئة الطلبة - عن بعد - بواسطة المدربين الوطنيين في الرياضيات والفيزياء والكيمياء والأحياء والعلوم النووية من طلبة الصفوف العاشر وحتى الثاني عشر",
+                                date: "أكتوبر - نوفمبر 2026م",
+                                year: "2026",
+                                month: "أكتوبر",
+                                notes: "تكون مسؤولية عملية متابعة انتظام الطلبة في التدريب لدوائر الابتكار العلمي والذكاء الاصطناعي بالمديريات التعليمية."
+                            },
+                            {
+                                stepNum: 3,
+                                stageTitle: "اختبار التصفية الأول",
+                                action: "تصفية الطلبة بإجراء اختبار مركزي لاختيار الطلبة المتأهلين للتدريب المتقدم",
+                                date: "7 ديسمبر 2026م",
+                                year: "2026",
+                                month: "ديسمبر",
+                                notes: "اختبار تصفية مركزي موحد لانتقاء نخبة الطلبة للمرحلة المتقدمة."
+                            },
+                            {
+                                stepNum: 4,
+                                stageTitle: "التدريب المتقدم الأول",
+                                action: "تدريب الطلبة - عن بعد - من قبل المدرب الوطني أو الخبير الخارجي في الرياضيات والكيمياء والفيزياء والأحياء والعلوم النووية",
+                                date: "يناير - يونيو 2027م",
+                                year: "2027",
+                                month: "يناير",
+                                notes: "برنامج تدريبي عميق ومكثف بالتعاون مع خبراء دوليين ومدربين وطنيين."
+                            },
+                            {
+                                stepNum: 5,
+                                stageTitle: "اختبار التصفية النهائي",
+                                action: "تصفية الطلبة بإجراء اختبار مركزي لاختيار الفرق الوطنية التي ستمثل سلطنة عمان في الأولمبيادات الإقليمية والعالمية الرياضيات والكيمياء والفيزياء والأحياء والعلوم النووية",
+                                date: "1 أبريل 2027م",
+                                year: "2027",
+                                month: "أبريل",
+                                notes: "الاختبار الحاسم لتشكيل المنتخبات الوطنية الممثلة للسلطنة."
+                            },
+                            {
+                                stepNum: 6,
+                                stageTitle: "التدريب المتقدم الثاني",
+                                action: "تدريب الطلبة - عن بعد - من قبل المدرب الوطني أو الخبير الخارجي في الرياضيات والكيمياء والفيزياء والأحياء والعلوم النووية",
+                                date: "أبريل - يوليو 2027م",
+                                year: "2027",
+                                month: "أبريل",
+                                notes: "مرحلة الإعداد التخصصي للفرق الوطنية المؤهلة قبل السفر."
+                            },
+                            {
+                                stepNum: 7,
+                                stageTitle: "المعسكر التدريبي المركزي والمشاركة العالمية 2027م",
+                                action: "إقامة معسكر تدريبي يسبق كل مشاركة في الأولمبيادات العالمية (يونيو - يوليو 2027م) ومشاركة الفرق في الأولمبيادات العلمية العالمية (يوليو - أغسطس 2027م)",
+                                date: "يونيو - أغسطس 2027م",
+                                year: "2027",
+                                month: "يونيو",
+                                notes: "المعسكر المركزي المغلق والسفر لخوض المنافسات العالمية في هنغاريا، الصين، بولندا، وباكستان."
+                            }
+                        ]
+                    },
+                    {
+                        id: "olymp-prog-juniors",
+                        title: "3- مراحل تنفيذ الأولمبياد الوطني للناشئين في مادتي العلوم والرياضيات للصفوف (7-9)",
+                        tag: "ثانياً: خطة التطبيق - مسار الناشئين (7-9)",
+                        summary: "تأهيل وإعداد طلبة المرحلة العمرية المبكرة (300 طالب لكل مادة) في العلوم والرياضيات عبر المعسكرات التخصصية.",
+                        stages: [
+                            {
+                                stepNum: 1,
+                                stageTitle: "تحديد الطلبة المؤهلين للمنافسة في الأولمبيادات الوطنية للناشئين",
+                                action: "استلام قوائم الطلبة المرشحين للمشاركة في الأولمبيادات الوطنية للناشئين من المديريات التعليمية",
+                                date: "أكتوبر 2026م",
+                                year: "2026",
+                                month: "أكتوبر",
+                                notes: "300 طالب في كل مادة - يتم ترشيح الطلبة حسب الشروط الموضحة في المخاطبات الرسمية."
+                            },
+                            {
+                                stepNum: 2,
+                                stageTitle: "تدريب التهيئة",
+                                action: "تدريب 195 طالب في محاور مادتي العلوم والرياضيات إضافة لطلبة الناشئين ممن كانوا في الصفين السابع والثامن من العام الدراسي السابق",
+                                date: "يناير - مارس 2027م",
+                                year: "2027",
+                                month: "يناير",
+                                notes: "التدريب يكون خلال الفترة المسائية أو الإجازة الأسبوعية."
+                            },
+                            {
+                                stepNum: 3,
+                                stageTitle: "اختبار التصفية الأول",
+                                action: "إجراء اختبار لا مركزي للتصفية وتحديد الطلبة المتأهلين للمعسكر التدريبي",
+                                date: "1 أبريل 2027م",
+                                year: "2027",
+                                month: "أبريل",
+                                notes: "اختيار 30 طالب في كل مادة للصعود للمعسكر المركزي."
+                            },
+                            {
+                                stepNum: 4,
+                                stageTitle: "المعسكر التدريبي المركزي",
+                                action: "تدريب 30 طالباً في كل من مادتي العلوم والرياضيات مركزياً واخضاعهم لاختبار التصفية النهائي",
+                                date: "مايو - يونيو 2027م",
+                                year: "2027",
+                                month: "مايو",
+                                notes: "تطبيق اختبار التصفية الثاني واختيار المجيدين."
+                            }
+                        ]
+                    }
+                ]
+            }
+        ];
+
+// State tracking
+        let allSectionsExpanded = false;
+
+        // Colors mapping for sections
+        const accentStyles = {
+            crimson: {
+                border: 'border-r-4 border-r-brand-crimson',
+                cardBorder: 'border-r-brand-crimson',
+                badgeBg: 'bg-red-50 text-[#8a1523] border-red-200/90',
+                iconBg: 'bg-brand-crimson text-white',
+                dot: 'bg-brand-crimson',
+                titleColor: 'text-[#8a1523]',
+                toggleBtn: 'hover:bg-red-50 hover:text-[#8a1523] border-red-100',
+                light: 'bg-red-50/50'
+            },
+            navy: {
+                border: 'border-r-4 border-r-brand-navy',
+                cardBorder: 'border-r-brand-navy',
+                badgeBg: 'bg-blue-50 text-[#0f3458] border-blue-200/90',
+                iconBg: 'bg-brand-navy text-white',
+                dot: 'bg-brand-navy',
+                titleColor: 'text-[#0f3458]',
+                toggleBtn: 'hover:bg-blue-50 hover:text-[#0f3458] border-blue-100',
+                light: 'bg-blue-50/50'
+            },
+            green: {
+                border: 'border-r-4 border-r-brand-green',
+                cardBorder: 'border-r-brand-green',
+                badgeBg: 'bg-emerald-50 text-[#145339] border-emerald-200/90',
+                iconBg: 'bg-brand-green text-white',
+                dot: 'bg-brand-green',
+                titleColor: 'text-[#145339]',
+                toggleBtn: 'hover:bg-emerald-50 hover:text-[#145339] border-emerald-100',
+                light: 'bg-emerald-50/50'
+            },
+            gold: {
+                border: 'border-r-4 border-r-brand-gold',
+                cardBorder: 'border-r-brand-gold',
+                badgeBg: 'bg-amber-50 text-[#845c13] border-amber-200/90',
+                iconBg: 'bg-brand-gold text-white',
+                dot: 'bg-brand-gold',
+                titleColor: 'text-[#845c13]',
+                toggleBtn: 'hover:bg-amber-50 hover:text-[#845c13] border-amber-100',
+                light: 'bg-amber-50/50'
+            }
+        };
+
+        // Render sections dynamically with mobile-first optimizations
+        function renderPlan() {
+            const root = document.getElementById('sectionsRoot');
+            root.innerHTML = '';
+
+            planData.forEach((section, sIndex) => {
+                const style = accentStyles[section.accentColor] || accentStyles.navy;
+                
+                // Section Card Wrapper
+                const sectionEl = document.createElement('div');
+                sectionEl.className = `bg-white rounded-xl sm:rounded-2xl border border-slate-200 shadow-card overflow-hidden transition-all duration-300 ${style.border}`;
+                sectionEl.id = section.id;
+
+                // Section Header (Level 1 Accordion Trigger) - Optimized for touch
+                sectionEl.innerHTML = `
+                    <div class="cursor-pointer p-4 sm:p-6 select-none flex items-center justify-between gap-3 sm:gap-4 hover:bg-slate-50/80 active:bg-slate-100/70 transition-colors touch-manipulation" onclick="toggleSection('${section.id}')">
+                        <div class="flex items-center gap-2.5 sm:gap-4 min-w-0">
+                            <span class="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl ${style.iconBg} flex items-center justify-center font-kufi font-bold text-sm sm:text-lg flex-shrink-0 shadow-sm">
+                                0${section.categoryNumber}
+                            </span>
+                            <div class="min-w-0">
+                                <div class="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+                                    <h3 class="font-kufi font-bold text-sm sm:text-xl text-brand-navy leading-snug">
+                                        ${section.title}
+                                    </h3>
+                                    <span class="text-[10px] sm:text-[11px] font-medium px-2 py-0.5 rounded-full border ${style.badgeBg} flex-shrink-0">
+                                        ${section.programs.length} ${section.programs.length === 1 ? 'برنامج' : 'برامج'}
+                                    </span>
+                                </div>
+                                <p class="text-[11px] sm:text-xs text-slate-400 mt-0.5 sm:mt-1 truncate">
+                                    ${section.subtitle} • اضغط للاستعراض والتوسيع
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-1 flex-shrink-0 mr-1">
+                            <span class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-slate-100 group-hover:bg-slate-200 text-slate-700 flex items-center justify-center transition-transform duration-300 text-base sm:text-lg font-bold sec-toggle-icon" id="icon-${section.id}">
+                                ＋
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Level 1 Content Wrapper -->
+                    <div class="accordion-content border-t border-slate-100" id="content-${section.id}">
+                        <div class="accordion-inner p-3 sm:p-6 bg-slate-50/40 space-y-3.5 sm:space-y-5" id="programs-list-${section.id}">
+                            <!-- Programs injected below -->
+                        </div>
+                    </div>
+                `;
+
+                root.appendChild(sectionEl);
+
+                // Render Programs in this section
+                const progList = sectionEl.querySelector(`#programs-list-${section.id}`);
+                section.programs.forEach(prog => {
+                    const progEl = createProgramCard(prog, style, section.id);
+                    progList.appendChild(progEl);
+                });
+            });
+        }
+
+        // Generate card for Level 2 Accordion (Individual Program) - Touch & Mobile Friendly
+        function createProgramCard(prog, style, sectionId) {
+            const card = document.createElement('div');
+            card.className = `bg-white rounded-lg sm:rounded-xl border border-slate-200/90 shadow-subtle overflow-hidden transition-all duration-200 hover:shadow-md program-card border-r-4 ${style.cardBorder}`;
+            card.id = prog.id;
+            card.dataset.progTitle = prog.title;
+            card.dataset.sectionId = sectionId;
+
+            // Header for Level 2
+            let html = `
+                <div class="cursor-pointer p-3.5 sm:p-5 flex items-start justify-between gap-2.5 hover:bg-slate-50/70 active:bg-slate-100/60 transition-colors touch-manipulation group" onclick="toggleProgram('${prog.id}')">
+                    <div class="space-y-1.5 min-w-0 flex-1">
+                        <div class="flex items-center gap-1.5 flex-wrap">
+                            <span class="text-[10px] sm:text-[11px] font-semibold px-2.5 py-0.5 rounded border ${style.badgeBg} shadow-2xs">
+                                ${prog.tag}
+                            </span>
+                        </div>
+                        <h4 class="font-kufi font-bold text-xs sm:text-base ${style.titleColor} leading-snug break-words flex items-center gap-2 group-hover:brightness-90 transition-all">
+                            <span class="w-1.5 h-4 sm:h-5 rounded-full ${style.dot} inline-block flex-shrink-0"></span>
+                            <span>${prog.title}</span>
+                        </h4>
+                        <p class="text-[11px] sm:text-xs text-slate-500 font-normal line-clamp-1 sm:line-clamp-2 pr-3.5">
+                            ${prog.summary}
+                        </p>
+                    </div>
+                    <div class="flex-shrink-0 mr-1 mt-1 sm:mt-0">
+                        <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-md sm:rounded-lg bg-slate-100 text-slate-600 border border-slate-200 ${style.toggleBtn} flex items-center justify-center font-bold text-xs sm:text-sm transition-all duration-300 prog-toggle-icon" id="prog-icon-${prog.id}">
+                            ＋
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Level 2 Content (Timeline / Stages / Mobile Card or Custom Table) -->
+                <div class="accordion-content border-t border-slate-100 bg-white" id="prog-content-${prog.id}">
+                    <div class="accordion-inner p-3 sm:p-6">
+            `;
+
+            if (prog.isCustomTable) {
+                html += `
+                    <div class="mb-3 text-xs sm:text-sm text-slate-600 bg-blue-50/60 p-2.5 sm:p-3 rounded-lg border border-blue-100">
+                        مصفوفة ربط الأولمبيادات العلمية الوطنية بالاستحقاقات والمسابقات الإقليمية والدولية:
+                    </div>
+
+                    <!-- Mobile Responsive Cards (Visible on screens < md) -->
+                    <div class="grid grid-cols-1 gap-2.5 md:hidden">
+                `;
+                prog.tableData.forEach((row, rIdx) => {
+                    html += `
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 text-xs space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-brand-navy font-kufi">${rIdx + 1}. ${row.nat}</span>
+                                <span class="px-2 py-0.5 rounded bg-white text-slate-600 border border-slate-200 text-[10px] font-medium">${row.target}</span>
+                            </div>
+                            <div class="text-brand-crimson font-semibold">
+                                ⟵ ${row.intl}
+                            </div>
+                            <div class="pt-1.5 border-t border-slate-200/70 flex items-center justify-between text-slate-600 text-[11px]">
+                                <span class="inline-flex items-center gap-1 font-medium bg-amber-50 text-amber-900 px-2 py-0.5 rounded border border-amber-200">
+                                    📍 ${row.dest} • ${row.time}
+                                </span>
+                            </div>
+                        </div>
+                    `;
+                });
+                html += `
+                    </div>
+
+                    <!-- Desktop & Tablet Table (Visible on screens md and up) -->
+                    <div class="hidden md:block overflow-x-auto">
+                        <table class="w-full text-right text-xs sm:text-sm border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100 text-brand-navy border-b border-slate-200 font-kufi">
+                                    <th class="py-2.5 px-3 rounded-tr-lg">م</th>
+                                    <th class="py-2.5 px-3">الأولمبيادات العلمية الوطنية</th>
+                                    <th class="py-2.5 px-3">الفئة المستهدفة</th>
+                                    <th class="py-2.5 px-3">الأولمبياد الإقليمي / الدولي المرتبط</th>
+                                    <th class="py-2.5 px-3 rounded-tl-lg">الدولة والتاريخ</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100">
+                `;
+                prog.tableData.forEach((row, rIdx) => {
+                    html += `
+                        <tr class="hover:bg-slate-50/80 transition-colors">
+                            <td class="py-2.5 px-3 font-semibold text-slate-400">${rIdx + 1}</td>
+                            <td class="py-2.5 px-3 font-semibold text-brand-navy">${row.nat}</td>
+                            <td class="py-2.5 px-3 text-slate-600"><span class="px-2 py-0.5 rounded bg-slate-100 text-xs">${row.target}</span></td>
+                            <td class="py-2.5 px-3 text-brand-crimson font-medium">${row.intl}</td>
+                            <td class="py-2.5 px-3 text-slate-600">
+                                <span class="inline-flex items-center gap-1 font-medium bg-amber-50 text-amber-900 px-2 py-0.5 rounded border border-amber-200 text-xs">
+                                    <svg class="w-3 h-3 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                    ${row.dest} • ${row.time}
+                                </span>
+                            </td>
+                        </tr>
+                    `;
+                });
+                html += `
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            } else if (prog.stages && prog.stages.length > 0) {
+                html += `<div class="relative pr-6 sm:pr-8 py-1 space-y-4 sm:space-y-6">`;
+                
+                // Vertical connecting line positioned seamlessly on all screen sizes
+                html += `<div class="absolute top-2.5 bottom-2.5 right-3 sm:right-4 w-0.5 bg-slate-200"></div>`;
+
+                prog.stages.forEach((stage, stIdx) => {
+                    const yearBadgeColor = stage.year === '2026' 
+                        ? 'bg-blue-50 text-blue-800 border-blue-200' 
+                        : 'bg-emerald-50 text-emerald-800 border-emerald-200';
+
+                    html += `
+                        <div class="relative flex items-start gap-2.5 sm:gap-4 group stage-item" data-year="${stage.year}" data-month="${stage.month || ''}" data-text="${stage.action} ${stage.stageTitle} ${stage.notes || ''}">
+                            
+                            <!-- Step Circle Indicator on the line -->
+                            <div class="absolute -right-6 sm:-right-8 top-3 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white border-2 border-brand-navy group-hover:border-brand-crimson flex items-center justify-center text-[11px] sm:text-xs font-bold text-brand-navy transition z-10 shadow-sm flex-shrink-0">
+                                ${stage.stepNum || (stIdx + 1)}
+                            </div>
+
+                            <!-- Stage Card -->
+                            <div class="flex-1 bg-slate-50/90 hover:bg-slate-100/90 rounded-lg sm:rounded-xl p-3 sm:p-4 border border-slate-200/80 transition-all min-w-0">
+                                
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2 mb-2">
+                                    <span class="font-kufi font-semibold text-xs sm:text-base text-brand-navy leading-snug">
+                                        ${stage.stageTitle}
+                                    </span>
+                                    
+                                    <!-- Date Badge -->
+                                    <span class="inline-flex items-center gap-1 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md text-[11px] sm:text-xs font-semibold border ${yearBadgeColor} self-start sm:self-auto shadow-2xs">
+                                        <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                        </svg>
+                                        <span>${stage.date}</span>
+                                    </span>
+                                </div>
+
+                                <div class="mt-1.5 text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
+                                    <span class="text-slate-400 font-normal">الإجراء: </span>
+                                    ${stage.action}
+                                </div>
+
+                                ${stage.notes ? `
+                                    <div class="mt-2 pt-2 border-t border-slate-200/70 text-[11px] sm:text-xs text-slate-500 leading-relaxed">
+                                        <span class="font-semibold text-slate-600">الملاحظات:</span> ${stage.notes}
+                                    </div>
+                                ` : ''}
+
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `</div>`;
+            }
+
+            html += `
+                    </div>
+                </div>
+            `;
+
+            card.innerHTML = html;
+            return card;
+        }
+
+        // Toggle Section (Level 1 Accordion)
+        function toggleSection(sectionId, forceState) {
+            const content = document.getElementById(`content-${sectionId}`);
+            const icon = document.getElementById(`icon-${sectionId}`);
+            if (!content) return;
+
+            const isCurrentlyExpanded = content.classList.contains('expanded');
+            const targetState = forceState !== undefined ? forceState : !isCurrentlyExpanded;
+
+            if (targetState) {
+                content.classList.add('expanded');
+                if (icon) icon.textContent = '−';
+            } else {
+                content.classList.remove('expanded');
+                if (icon) icon.textContent = '＋';
+            }
+        }
+
+        // Toggle Program (Level 2 Accordion)
+        function toggleProgram(progId, forceState) {
+            const content = document.getElementById(`prog-content-${progId}`);
+            const icon = document.getElementById(`prog-icon-${progId}`);
+            if (!content) return;
+
+            const isCurrentlyExpanded = content.classList.contains('expanded');
+            const targetState = forceState !== undefined ? forceState : !isCurrentlyExpanded;
+
+            if (targetState) {
+                content.classList.add('expanded');
+                if (icon) icon.textContent = '−';
+            } else {
+                content.classList.remove('expanded');
+                if (icon) icon.textContent = '＋';
+            }
+        }
+
+        // Expand and Scroll To a specific program from timeline
+        function scrollToProgram(progId) {
+            // Find parent section
+            let targetSecId = null;
+            planData.forEach(sec => {
+                if (sec.programs.some(p => p.id === progId)) {
+                    targetSecId = sec.id;
+                }
+            });
+
+            if (targetSecId) {
+                toggleSection(targetSecId, true);
+            }
+            toggleProgram(progId, true);
+
+            setTimeout(() => {
+                const targetElement = document.getElementById(progId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    targetElement.classList.add('ring-2', 'ring-brand-gold');
+                    setTimeout(() => {
+                        targetElement.classList.remove('ring-2', 'ring-brand-gold');
+                    }, 2500);
+                }
+            }, 300);
+        }
+
+        // Initialize event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            // Render basic UI
+            renderPlan();
+
+            // Toggle All Button Logic
+            const toggleAllBtn = document.getElementById('toggleAllBtn');
+            const toggleAllBtnText = document.getElementById('toggleAllBtnText');
+
+            if (toggleAllBtn) {
+                toggleAllBtn.addEventListener('click', () => {
+                    allSectionsExpanded = !allSectionsExpanded;
+                    planData.forEach(sec => {
+                        toggleSection(sec.id, allSectionsExpanded);
+                        sec.programs.forEach(p => {
+                            toggleProgram(p.id, allSectionsExpanded);
+                        });
+                    });
+                    toggleAllBtnText.textContent = allSectionsExpanded ? 'إغلاق الكل' : 'فتح الكل';
+                });
+            }
+
+            // Open the first section by default to give an immediate welcome preview
+            toggleSection('sec-1', true);
+        });
+
+</script>
+</body>
+</html>
