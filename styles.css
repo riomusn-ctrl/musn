@@ -1,0 +1,57 @@
+/* Custom official geometry patterns with deep navy gradients */
+        .bg-pattern {
+            background-color: #0d2238;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(20, 50, 80, 0.75) 0%, transparent 60%),
+                radial-gradient(circle at 100% 100%, rgba(10, 26, 44, 0.9) 0%, transparent 55%),
+                linear-gradient(155deg, #071320 0%, #0d2238 35%, #153556 70%, #091726 100%),
+                radial-gradient(rgba(184, 144, 71, 0.22) 0.85px, transparent 0.85px), 
+                radial-gradient(rgba(147, 197, 253, 0.16) 0.85px, transparent 0.85px);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px, 28px 28px;
+            background-position: 0 0, 0 0, 0 0, 0 0, 14px 14px;
+            background-attachment: fixed;
+        }
+        
+        .border-ornament {
+            background-image: repeating-linear-gradient(45deg, #b89047, #b89047 10px, transparent 10px, transparent 20px);
+        }
+        
+        /* Accordion transition styles */
+        .accordion-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .accordion-content.expanded {
+            grid-template-rows: 1fr;
+        }
+        .accordion-inner {
+            overflow: hidden;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Touch optimization */
+        .touch-scroll {
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+        }
+        
+        /* Tap highlight removal for slick mobile feel */
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
